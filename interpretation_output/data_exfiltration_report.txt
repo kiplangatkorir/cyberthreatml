@@ -1,0 +1,28 @@
+=================================================
+THREAT DETECTION EXPLANATION REPORT (RULES)
+=================================================
+
+Prediction: DDoS (Class ID: 2)
+Explanation Method: rules
+
+TOP CONTRIBUTING FEATURES
+-----------------------
+1. Packet Size: +0.8640
+2. Payload Entropy: +0.7560
+3. ICMP Flag: +0.3224
+4. Suspicious Port Combo: +0.2240
+5. Feature 17: +0.2226
+
+INTERPRETATION
+-------------
+Features increasing the likelihood of this threat:
+- Packet Size (contribution: +0.8640)
+- Payload Entropy (contribution: +0.7560)
+- ICMP Flag (contribution: +0.3224)
+- Suspicious Port Combo (contribution: +0.2240)
+- Feature 17 (contribution: +0.2226)
+
+NOTES
+-----
+This is a simple statistical explanation based on feature values.
+More sophisticated explanation methods are available with optional dependencies.

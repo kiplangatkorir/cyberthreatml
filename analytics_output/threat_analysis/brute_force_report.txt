@@ -1,0 +1,28 @@
+=================================================
+THREAT DETECTION EXPLANATION REPORT (RULES)
+=================================================
+
+Prediction: Brute Force (Class ID: 3)
+Explanation Method: rules
+
+TOP CONTRIBUTING FEATURES
+-----------------------
+1. Packet Size: +0.8624
+2. Payload Entropy: +0.7371
+3. Bytes Transferred: +0.7019
+4. Flow Direction: +0.5578
+5. Encrypted Payload: +0.4021
+
+INTERPRETATION
+-------------
+Features increasing the likelihood of this threat:
+- Packet Size (contribution: +0.8624)
+- Payload Entropy (contribution: +0.7371)
+- Bytes Transferred (contribution: +0.7019)
+- Flow Direction (contribution: +0.5578)
+- Encrypted Payload (contribution: +0.4021)
+
+NOTES
+-----
+This is a simple statistical explanation based on feature values.
+More sophisticated explanation methods are available with optional dependencies.

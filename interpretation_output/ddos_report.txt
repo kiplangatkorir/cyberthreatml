@@ -1,0 +1,28 @@
+=================================================
+THREAT DETECTION EXPLANATION REPORT (RULES)
+=================================================
+
+Prediction: Brute Force (Class ID: 3)
+Explanation Method: rules
+
+TOP CONTRIBUTING FEATURES
+-----------------------
+1. Packet Size: +0.9120
+2. ICMP Flag: +0.9000
+3. TTL Value: +0.3527
+4. Feature 21: +0.2272
+5. Feature 17: +0.1860
+
+INTERPRETATION
+-------------
+Features increasing the likelihood of this threat:
+- Packet Size (contribution: +0.9120)
+- ICMP Flag (contribution: +0.9000)
+- TTL Value (contribution: +0.3527)
+- Feature 21 (contribution: +0.2272)
+- Feature 17 (contribution: +0.1860)
+
+NOTES
+-----
+This is a simple statistical explanation based on feature values.
+More sophisticated explanation methods are available with optional dependencies.

@@ -1,0 +1,25 @@
+[project]
+name = "cyberthreat-ml"
+version = "0.1.0"
+description = "A Python library for real-time cybersecurity threat detection using TensorFlow"
+authors = [
+    {name = "CyberThreat-ML Team", email = "example@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "matplotlib>=3.10.1",
+    "numpy<2.0.0",
+    "pandas>=2.2.3",
+    "scikit-learn>=1.6.1",
+    "seaborn>=0.13.2",
+    "shap>=0.47.0",
+    "tensorflow>=2.14.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["cyberthreat_ml"]

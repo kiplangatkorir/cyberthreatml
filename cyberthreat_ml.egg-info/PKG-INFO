@@ -1,0 +1,37 @@
+Metadata-Version: 2.2
+Name: cyberthreat-ml
+Version: 0.1.0
+Summary: A Python library for real-time cybersecurity threat detection using TensorFlow
+Author-email: CyberThreat-ML Team <example@example.com>
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: matplotlib>=3.10.1
+Requires-Dist: numpy<2.0.0
+Requires-Dist: pandas>=2.2.3
+Requires-Dist: scikit-learn>=1.6.1
+Requires-Dist: seaborn>=0.13.2
+Requires-Dist: shap>=0.47.0
+Requires-Dist: tensorflow>=2.14.0
+
+# CyberThreat-ML
+
+A Python library for real-time cybersecurity threat detection using TensorFlow.
+
+## Overview
+
+CyberThreat-ML is a comprehensive library for building, training, and deploying machine learning models to detect cyber threats in real-time. It provides tools for processing network traffic data, training models, evaluating performance, explaining predictions, and deploying models in real-time detection systems.
+
+## Features
+
+- Core ML model for cybersecurity threat detection
+- Support for real-time data processing and threat detection
+- Binary classification of potential threats
+- Model training, evaluation, and persistence
+- Model explainability using SHAP
+- Preprocessing utilities for network traffic data
+- API for integration into security systems
+
+## Installation
+
+```bash
+pip install cyberthreat-ml

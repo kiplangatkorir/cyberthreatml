@@ -1,0 +1,1 @@
+{"input_shape": [25], "model_config": {"hidden_layers": [64, 32, 16], "dropout_rate": 0.3, "activation": "relu", "output_activation": "softmax", "loss": "sparse_categorical_crossentropy", "metrics": ["accuracy"], "optimizer": "adam", "class_names": ["Normal Traffic", "Port Scan", "DDoS", "Brute Force", "Data Exfiltration"]}}

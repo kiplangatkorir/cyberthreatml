@@ -1,0 +1,85 @@
+ANOMALY 5 ANALYSIS
+==================================================
+
+Sample index: 58
+True class: Normal
+Anomaly score: 0.3678
+Severity: Medium-Low (0.2386)
+
+FEATURE ANALYSIS:
+  Feature_0:
+    Value: 0.5005
+    Z-score: 1.9755
+    Deviation: 1.9755
+    Baseline mean: 0.3020
+    Baseline std: 0.1005
+
+  Feature_1:
+    Value: 0.2443
+    Z-score: -1.5671
+    Deviation: 1.5671
+    Baseline mean: 0.4035
+    Baseline std: 0.1016
+
+  Feature_9:
+    Value: 0.0573
+    Z-score: -1.5505
+    Deviation: 1.5505
+    Baseline mean: 0.5109
+    Baseline std: 0.2925
+
+  Feature_5:
+    Value: 0.2909
+    Z-score: -1.4145
+    Deviation: 1.4145
+    Baseline mean: 0.5015
+    Baseline std: 0.1489
+
+  Feature_4:
+    Value: 0.0882
+    Z-score: -1.3927
+    Deviation: 1.3927
+    Baseline mean: 0.4904
+    Baseline std: 0.2888
+
+  Feature_6:
+    Value: 0.8600
+    Z-score: 1.3026
+    Deviation: 1.3026
+    Baseline mean: 0.4848
+    Baseline std: 0.2880
+
+  Feature_3:
+    Value: 0.1424
+    Z-score: -1.2427
+    Deviation: 1.2427
+    Baseline mean: 0.4929
+    Baseline std: 0.2820
+
+  Feature_8:
+    Value: 0.3198
+    Z-score: -0.6282
+    Deviation: 0.6282
+    Baseline mean: 0.4988
+    Baseline std: 0.2849
+
+  Feature_2:
+    Value: 0.3386
+    Z-score: -0.6109
+    Deviation: 0.6109
+    Baseline mean: 0.5138
+    Baseline std: 0.2868
+
+  Feature_7:
+    Value: 0.4321
+    Z-score: -0.2477
+    Deviation: 0.2477
+    Baseline mean: 0.5034
+    Baseline std: 0.2881
+
+RECOMMENDED ACTIONS:
+  Priority: Medium-Low
+  Actions:
+    - Monitor closely for 24 hours
+    - Check related systems for similar patterns
+  Investigation: Recommended during next regular review

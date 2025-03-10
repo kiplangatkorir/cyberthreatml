@@ -1,0 +1,28 @@
+=================================================
+THREAT DETECTION EXPLANATION REPORT (RULES)
+=================================================
+
+Prediction: Data Exfiltration (Class ID: 4)
+Explanation Method: rules
+
+TOP CONTRIBUTING FEATURES
+-----------------------
+1. Source Port: +0.9000
+2. Suspicious Port Combo: +0.8200
+3. Destination Port: +0.7840
+4. Feature 10: +0.3179
+5. Feature 20: +0.3035
+
+INTERPRETATION
+-------------
+Features increasing the likelihood of this threat:
+- Source Port (contribution: +0.9000)
+- Suspicious Port Combo (contribution: +0.8200)
+- Destination Port (contribution: +0.7840)
+- Feature 10 (contribution: +0.3179)
+- Feature 20 (contribution: +0.3035)
+
+NOTES
+-----
+This is a simple statistical explanation based on feature values.
+More sophisticated explanation methods are available with optional dependencies.

@@ -1,0 +1,159 @@
+modules = ["python-3.11"]
+
+[nix]
+channel = "stable-24_05"
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "CyberThreat-ML Demo"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "python_script"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "multiclass_example"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "visualization_demo"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "integrated_analytics"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "enterprise_security"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "iot_security"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "zero_day_detection"
+
+[[workflows.workflow]]
+name = "CyberThreat-ML Demo"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python examples/basic_usage.py"
+
+[[workflows.workflow]]
+name = "python_script"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python examples/realtime_detection.py"
+
+[[workflows.workflow]]
+name = "multiclass_example"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python examples/multiclass_classification.py"
+
+[[workflows.workflow]]
+name = "visualization_demo"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python examples/visualization_interpretability.py"
+
+[[workflows.workflow]]
+name = "integrated_analytics"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python examples/integrated_analytics.py"
+
+[[workflows.workflow]]
+name = "enterprise_security"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python examples/enterprise_security.py"
+
+[[workflows.workflow]]
+name = "iot_security"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python examples/iot_security.py"
+
+[[workflows.workflow]]
+name = "zero_day_detection"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python examples/zero_day_detection.py"
+
+[deployment]
+run = ["sh", "-c", "python examples/basic_usage.py"]
