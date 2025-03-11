@@ -1,81 +1,81 @@
 ANOMALY 3 ANALYSIS
 ==================================================
 
-Sample index: 30
+Sample index: 81
 True class: Normal
-Anomaly score: 0.3646
-Severity: Medium-Low (0.2359)
+Anomaly score: 0.3984
+Severity: Medium-Low (0.2104)
 
 FEATURE ANALYSIS:
-  Feature_1:
-    Value: 0.6280
-    Z-score: 2.2106
-    Deviation: 2.2106
-    Baseline mean: 0.4035
-    Baseline std: 0.1016
+  Feature_3:
+    Value: 0.9847
+    Z-score: 1.6711
+    Deviation: 1.6711
+    Baseline mean: 0.5128
+    Baseline std: 0.2824
 
   Feature_8:
-    Value: 0.0385
-    Z-score: -1.6156
-    Deviation: 1.6156
-    Baseline mean: 0.4988
-    Baseline std: 0.2849
-
-  Feature_6:
-    Value: 0.0617
-    Z-score: -1.4690
-    Deviation: 1.4690
-    Baseline mean: 0.4848
+    Value: 0.9603
+    Z-score: 1.5501
+    Deviation: 1.5501
+    Baseline mean: 0.5138
     Baseline std: 0.2880
 
-  Feature_2:
-    Value: 0.1015
-    Z-score: -1.4375
-    Deviation: 1.4375
-    Baseline mean: 0.5138
-    Baseline std: 0.2868
-
   Feature_4:
-    Value: 0.1119
-    Z-score: -1.3105
-    Deviation: 1.3105
-    Baseline mean: 0.4904
-    Baseline std: 0.2888
+    Value: 0.9268
+    Z-score: 1.4973
+    Deviation: 1.4973
+    Baseline mean: 0.4952
+    Baseline std: 0.2882
 
-  Feature_0:
-    Value: 0.1739
-    Z-score: -1.2749
-    Deviation: 1.2749
-    Baseline mean: 0.3020
-    Baseline std: 0.1005
-
-  Feature_7:
-    Value: 0.2023
-    Z-score: -1.0451
-    Deviation: 1.0451
-    Baseline mean: 0.5034
-    Baseline std: 0.2881
-
-  Feature_5:
-    Value: 0.4215
-    Z-score: -0.5371
-    Deviation: 0.5371
-    Baseline mean: 0.5015
-    Baseline std: 0.1489
+  Feature_2:
+    Value: 0.9167
+    Z-score: 1.4599
+    Deviation: 1.4599
+    Baseline mean: 0.4955
+    Baseline std: 0.2885
 
   Feature_9:
-    Value: 0.3755
-    Z-score: -0.4628
-    Deviation: 0.4628
-    Baseline mean: 0.5109
-    Baseline std: 0.2925
+    Value: 0.0918
+    Z-score: -1.4017
+    Deviation: 1.4017
+    Baseline mean: 0.4913
+    Baseline std: 0.2851
 
-  Feature_3:
-    Value: 0.3707
-    Z-score: -0.4332
-    Deviation: 0.4332
-    Baseline mean: 0.4929
-    Baseline std: 0.2820
+  Feature_6:
+    Value: 0.8846
+    Z-score: 1.3191
+    Deviation: 1.3191
+    Baseline mean: 0.5056
+    Baseline std: 0.2873
+
+  Feature_0:
+    Value: 0.3755
+    Z-score: 0.7526
+    Deviation: 0.7526
+    Baseline mean: 0.2981
+    Baseline std: 0.1028
+
+  Feature_1:
+    Value: 0.3298
+    Z-score: -0.6281
+    Deviation: 0.6281
+    Baseline mean: 0.3958
+    Baseline std: 0.1050
+
+  Feature_7:
+    Value: 0.5534
+    Z-score: 0.1962
+    Deviation: 0.1962
+    Baseline mean: 0.4966
+    Baseline std: 0.2894
+
+  Feature_5:
+    Value: 0.4975
+    Z-score: -0.0434
+    Deviation: 0.0434
+    Baseline mean: 0.5040
+    Baseline std: 0.1496
 
 RECOMMENDED ACTIONS:
   Priority: Medium-Low

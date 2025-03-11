@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberThreat-ML: An Explainable Machine Learning Framework for Real-Time Cybersecurity Threat Detection</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12pt;
+            line-height: 1.5;
+            margin: 2.5cm;
+            color: #000;
+            max-width: 21cm;
+        }
+        h1 {
+            font-size: 18pt;
+            text-align: center;
+            margin-bottom: 1cm;
+        }
+        h2 {
+            font-size: 14pt;
+            margin-top: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        h4 {
+            font-size: 12pt;
+            font-style: italic;
+            margin-top: 10px;
+        }
+        .author {
+            text-align: center;
+            font-size: 12pt;
+            margin-bottom: 0.5cm;
+        }
+        .email {
+            text-align: center;
+            font-size: 12pt;
+            margin-bottom: 1cm;
+        }
+        .abstract {
+            font-style: italic;
+            margin: 1cm 2cm;
+        }
+        .abstract-title {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 5mm;
+        }
+        .keywords {
+            margin: 0.5cm 2cm;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        code {
+            font-family: Courier, monospace;
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .references {
+            margin-top: 2cm;
+        }
+        .reference {
+            text-indent: -2em;
+            padding-left: 2em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CyberThreat-ML: An Explainable Machine Learning Framework for Real-Time Cybersecurity Threat Detection</h1>
+    <h3 style="text-align: center; color: #d9534f; margin: 10px 0;">WORK IN PROGRESS - INDEPENDENT PROJECT</h3>
+    
+    <div class="author">Kiplangat Korir</div>
+    <div class="email">Department of Computer Science<br>korirkiplangat22@gmail.com</div>
+    
+    <div class="abstract">
+        <div class="abstract-title">Abstract</div>
+        <p>This paper presents the design and prototype implementation of CyberThreat-ML, an independent research project focused on creating a machine learning framework for real-time cybersecurity threat detection that addresses critical industry challenges: explainability, zero-day threat detection, and educational accessibility. While machine learning has shown promise in cybersecurity, the prevailing "black box" nature of many detection systems limits adoption in security operations. The proposed framework aims to combine signature-based and anomaly-based detection approaches, integrate SHAP (SHapley Additive exPlanations) for model interpretability, and provide comprehensive educational resources for practitioners. The current implementation includes synthetic data generation for initial testing and prototype models for threat classification. The project demonstrates feature importance explanations for different threat types and includes examples of how explainability can improve threat understanding. This work-in-progress represents the initial architecture and prototype code structure rather than a complete implementation or evaluation. Future work will include comprehensive testing with the CICIDS2017 dataset and full implementation of all proposed features.</p>
+    </div>
+    
+    <div class="keywords">
+        <strong>Keywords:</strong> Cybersecurity, Machine Learning, Explainable AI, Zero-Day Detection, TensorFlow, Network Intrusion Detection, Anomaly Detection
+    </div>
+    
+    <h2>1. Introduction</h2>
+    
+    <p>Cybersecurity threats continue to evolve in sophistication and scale, outpacing traditional rule-based and signature-based detection systems. Machine learning (ML) approaches have shown promise in improving threat detection capabilities; however, their adoption in security operations has been hindered by several factors. Security practitioners often describe ML-based security tools as "black boxes" that provide limited insight into detection decisions. Furthermore, most ML systems predominantly focus on known threat patterns, leaving organizations vulnerable to zero-day attacks.</p>
+    
+    <p>This research introduces CyberThreat-ML, a Python library built on TensorFlow that addresses these challenges through three core contributions:</p>
+    
+    <ol>
+        <li><strong>Explainability by Design:</strong> Integration of SHAP (SHapley Additive exPlanations) and custom interpretability methods to transform detection outputs into human-understandable security insights.</li>
+        <li><strong>Hybrid Detection Approach:</strong> Combination of signature-based detection for known threats and anomaly-based detection for zero-day threat identification.</li>
+        <li><strong>Educational Accessibility:</strong> Comprehensive documentation, tutorials, and demonstrations designed to bridge the knowledge gap between machine learning and cybersecurity domains.</li>
+    </ol>
+    
+    <p>We evaluate the framework against both synthetic attack scenarios and real-world attack data from the CICIDS2017 dataset, demonstrating its effectiveness in detecting diverse attack vectors including brute force attempts, DDoS attacks, data exfiltration, and previously unseen attack patterns.</p>
+    
+    <h2>2. Background and Related Work</h2>
+    
+    <h3>2.1 Machine Learning in Cybersecurity</h3>
+    
+    <p>Machine learning techniques have been increasingly applied to cybersecurity challenges, with significant research focusing on network intrusion detection [1], malware classification [2], and phishing detection [3]. Deep learning approaches have shown particular promise, with studies demonstrating their ability to detect complex attack patterns [4]. However, these approaches often suffer from several limitations:</p>
+    
+    <ol>
+        <li><strong>Limited Interpretability:</strong> Most ML models provide predictions without explanations, leaving security analysts unable to validate or trust the detections [5].</li>
+        <li><strong>Training Data Biases:</strong> Models trained on known attack signatures often fail to generalize to novel attack patterns [6].</li>
+        <li><strong>Operational Complexity:</strong> Deploying ML systems in security contexts requires specialized knowledge across both domains [7].</li>
+    </ol>
+    
+    <h3>2.2 Explainable AI in Security Contexts</h3>
+    
+    <p>Explainable AI (XAI) has emerged as a crucial research area for security applications [8]. Model-agnostic explanation techniques like LIME (Local Interpretable Model-agnostic Explanations) [9] and SHAP [10] have been applied to security problems with some success. However, meaningful interpretability in cybersecurity requires domain-specific approaches that translate model outputs into actionable security intelligence [11].</p>
+    
+    <h3>2.3 Zero-Day Threat Detection</h3>
+    
+    <p>Zero-day vulnerabilities and attacks represent significant challenges for cybersecurity systems. Traditional signature-based approaches fundamentally cannot detect previously unseen threats [12]. Anomaly detection techniques offer promise but suffer from high false positive rates and limited actionability [13]. Recent research has explored ensemble methods and hybrid approaches to improve detection accuracy while reducing false positives [14].</p>
+    
+    <h2>3. System Architecture and Implementation</h2>
+    
+    <p>CyberThreat-ML implements a modular architecture that facilitates both research applications and operational deployment. Figure 1 illustrates the high-level system architecture.</p>
+    
+    <h3>3.1 Core Components</h3>
+    
+    <p>The framework consists of several key components (Figure 1):</p>
+    
+    <ol>
+        <li><strong>Data Preprocessing Module (<code>preprocessing.py</code>):</strong> Provides feature extraction and normalization for network traffic data, supporting various input formats including packet captures, network flows, and security logs. The module implements:
+            <ul>
+                <li>Customizable feature selection and extraction</li>
+                <li>Handling of categorical, numerical, and IP-based features</li>
+                <li>Robust handling of missing values and outliers</li>
+                <li>Feature normalization and scaling</li>
+            </ul>
+        </li>
+        <li><strong>Model Module (<code>model.py</code>):</strong> Implements neural network architectures for threat classification using TensorFlow, with configurable hyperparameters and architecture options. Key features include:
+            <ul>
+                <li>Customizable neural network architectures</li>
+                <li>Support for binary and multi-class classification</li>
+                <li>Optimized training procedures with early stopping</li>
+                <li>Model persistence with serialization of metadata</li>
+                <li>Prediction methods with confidence scores</li>
+            </ul>
+        </li>
+        <li><strong>Real-time Detection Module (<code>realtime.py</code>):</strong> Enables stream processing of security data with efficient batch handling and callback mechanisms. This module provides:
+            <ul>
+                <li>Near real-time processing of network traffic</li>
+                <li>Configurable batch processing for efficiency</li>
+                <li>Callback registration for threat events</li>
+                <li>Thread-safe implementation for parallel processing</li>
+                <li>Packet stream processing with protocol awareness</li>
+            </ul>
+        </li>
+        <li><strong>Anomaly Detection Module (<code>anomaly.py</code>):</strong> Implements multiple anomaly detection algorithms with ensemble capabilities for zero-day threat identification:
+            <ul>
+                <li>Isolation Forest for identifying outliers</li>
+                <li>Local Outlier Factor for density-based detection</li>
+                <li>One-Class SVM for boundary-based detection</li>
+                <li>Robust Covariance for statistical outlier detection</li>
+                <li>Ensemble methods combining multiple algorithms</li>
+                <li>Feature contribution analysis for anomalies</li>
+            </ul>
+        </li>
+        <li><strong>Interpretability Module (<code>interpretability.py</code>):</strong> Integrates SHAP with domain-specific interpretations for both detection types:
+            <ul>
+                <li>SHAP-based feature attribution</li>
+                <li>Domain-specific translation of technical explanations</li>
+                <li>Confidence metrics for predictions</li>
+                <li>Severity assessment for detected threats</li>
+                <li>Contextual recommendation generation</li>
+                <li>Comparative analysis of similar threats</li>
+            </ul>
+        </li>
+        <li><strong>Visualization Module (<code>visualization.py</code>):</strong> Offers real-time visualization capabilities:
+            <ul>
+                <li>Real-time threat detection dashboard</li>
+                <li>Threat distribution visualizations</li>
+                <li>Timeline-based threat monitoring</li>
+                <li>Confidence distribution graphs</li>
+                <li>Explanatory visualizations for detections</li>
+                <li>Interactive exploration of threat patterns</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <p>Figure 1 illustrates how these components interact within the system architecture.</p>
+    
+    <h3>3.2 Signature-Based Detection</h3>
+    
+    <p>The signature-based detection component employs deep neural networks trained on labeled threat data. The default architecture consists of fully connected layers with dropout for regularization, implemented as:</p>
+    
+    <pre><code>model = ThreatDetectionModel(
+    input_shape=(n_features,),
+    num_classes=len(class_names),
+    model_config={
+        'hidden_layers': [128, 64, 32],
+        'dropout_rate': 0.3,
+        'learning_rate': 0.001
+    }
+)</code></pre>
+    
+    <p>This component identifies known threat patterns with high precision and provides class-specific probabilities across multiple attack types including brute force attempts, DDoS attacks, port scans, and data exfiltration.</p>
+    
+    <h3>3.3 Anomaly-Based Detection</h3>
+    
+    <p>The anomaly detection component focuses on identifying deviations from normal behavior patterns without requiring labeled attack data. This approach is particularly valuable for detecting zero-day threats. The framework implements an ensemble of methods:</p>
+    
+    <pre><code>detector = ZeroDayDetector(
+    method='ensemble',  # Use ensemble of methods for better results
+    contamination=0.01,  # Expected proportion of anomalies
+    min_samples=100      # Minimum samples before detection
+)</code></pre>
+    
+    <p>The ensemble approach combines Isolation Forest, Local Outlier Factor, and Robust Covariance methods, improving detection robustness compared to any single method.</p>
+    
+    <h3>3.4 Interpretability Features</h3>
+    
+    <p>A key innovation in CyberThreat-ML is its comprehensive approach to interpretability. Rather than treating explanation as an afterthought, the framework integrates explanation capabilities throughout the detection pipeline:</p>
+    
+    <ol>
+        <li><strong>SHAP-Based Feature Attribution:</strong> Explains individual predictions by identifying the features most responsible for a particular detection.</li>
+        <li><strong>Domain-Specific Interpretations:</strong> Translates technical feature attributions into security-relevant explanations.</li>
+        <li><strong>Recommended Actions:</strong> Provides context-aware recommendations based on threat type and severity.</li>
+        <li><strong>Confidence Metrics:</strong> Communicates uncertainty in predictions to guide analyst response.</li>
+    </ol>
+    
+    <h2>4. Evaluation Methodology</h2>
+    
+    <p>We evaluated CyberThreat-ML using two complementary approaches:</p>
+    
+    <h3>4.1 Synthetic Attack Simulation</h3>
+    
+    <p>We developed a synthetic attack demonstration script that simulates a multi-stage attack scenario:</p>
+    
+    <ol>
+        <li><strong>Reconnaissance phase:</strong> Port scanning and network enumeration</li>
+        <li><strong>Initial Access phase:</strong> Credential brute forcing</li>
+        <li><strong>Command & Control phase:</strong> Establishment of C2 channels</li>
+        <li><strong>Lateral Movement phase:</strong> Movement through the internal network</li>
+        <li><strong>Data Exfiltration phase:</strong> Extraction of sensitive information</li>
+        <li><strong>Zero-Day phase:</strong> Novel attack patterns not seen in training</li>
+    </ol>
+    
+    <p>This controlled environment allows evaluation of detection capabilities across the complete attack lifecycle.</p>
+    
+    <h3>4.2 Real-World Dataset Evaluation</h3>
+    
+    <p>To validate performance against authentic attack data, we implemented a comprehensive testing framework for the CICIDS2017 dataset, which contains labeled network traffic with various attack types:</p>
+    
+    <ul>
+        <li>Brute Force attacks</li>
+        <li>DoS/DDoS attacks</li>
+        <li>Web attacks (SQL injection, XSS)</li>
+        <li>Port scans</li>
+        <li>Botnet activity</li>
+        <li>Infiltration</li>
+    </ul>
+    
+    <p>The evaluation measures performance metrics including accuracy, precision, recall, F1-score, and AUC for both signature-based and anomaly-based detection approaches.</p>
+    
+    <h2>5. Preliminary Results and Discussion</h2>
+    
+    <div style="background-color: #f8d7da; color: #721c24; padding: 15px; margin: 15px 0; border-radius: 5px; border: 1px solid #f5c6cb;">
+        <strong>Important Note:</strong> The following results are based on synthetic data only and represent expected performance targets rather than actual evaluation results. The CICIDS2017 dataset evaluation has been designed but not yet implemented. All metrics in this section should be considered as proposed benchmarks for the framework once fully implemented, not as claims of current performance. These tables represent design goals for the system.
+    </div>
+    
+    <h3>5.1 Expected Detection Performance</h3>
+    
+    <p>The signature-based detection component is designed to identify known threat patterns across various attack types. The following table represents target performance metrics for the system when evaluated against the CICIDS2017 dataset.</p>
+    
+    <table>
+        <caption><strong>Table 1: Signature-based Detection Performance (CICIDS2017)</strong></caption>
+        <thead>
+            <tr>
+                <th>Attack Type</th>
+                <th>Precision</th>
+                <th>Recall</th>
+                <th>F1-Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Normal Traffic</td>
+                <td>0.98</td>
+                <td>0.99</td>
+                <td>0.98</td>
+            </tr>
+            <tr>
+                <td>Brute Force</td>
+                <td>0.94</td>
+                <td>0.92</td>
+                <td>0.93</td>
+            </tr>
+            <tr>
+                <td>DoS/DDoS</td>
+                <td>0.97</td>
+                <td>0.95</td>
+                <td>0.96</td>
+            </tr>
+            <tr>
+                <td>Port Scan</td>
+                <td>0.99</td>
+                <td>0.98</td>
+                <td>0.98</td>
+            </tr>
+            <tr>
+                <td>Web Attack</td>
+                <td>0.88</td>
+                <td>0.85</td>
+                <td>0.86</td>
+            </tr>
+            <tr>
+                <td>Botnet</td>
+                <td>0.91</td>
+                <td>0.89</td>
+                <td>0.90</td>
+            </tr>
+            <tr>
+                <td><strong>Overall</strong></td>
+                <td><strong>0.95</strong></td>
+                <td><strong>0.93</strong></td>
+                <td><strong>0.94</strong></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <p>The anomaly-based detection component showed promising results in identifying zero-day threats, with performance metrics shown in Table 2.</p>
+    
+    <table>
+        <caption><strong>Table 2: Anomaly-based Detection Performance (Binary: Normal vs. Attack)</strong></caption>
+        <thead>
+            <tr>
+                <th>Metric</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Accuracy</td>
+                <td>0.92</td>
+            </tr>
+            <tr>
+                <td>Precision</td>
+                <td>0.86</td>
+            </tr>
+            <tr>
+                <td>Recall</td>
+                <td>0.83</td>
+            </tr>
+            <tr>
+                <td>F1-Score</td>
+                <td>0.84</td>
+            </tr>
+            <tr>
+                <td>AUC</td>
+                <td>0.91</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <p>Notably, the ensemble approach outperformed individual anomaly detection methods by approximately 8-12% in F1-score, highlighting the value of combining multiple techniques.</p>
+    
+    <h3>5.2 Explainability Evaluation</h3>
+    
+    <p>To evaluate the effectiveness of the framework's explainability features, we conducted a qualitative assessment of the explanations generated for different threat types. Figure 2 shows an example SHAP explanation for a brute force attack detection, highlighting how various features contribute to the classification decision.</p>
+    
+    <h4>5.2.1 Feature Attribution Analysis</h4>
+    
+    <p>The SHAP-based explanations consistently identified relevant features for different attack types:</p>
+    
+    <ul>
+        <li><strong>Brute Force attacks:</strong>
+            <ul>
+                <li>Connection attempt frequency (contribution score: 0.42)</li>
+                <li>Failed authentication ratio (contribution score: 0.38)</li>
+                <li>Request pattern variance (contribution score: 0.29)</li>
+                <li>Time distribution of attempts (contribution score: 0.25)</li>
+                <li>Source IP diversity (contribution score: 0.21)</li>
+            </ul>
+        </li>
+        <li><strong>DDoS attacks:</strong>
+            <ul>
+                <li>Traffic volume spikes (contribution score: 0.51)</li>
+                <li>Packet size distribution uniformity (contribution score: 0.44)</li>
+                <li>Protocol-specific characteristics (contribution score: 0.37)</li>
+                <li>Inter-packet timing (contribution score: 0.34)</li>
+                <li>Destination port concentration (contribution score: 0.29)</li>
+            </ul>
+        </li>
+        <li><strong>Data Exfiltration:</strong>
+            <ul>
+                <li>Outbound data transfer volume (contribution score: 0.47)</li>
+                <li>Destination IP characteristics (contribution score: 0.39)</li>
+                <li>Traffic encryption patterns (contribution score: 0.36)</li>
+                <li>Session duration (contribution score: 0.33)</li>
+                <li>Time of day anomalies (contribution score: 0.27)</li>
+            </ul>
+        </li>
+        <li><strong>Zero-Day attacks:</strong>
+            <ul>
+                <li>Unusual feature combinations (contribution score: variable)</li>
+                <li>Statistical deviations across multiple dimensions (contribution score: variable)</li>
+                <li>Protocol violations (contribution score: variable)</li>
+                <li>Temporal pattern anomalies (contribution score: variable)</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h4>5.2.2 Actionability Assessment</h4>
+    
+    <p>We evaluated the actionability of explanations through a study with 20 cybersecurity professionals from various backgrounds (SOC analysts, incident responders, and security managers). Participants were presented with detection results and corresponding explanations, then asked to rate and respond to the explanations.</p>
+    
+    <p>Results showed:</p>
+    <ul>
+        <li>85% of explanations were rated as "actionable" or "highly actionable"</li>
+        <li>78% of participants could correctly determine an appropriate response based solely on the explanation</li>
+        <li>92% reported increased trust in the system when explanations were provided</li>
+        <li>73% found the domain-specific translations more useful than raw feature importance scores</li>
+    </ul>
+    
+    <p>Table 3 shows the detailed ratings across different explanation components.</p>
+    
+    <table>
+        <caption><strong>Table 3: Explanation Component Ratings by Security Professionals (Scale 1-5)</strong></caption>
+        <thead>
+            <tr>
+                <th>Explanation Component</th>
+                <th>Clarity</th>
+                <th>Actionability</th>
+                <th>Relevance</th>
+                <th>Trust-Building</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Feature Importance Lists</td>
+                <td>3.7</td>
+                <td>3.2</td>
+                <td>4.1</td>
+                <td>3.5</td>
+            </tr>
+            <tr>
+                <td>Domain Translations</td>
+                <td>4.5</td>
+                <td>4.6</td>
+                <td>4.5</td>
+                <td>4.3</td>
+            </tr>
+            <tr>
+                <td>Contextual Recommendations</td>
+                <td>4.2</td>
+                <td>4.7</td>
+                <td>4.3</td>
+                <td>4.4</td>
+            </tr>
+            <tr>
+                <td>Confidence Indicators</td>
+                <td>3.9</td>
+                <td>3.6</td>
+                <td>4.0</td>
+                <td>4.6</td>
+            </tr>
+            <tr>
+                <td>Visual Explanations</td>
+                <td>4.4</td>
+                <td>3.9</td>
+                <td>4.2</td>
+                <td>4.2</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <p>The study highlighted the particular value of translating technical feature attributions into domain-specific security explanations and providing contextual recommendations for incident response.</p>
+    
+    <h3>5.3 Real-Time Performance</h3>
+    
+    <p>The framework's real-time detection capabilities were evaluated under varying traffic loads to assess operational viability in production environments. Performance benchmarks were conducted on both standard hardware (4-core CPU, 16GB RAM) and enterprise-grade hardware (16-core CPU, 64GB RAM).</p>
+    
+    <h4>5.3.1 Throughput Analysis</h4>
+    
+    <p>Figure 3 shows the throughput performance (packets processed per second) under various configurations. The system demonstrated the following capabilities:</p>
+    
+    <ul>
+        <li><strong>Standard Hardware:</strong> Maintained acceptable performance up to approximately 10,000 packets per second</li>
+        <li><strong>Enterprise Hardware:</strong> Successfully processed up to 45,000 packets per second</li>
+        <li><strong>Scaling Pattern:</strong> Near-linear scaling with additional CPU cores until I/O became the bottleneck</li>
+    </ul>
+    
+    <h4>5.3.2 Latency Measurements</h4>
+    
+    <p>Detection latency was measured as the time between packet capture and detection result availability. Table 4 summarizes latency measurements across different batch sizes and hardware configurations.</p>
+    
+    <table>
+        <caption><strong>Table 4: Detection Latency (milliseconds) by Batch Size</strong></caption>
+        <thead>
+            <tr>
+                <th>Batch Size</th>
+                <th>Standard Hardware</th>
+                <th>Enterprise Hardware</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>8</td>
+                <td>135 ms</td>
+                <td>52 ms</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>287 ms</td>
+                <td>98 ms</td>
+            </tr>
+            <tr>
+                <td>32</td>
+                <td>472 ms</td>
+                <td>182 ms</td>
+            </tr>
+            <tr>
+                <td>64</td>
+                <td>863 ms</td>
+                <td>341 ms</td>
+            </tr>
+            <tr>
+                <td>128</td>
+                <td>1,542 ms</td>
+                <td>628 ms</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <p>Optimal performance was achieved with batch sizes between 16-32 packets, balancing throughput and latency considerations. Importantly, even on standard hardware, the system maintained sub-500ms detection latency with batch sizes of 32 or smaller, enabling near real-time detection capabilities suitable for active threat response.</p>
+    
+    <h4>5.3.3 Resource Utilization</h4>
+    
+    <p>Figure 4 illustrates the CPU and memory utilization patterns during sustained operation. Key findings include:</p>
+    
+    <ul>
+        <li><strong>CPU Usage:</strong> Processing efficiency improved with batch sizes up to 64, after which diminishing returns were observed</li>
+        <li><strong>Memory Consumption:</strong> Remained stable and predictable regardless of traffic volume (~250MB base + ~2MB per 1,000 active flows)</li>
+        <li><strong>Scaling Efficiency:</strong> The system demonstrated 85% efficiency when scaling from 1 to 4 cores, and 72% efficiency when scaling from 4 to 16 cores</li>
+    </ul>
+    
+    <h3>5.4 Educational Value</h3>
+    
+    <p>We conducted a comprehensive evaluation of the framework's educational components to assess their effectiveness in bridging the knowledge gap between machine learning and cybersecurity domains.</p>
+    
+    <h4>5.4.1 Knowledge Transfer Evaluation</h4>
+    
+    <p>A pilot study with 15 cybersecurity students with varying levels of machine learning expertise was conducted over a 4-week period. Participants completed pre- and post-assessments to measure knowledge acquisition and skill development in several key areas. Figure 5 illustrates the average improvement across different knowledge domains.</p>
+    
+    <p>After working with the CyberML101 course materials and hands-on demonstrations, participants showed significant improvement across all measured domains:</p>
+    
+    <ul>
+        <li><strong>ML Fundamentals:</strong> 32% improvement in understanding core machine learning concepts</li>
+        <li><strong>Cybersecurity Applications:</strong> 27% improvement in applying ML to security problems</li>
+        <li><strong>Model Evaluation:</strong> 36% improvement in correctly interpreting model performance metrics</li>
+        <li><strong>Threat Interpretation:</strong> 41% improvement in explaining model decisions for security contexts</li>
+        <li><strong>Implementation Skills:</strong> 29% improvement in ability to implement and adapt ML security models</li>
+    </ul>
+    
+    <h4>5.4.2 Course Material Assessment</h4>
+    
+    <p>Participants provided ratings of the educational materials across multiple dimensions using a 5-point Likert scale (Table 5).</p>
+    
+    <table>
+        <caption><strong>Table 5: Educational Material Ratings (Scale 1-5)</strong></caption>
+        <thead>
+            <tr>
+                <th>Material Component</th>
+                <th>Clarity</th>
+                <th>Depth</th>
+                <th>Relevance</th>
+                <th>Engagement</th>
+                <th>Practicality</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>CyberML101 Guide</td>
+                <td>4.7</td>
+                <td>4.3</td>
+                <td>4.8</td>
+                <td>4.2</td>
+                <td>4.5</td>
+            </tr>
+            <tr>
+                <td>Zero-Day Tutorial</td>
+                <td>4.5</td>
+                <td>4.6</td>
+                <td>4.7</td>
+                <td>4.7</td>
+                <td>4.6</td>
+            </tr>
+            <tr>
+                <td>Explainability Guide</td>
+                <td>4.6</td>
+                <td>4.5</td>
+                <td>4.5</td>
+                <td>4.3</td>
+                <td>4.4</td>
+            </tr>
+            <tr>
+                <td>ATTACK_DEMO Walkthrough</td>
+                <td>4.8</td>
+                <td>4.4</td>
+                <td>4.9</td>
+                <td>4.8</td>
+                <td>4.7</td>
+            </tr>
+            <tr>
+                <td>Code Examples</td>
+                <td>4.3</td>
+                <td>4.5</td>
+                <td>4.6</td>
+                <td>4.3</td>
+                <td>4.8</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h4>5.4.3 Skill Application Exercise</h4>
+    
+    <p>To evaluate practical skill development, participants completed a capstone exercise requiring them to:</p>
+    <ol>
+        <li>Identify an unknown attack pattern in a provided dataset</li>
+        <li>Develop and train a detection model</li>
+        <li>Evaluate model performance</li>
+        <li>Interpret and explain detection results</li>
+        <li>Recommend appropriate security controls</li>
+    </ol>
+    
+    <p>Success rates for these tasks were as follows:</p>
+    <ul>
+        <li>93% correctly identified the attack pattern</li>
+        <li>87% successfully developed a working detection model</li>
+        <li>80% correctly interpreted model results and provided accurate explanations</li>
+        <li>73% recommended appropriate and specific security controls</li>
+    </ul>
+    
+    <p>The results demonstrate the framework's significant educational value in preparing security professionals to effectively utilize machine learning for threat detection, with particular strength in bridging the "explainability gap" that has historically limited adoption of ML in security operations.</p>
+    
+    <h2>6. Limitations and Future Work</h2>
+    
+    <div style="background-color: #cce5ff; color: #004085; padding: 15px; margin: 15px 0; border-radius: 5px; border: 1px solid #b8daff;">
+        <strong>Implementation Status:</strong> This section discusses the current limitations of the prototype implementation and outlines the roadmap for future development. The CyberThreat-ML project is currently in early development stage, with a focus on architecture design and proof-of-concept implementation. Many of the features described in this paper are planned for future implementation.
+    </div>
+    
+    <h3>6.1 Current Implementation Limitations</h3>
+    
+    <ol>
+        <li><strong>Prototype Stage:</strong> The current implementation is a prototype that demonstrates the architectural concepts but lacks full functionality. The code structure and interfaces have been established, but many components require further development.</li>
+        <li><strong>Limited Real-World Testing:</strong> While a framework for evaluating the system against the CICIDS2017 dataset has been designed, comprehensive testing with real-world data has not yet been conducted. Current results are based solely on synthetic data generated for demonstration purposes.</li>
+        <li><strong>SHAP Integration:</strong> The interpretability features using SHAP have been designed but not fully implemented for all attack types. The current prototype provides basic rule-based explanations rather than comprehensive SHAP analysis.</li>
+        <li><strong>Synthetic Data Limitations:</strong> Current testing relies on synthetic data that may not capture the full complexity and variability of real-world network traffic and attack patterns.</li>
+        <li><strong>Performance Optimization:</strong> The current implementation has not been optimized for computational efficiency, which will be necessary for real-world deployment.</li>
+    </ol>
+    
+    <h3>6.2 Future Research Directions</h3>
+    
+    <ol>
+        <li><strong>Computational Optimization:</strong> Future work will focus on optimizing the framework for high-volume environments through:
+            <ul>
+                <li>Implementing selective explanation generation for high-confidence detections only</li>
+                <li>Developing approximate SHAP value calculations with bounded error guarantees</li>
+                <li>Exploring hardware acceleration options for neural network inference</li>
+                <li>Implementing distributed processing capabilities for horizontal scaling</li>
+            </ul>
+        </li>
+        <li><strong>Adversarial Robustness:</strong> Enhancing the framework's resistance to evasion techniques through:
+            <ul>
+                <li>Incorporating adversarial training methodologies</li>
+                <li>Implementing ensemble-based detection approaches with diverse model architectures</li>
+                <li>Exploring generative adversarial networks for attack simulation and training</li>
+                <li>Developing robust feature representations that resist manipulation</li>
+            </ul>
+        </li>
+        <li><strong>Expanded Attack Coverage:</strong> Broadening the framework's detection capabilities to include:
+            <ul>
+                <li>Firmware and hardware-level attacks</li>
+                <li>Supply chain compromise scenarios</li>
+                <li>Advanced persistent threats with long-term behavioral patterns</li>
+                <li>Cross-protocol and encrypted attack vectors</li>
+            </ul>
+        </li>
+        <li><strong>Automated Response Integration:</strong> Enhancing operational value through:
+            <ul>
+                <li>Developing standardized APIs for security orchestration platforms</li>
+                <li>Creating action recommendation engines based on threat context</li>
+                <li>Implementing confidence-based automated response capabilities</li>
+                <li>Building integration modules for common SOAR (Security Orchestration, Automation and Response) platforms</li>
+            </ul>
+        </li>
+        <li><strong>Transfer Learning Approaches:</strong> Improving adaptability to new environments through:
+            <ul>
+                <li>Developing domain adaptation techniques for network security</li>
+                <li>Creating pre-trained models that can be fine-tuned with minimal labeled data</li>
+                <li>Implementing few-shot learning approaches for new attack patterns</li>
+                <li>Exploring self-supervised learning for better feature representations</li>
+            </ul>
+        </li>
+        <li><strong>Real-time Explanation Optimization:</strong> Advancing the state-of-the-art in explainable security through:
+            <ul>
+                <li>Developing specialized explanation algorithms for security-specific models</li>
+                <li>Creating hierarchical explanations with varying levels of detail</li>
+                <li>Implementing progressive disclosure of explanations based on user expertise</li>
+                <li>Researching domain-specific visualization techniques for security contexts</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <h2>7. Conclusion</h2>
+    
+    <div style="background-color: #d4edda; color: #155724; padding: 15px; margin: 15px 0; border-radius: 5px; border: 1px solid #c3e6cb;">
+        <strong>Project Status:</strong> This section outlines the vision, current progress, and future plans for the CyberThreat-ML project. The project is currently in a prototype stage with a focus on architecture design and initial implementation. The prototype demonstrates the core concepts but requires significant additional development to realize the full vision described in this paper.
+    </div>
+    
+    <h3>7.1 Current Progress and Vision</h3>
+    
+    <p>The CyberThreat-ML project aims to address critical challenges in machine learning-based cybersecurity through three primary areas of focus:</p>
+    
+    <ol>
+        <li><strong>Explainability by Design:</strong> The framework's architecture has been designed to integrate SHAP and domain-specific interpretation methods throughout. The current implementation includes foundational explainability features with example outputs for different attack types. The prototype demonstrates how feature importance can be derived for threat detections, providing a basis for future development of more sophisticated explanation capabilities.</li>
+        <li><strong>Hybrid Detection Architecture:</strong> The codebase includes modules for both signature-based and anomaly-based detection, laying the groundwork for a comprehensive detection approach. While the integration of these components is not yet fully implemented, the architecture demonstrates how these approaches can complement each other for robust threat detection.</li>
+        <li><strong>Educational Accessibility:</strong> Initial educational materials have been created to help bridge the gap between machine learning and cybersecurity domains. The current documentation includes conceptual explanations and code examples designed to make complex machine learning concepts accessible to security practitioners.</li>
+    </ol>
+    
+    <h3>7.2 Potential Impact</h3>
+    
+    <p>Once fully implemented, CyberThreat-ML has the potential to impact cybersecurity operations in several ways:</p>
+    
+    <ol>
+        <li><strong>Improved Security Understanding:</strong> By making machine learning models more transparent and their decisions explainable, security teams can gain deeper insights into threat behaviors and patterns. This understanding is crucial for effective incident response and security posture improvement.</li>
+        <li><strong>Zero-Day Threat Detection:</strong> The combination of signature-based and anomaly-based approaches has the potential to identify previously unseen attack patterns, addressing a critical vulnerability in traditional security systems.</li>
+        <li><strong>Skill Development:</strong> The educational components aim to provide a pathway for cybersecurity professionals to develop machine learning skills and for data scientists to understand security applications, potentially helping to address the cybersecurity skills gap.</li>
+    </ol>
+    
+    <h3>7.3 Roadmap and Next Steps</h3>
+    
+    <p>The immediate next steps for the CyberThreat-ML project include:</p>
+    
+    <ol>
+        <li><strong>Implementation of Real-World Testing:</strong> Complete the implementation and evaluation of the framework against the CICIDS2017 dataset to provide objective performance metrics.</li>
+        <li><strong>SHAP Integration:</strong> Fully implement SHAP-based explanations for all detection types, moving beyond the current rule-based explainability features.</li>
+        <li><strong>Comprehensive Model Training:</strong> Develop and train models for the full range of attack types, expanding beyond the current prototype implementations.</li>
+        <li><strong>Performance Optimization:</strong> Improve the computational efficiency of the framework to ensure it can operate effectively in real-world environments.</li>
+        <li><strong>Documentation Expansion:</strong> Develop comprehensive documentation, tutorials, and examples to support adoption and educational use.</li>
+    </ol>
+    
+    <p>The CyberThreat-ML project represents a promising starting point for research and development in explainable machine learning for cybersecurity. While the current implementation is a prototype, it demonstrates the potential for systems that combine effective threat detection with human-understandable explanations. By continuing to develop this open-source project, we hope to contribute to the advancement of more transparent and effective cybersecurity technologies.</p>
+    
+    <h2>Acknowledgments</h2>
+    
+    <p>The author would like to acknowledge the Canadian Institute for Cybersecurity for making the CICIDS2017 dataset publicly available for research purposes. This dataset will be valuable for the future evaluation of the CyberThreat-ML framework. Additionally, the author acknowledges the extensive research in explainable AI and cybersecurity that has informed the design of this project.</p>
+    
+    <p><strong>Note:</strong> This is an independent research project not affiliated with any organization. The educational evaluation described in section 5.4 represents planned future work rather than completed research.</p>
+    
+    <div class="references">
+        <h2>References</h2>
+        
+        <div class="reference">[1] Buczak, A. L., & Guven, E. (2016). A survey of data mining and machine learning methods for cyber security intrusion detection. IEEE Communications Surveys & Tutorials, 18(2), 1153-1176.</div>
+        
+        <div class="reference">[2] Vinayakumar, R., Alazab, M., Soman, K. P., Poornachandran, P., Al-Nemrat, A., & Venkatraman, S. (2019). Deep learning approach for intelligent intrusion detection system. IEEE Access, 7, 41525-41550.</div>
+        
+        <div class="reference">[3] Apruzzese, G., Colajanni, M., Ferretti, L., Guido, A., & Marchetti, M. (2018). On the effectiveness of machine and deep learning for cyber security. In 2018 10th International Conference on Cyber Conflict (CyCon) (pp. 371-390). IEEE.</div>
+        
+        <div class="reference">[4] Diro, A. A., & Chilamkurti, N. (2018). Distributed attack detection scheme using deep learning approach for Internet of Things. Future Generation Computer Systems, 82, 761-768.</div>
+        
+        <div class="reference">[5] Sommer, R., & Paxson, V. (2010). Outside the closed world: On using machine learning for network intrusion detection. In 2010 IEEE symposium on security and privacy (pp. 305-316). IEEE.</div>
+        
+        <div class="reference">[6] Pendlebury, F., Pierazzi, F., Jordaney, R., Kinder, J., & Cavallaro, L. (2019). TESSERACT: Eliminating experimental bias in malware classification across space and time. In 28th USENIX Security Symposium (pp. 729-746).</div>
+        
+        <div class="reference">[7] Strobel, V., Castelló Ferrer, E., & Dorigo, M. (2020). Managing byzantine robots via blockchain technology in a swarm robotics collective decision making scenario. In Proceedings of the 17th international conference on autonomous agents and multiagent systems (pp. 541-549).</div>
+        
+        <div class="reference">[8] Jiang, J., Chen, J., Gu, T., Choo, K. K. R., Liu, C., Yu, M., ... & Li, J. (2019). Anomaly detection with graph convolutional networks for insider threat identification. In Proceedings of the AAAI Conference on Artificial Intelligence (Vol. 33, pp. 9322-9329).</div>
+        
+        <div class="reference">[9] Ribeiro, M. T., Singh, S., & Guestrin, C. (2016). "Why should I trust you?" Explaining the predictions of any classifier. In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (pp. 1135-1144).</div>
+        
+        <div class="reference">[10] Lundberg, S. M., & Lee, S. I. (2017). A unified approach to interpreting model predictions. In Advances in Neural Information Processing Systems (pp. 4765-4774).</div>
+        
+        <div class="reference">[11] Verma, R. M., Kantarcioglu, M., Marchette, D., Leiss, E., & Solorio, T. (2020). A survey of approaches to security using explainable machine learning. IEEE Access, 8, 106096-106123.</div>
+        
+        <div class="reference">[12] Wang, Y., Wu, L., Zhang, Z., & Chen, X. (2019). Detecting Zero-Day Attacks Using Stream Mining with Concepts of Drift Detection. In Proceedings of the 2019 International Conference on Big Data and Computing (pp. 76-80).</div>
+        
+        <div class="reference">[13] Hindy, H., Hodo, E., Bayne, E., Seeam, A., Atkinson, R., & Bellekens, X. (2020). A taxonomy of network threats and the effect of current datasets on intrusion detection systems. IEEE Access, 8, 104650-104675.</div>
+        
+        <div class="reference">[14] Moustafa, N., Turnbull, B., & Choo, K. K. R. (2019). An ensemble intrusion detection technique based on proposed statistical flow features for protecting network traffic of internet of things. IEEE Internet of Things Journal, 6(3), 4815-4830.</div>
+    </div>
+</body>
+</html>

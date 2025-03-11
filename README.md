@@ -215,6 +215,31 @@ threshold = find_optimal_threshold(model, X_val, y_val, metric='f1')
 
 The library includes several example scripts demonstrating different capabilities:
 
+### Minimal Examples (No External Dependencies)
+
+These examples work in most environments as they don't require external libraries:
+
+- `examples/minimal_example.py`: Basic verification of project structure and environment
+- `examples/simplified_realtime.py`: Simplified real-time threat detection without external dependencies
+
+To run these minimal examples:
+
+```bash
+# Option 1: Using the provided shell script
+bash run_python_example.sh examples/minimal_example.py
+bash run_python_example.sh examples/simplified_realtime.py
+
+# Option 2: Using the direct Python path
+/mnt/nixmodules/nix/store/b03kwd9a5dm53k0z5vfzdhkvaa64c4g7-python3-3.10.13-env/bin/python3 examples/minimal_example.py
+/mnt/nixmodules/nix/store/b03kwd9a5dm53k0z5vfzdhkvaa64c4g7-python3-3.10.13-env/bin/python3 examples/simplified_realtime.py
+```
+
+For more details on running examples in Replit, see [Replit_Guide.md](docs/Replit_Guide.md).
+
+### Full-Featured Examples 
+
+These examples demonstrate the complete capabilities of the library (require TensorFlow and other dependencies):
+
 - `examples/basic_usage.py`: Basic binary classification of threats
 - `examples/multiclass_classification.py`: Multi-class threat classification
 - `examples/realtime_detection.py`: Real-time detection of threats in a packet stream
@@ -224,8 +249,14 @@ The library includes several example scripts demonstrating different capabilitie
 - `examples/iot_security.py`: IoT device security monitoring and threat detection
 - `examples/zero_day_detection.py`: Zero-day attack detection using anomaly-based methods
 
-For more information on IoT security capabilities, see the [IoT_SECURITY.md](IOT_SECURITY.md) documentation.  
-For more information on zero-day detection capabilities, see the [ZERO_DAY_DETECTION.md](ZERO_DAY_DETECTION.md) documentation.
+### Documentation
+
+- [QuickStart.md](docs/QuickStart.md): Quick start guide to get you up and running
+- [Real_Time_Detection_Tutorial.md](docs/Real_Time_Detection_Tutorial.md): Detailed tutorial on real-time threat detection
+- [CyberML101.md](docs/CyberML101.md): Introduction to machine learning for cybersecurity
+- [Explainability_Guide.md](docs/Explainability_Guide.md): Guide to understanding model predictions
+- [IoT_SECURITY.md](IOT_SECURITY.md): IoT security capabilities
+- [ZERO_DAY_DETECTION.md](ZERO_DAY_DETECTION.md): Zero-day detection capabilities
 
 ## Contributing
 

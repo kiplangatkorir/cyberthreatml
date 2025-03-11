@@ -1,4 +1,4 @@
-modules = ["python-3.11"]
+modules = ["python3", "python-3.11"]
 
 [nix]
 channel = "stable-24_05"
@@ -13,15 +13,7 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
-args = "CyberThreat-ML Demo"
-
-[[workflows.workflow.tasks]]
-task = "workflow.run"
 args = "python_script"
-
-[[workflows.workflow.tasks]]
-task = "workflow.run"
-args = "multiclass_example"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
@@ -43,19 +35,21 @@ args = "iot_security"
 task = "workflow.run"
 args = "zero_day_detection"
 
-[[workflows.workflow]]
-name = "CyberThreat-ML Demo"
-author = "agent"
-
-[workflows.workflow.metadata]
-agentRequireRestartOnSave = false
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "test_python"
 
 [[workflows.workflow.tasks]]
-task = "packager.installForAll"
+task = "workflow.run"
+args = "CyberThreat-ML Demo"
 
 [[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "python examples/basic_usage.py"
+task = "workflow.run"
+args = "simplified_realtime"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "real_world_testing"
 
 [[workflows.workflow]]
 name = "python_script"
@@ -70,20 +64,6 @@ task = "packager.installForAll"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "python examples/realtime_detection.py"
-
-[[workflows.workflow]]
-name = "multiclass_example"
-author = "agent"
-
-[workflows.workflow.metadata]
-agentRequireRestartOnSave = false
-
-[[workflows.workflow.tasks]]
-task = "packager.installForAll"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "python examples/multiclass_classification.py"
 
 [[workflows.workflow]]
 name = "visualization_demo"
@@ -155,5 +135,61 @@ task = "packager.installForAll"
 task = "shell.exec"
 args = "python examples/zero_day_detection.py"
 
+[[workflows.workflow]]
+name = "test_python"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python -V || python3 -V || /usr/bin/python3 -V || /usr/bin/env python3 -V || echo \"Python not found\""
+
+[[workflows.workflow]]
+name = "CyberThreat-ML Demo"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd /home/runner/workspace && /mnt/nixmodules/nix/store/b03kwd9a5dm53k0z5vfzdhkvaa64c4g7-python3-3.10.13-env/bin/python3 examples/minimal_example.py"
+
+[[workflows.workflow]]
+name = "simplified_realtime"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd /home/runner/workspace && /mnt/nixmodules/nix/store/b03kwd9a5dm53k0z5vfzdhkvaa64c4g7-python3-3.10.13-env/bin/python3 examples/simplified_realtime.py"
+
+[[workflows.workflow]]
+name = "real_world_testing"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd /home/runner/workspace && /mnt/nixmodules/nix/store/b03kwd9a5dm53k0z5vfzdhkvaa64c4g7-python3-3.10.13-env/bin/python3 examples/real_world_testing.py --download"
+
 [deployment]
-run = ["sh", "-c", "python examples/basic_usage.py"]
+run = ["sh", "-c", "python3 examples/basic_usage.py"]

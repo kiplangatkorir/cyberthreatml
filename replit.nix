@@ -1,5 +1,12 @@
 {pkgs}: {
   deps = [
+    pkgs.python3
+    pkgs.pandoc
+    pkgs.wkhtmltopdf
+    pkgs.pango
+    pkgs.harfbuzz
+    pkgs.glib
+    pkgs.fontconfig
     pkgs.tk
     pkgs.tcl
     pkgs.qhull
