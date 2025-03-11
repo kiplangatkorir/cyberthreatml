@@ -255,8 +255,14 @@ These examples demonstrate the complete capabilities of the library (require Ten
 - [Real_Time_Detection_Tutorial.md](docs/Real_Time_Detection_Tutorial.md): Detailed tutorial on real-time threat detection
 - [CyberML101.md](docs/CyberML101.md): Introduction to machine learning for cybersecurity
 - [Explainability_Guide.md](docs/Explainability_Guide.md): Guide to understanding model predictions
-- [IoT_SECURITY.md](IOT_SECURITY.md): IoT security capabilities
-- [ZERO_DAY_DETECTION.md](ZERO_DAY_DETECTION.md): Zero-day detection capabilities
+- [IoT_Security.md](docs/IoT_Security.md): IoT security capabilities
+- [Zero_Day_Detection_Guide.md](docs/Zero_Day_Detection_Guide.md): Zero-day detection capabilities
+- [Real_World_Testing_Guide.md](docs/Real_World_Testing_Guide.md): Guide for testing with real-world data
+- [Technical_Documentation.md](docs/Technical_Documentation.md): Detailed technical documentation
+- [Library_Documentation.md](docs/Library_Documentation.md): Comprehensive library reference
+- [Getting_Started.md](docs/Getting_Started.md): Detailed getting started guide
+- [Use_Cases_Guide.md](docs/Use_Cases_Guide.md): Examples of real-world use cases
+- [Project_Status.md](docs/Project_Status.md): Current project status and roadmap
 
 ## Contributing
 

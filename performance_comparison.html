@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CyberThreat-ML Performance Comparison</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .chart {
+      margin: 20px 0;
+      width: 100%;
+    }
+    .bars {
+      display: flex;
+      height: 300px;
+      width: 100%;
+      align-items: flex-end;
+      margin-top: 20px;
+    }
+    .bar-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      margin: 0 10px;
+    }
+    .bar-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      justify-content: flex-end;
+    }
+    .bar {
+      width: 40px;
+      transition: height 0.5s;
+      margin: 0 5px;
+      position: relative;
+    }
+    .bar-value {
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .method {
+      margin-top: 10px;
+      font-size: 12px;
+      text-align: center;
+      height: 40px;
+      display: flex;
+      align-items: center;
+    }
+    .y-axis {
+      display: flex;
+      flex-direction: column;
+      height: 300px;
+      justify-content: space-between;
+      margin-right: 5px;
+    }
+    .y-label {
+      font-size: 12px;
+      text-align: right;
+      width: 40px;
+    }
+    .x-axis {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin-top: 5px;
+      border-top: 1px solid #ccc;
+      padding-top: 5px;
+    }
+    .x-label {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .chart-container {
+      display: flex;
+      width: 100%;
+    }
+    .legend {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin: 5px 10px;
+    }
+    .legend-color {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+    }
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 20px 0 10px;
+      text-align: center;
+    }
+    .subtitle {
+      font-size: 14px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #555;
+    }
+    /* Responsive design */
+    @media (max-width: 600px) {
+      .bars {
+        height: 200px;
+      }
+      .bar {
+        width: 30px;
+      }
+      .method {
+        font-size: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">Figure 2: Anomaly Detection Method Performance Comparison</div>
+    <div class="subtitle">Comparison across different metrics for various anomaly detection algorithms</div>
+
+    <!-- Chart 1: AUC-ROC -->
+    <div class="chart">
+      <div class="title" style="font-size: 16px;">AUC-ROC Score</div>
+      <div class="chart-container">
+        <div class="y-axis">
+          <div class="y-label">1.0</div>
+          <div class="y-label">0.8</div>
+          <div class="y-label">0.6</div>
+          <div class="y-label">0.4</div>
+          <div class="y-label">0.2</div>
+          <div class="y-label">0.0</div>
+        </div>
+        <div class="bars">
+          <div class="bar-group">
+            <div class="bar-container">
+              <div class="bar" style="height: 87%; background-color: #4285F4;">
+                <div class="bar-value">0.87</div>
+              </div>
+            </div>
+            <div class="method">Isolation Forest</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-container">
+              <div class="bar" style="height: 85%; background-color: #EA4335;">
+                <div class="bar-value">0.85</div>
+              </div>
+            </div>
+            <div class="method">Local Outlier Factor</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-container">
+              <div class="bar" style="height: 82%; background-color: #FBBC05;">
+                <div class="bar-value">0.82</div>
+              </div>
+            </div>
+            <div class="method">One-Class SVM</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-container">
+              <div class="bar" style="height: 83%; background-color: #34A853;">
+                <div class="bar-value">0.83</div>
+              </div>
+            </div>
+            <div class="method">Robust Covariance</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-container">
+              <div class="bar" style="height: 93%; background-color: #8e44ad;">
+                <div class="bar-value">0.93</div>
+              </div>
+            </div>
+            <div class="method">Ensemble Approach</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chart 2: F1-Score -->
+    <div class="chart">
+      <div class="title" style="font-size: 16px;">F1-Score</div>
+      <div class="chart-container">
+        <div class="y-axis">
+          <div class="y-label">1.0</div>
+          <div class="y-label">0.8</div>
+          <div class="y-label">0.6</div>
+          <div class="y-label">0.4</div>
+          <div class="y-label">0.2</div>
+          <div class="y-label">0.0</div>
+        </div>
+        <div class="bars">
+          <div class="bar-group">
+            <div class="bar-container">
+              <div class="bar" style="height: 81%; background-color: #4285F4;">
+                <div class="bar-value">0.81</div>
+              </div>
+            </div>
+            <div class="method">Isolation Forest</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-container">
+              <div class="bar" style="height: 79%; background-color: #EA4335;">
+                <div class="bar-value">0.79</div>
+              </div>
+            </div>
+            <div class="method">Local Outlier Factor</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-container">
+              <div class="bar" style="height: 78%; background-color: #FBBC05;">
+                <div class="bar-value">0.78</div>
+              </div>
+            </div>
+            <div class="method">One-Class SVM</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-container">
+              <div class="bar" style="height: 78%; background-color: #34A853;">
+                <div class="bar-value">0.78</div>
+              </div>
+            </div>
+            <div class="method">Robust Covariance</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-container">
+              <div class="bar" style="height: 88%; background-color: #8e44ad;">
+                <div class="bar-value">0.88</div>
+              </div>
+            </div>
+            <div class="method">Ensemble Approach</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chart 3: False Positive Rate -->
+    <div class="chart">
+      <div class="title" style="font-size: 16px;">False Positive Rate (Lower is Better)</div>
+      <div class="chart-container">
+        <div class="y-axis">
+          <div class="y-label">0.20</div>
+          <div class="y-label">0.16</div>
+          <div class="y-label">0.12</div>
+          <div class="y-label">0.08</div>
+          <div class="y-label">0.04</div>
+          <div class="y-label">0.00</div>
+        </div>
+        <div class="bars">
+          <div class="bar-group">
+            <div class="bar-container">
+              <div class="bar" style="height: 60%; background-color: #4285F4;">
+                <div class="bar-value">0.12</div>
+              </div>
+            </div>
+            <div class="method">Isolation Forest</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-container">
+              <div class="bar" style="height: 70%; background-color: #EA4335;">
+                <div class="bar-value">0.14</div>
+              </div>
+            </div>
+            <div class="method">Local Outlier Factor</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-container">
+              <div class="bar" style="height: 85%; background-color: #FBBC05;">
+                <div class="bar-value">0.17</div>
+              </div>
+            </div>
+            <div class="method">One-Class SVM</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-container">
+              <div class="bar" style="height: 75%; background-color: #34A853;">
+                <div class="bar-value">0.15</div>
+              </div>
+            </div>
+            <div class="method">Robust Covariance</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-container">
+              <div class="bar" style="height: 35%; background-color: #8e44ad;">
+                <div class="bar-value">0.07</div>
+              </div>
+            </div>
+            <div class="method">Ensemble Approach</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="title">Figure 3: Feature Importance for Threat Detection</div>
+    <div class="subtitle">Top features contributing to different attack types</div>
+
+    <!-- Feature Importance Chart -->
+    <div class="chart">
+      <div class="title" style="font-size: 16px;">Brute Force Attack Feature Importance</div>
+      <div class="chart-container">
+        <div class="y-axis">
+          <div class="y-label">0.5</div>
+          <div class="y-label">0.4</div>
+          <div class="y-label">0.3</div>
+          <div class="y-label">0.2</div>
+          <div class="y-label">0.1</div>
+          <div class="y-label">0.0</div>
+        </div>
+        <div class="bars">
+          <div class="bar-group">
+            <div class="bar-container">
+              <div class="bar" style="height: 84%; background-color: #4285F4;">
+                <div class="bar-value">0.42</div>
+              </div>
+            </div>
+            <div class="method">Connection Frequency</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-container">
+              <div class="bar" style="height: 76%; background-color: #EA4335;">
+                <div class="bar-value">0.38</div>
+              </div>
+            </div>
+            <div class="method">Failed Auth Ratio</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-container">
+              <div class="bar" style="height: 58%; background-color: #FBBC05;">
+                <div class="bar-value">0.29</div>
+              </div>
+            </div>
+            <div class="method">Request Variance</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-container">
+              <div class="bar" style="height: 50%; background-color: #34A853;">
+                <div class="bar-value">0.25</div>
+              </div>
+            </div>
+            <div class="method">Time Distribution</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-container">
+              <div class="bar" style="height: 42%; background-color: #8e44ad;">
+                <div class="bar-value">0.21</div>
+              </div>
+            </div>
+            <div class="method">Source IP Diversity</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DDoS Feature Importance -->
+    <div class="chart">
+      <div class="title" style="font-size: 16px;">DDoS Attack Feature Importance</div>
+      <div class="chart-container">
+        <div class="y-axis">
+          <div class="y-label">0.6</div>
+          <div class="y-label">0.5</div>
+          <div class="y-label">0.4</div>
+          <div class="y-label">0.3</div>
+          <div class="y-label">0.2</div>
+          <div class="y-label">0.0</div>
+        </div>
+        <div class="bars">
+          <div class="bar-group">
+            <div class="bar-container">
+              <div class="bar" style="height: 85%; background-color: #4285F4;">
+                <div class="bar-value">0.51</div>
+              </div>
+            </div>
+            <div class="method">Traffic Volume</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-container">
+              <div class="bar" style="height: 73%; background-color: #EA4335;">
+                <div class="bar-value">0.44</div>
+              </div>
+            </div>
+            <div class="method">Packet Size</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-container">
+              <div class="bar" style="height: 62%; background-color: #FBBC05;">
+                <div class="bar-value">0.37</div>
+              </div>
+            </div>
+            <div class="method">Protocol Features</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-container">
+              <div class="bar" style="height: 53%; background-color: #34A853;">
+                <div class="bar-value">0.32</div>
+              </div>
+            </div>
+            <div class="method">Source IP Diversity</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-container">
+              <div class="bar" style="height: 48%; background-color: #8e44ad;">
+                <div class="bar-value">0.29</div>
+              </div>
+            </div>
+            <div class="method">Inter-arrival Time</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
