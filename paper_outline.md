@@ -2,7 +2,7 @@
 
 ## Main Paper Structure
 
-### 1. Introduction
+### 1. Introduction 
 - Enhanced motivation and problem statement 
 - Expanded core contributions (covering all main features)
 - Reorganized to highlight real-world applications
