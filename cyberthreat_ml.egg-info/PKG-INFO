@@ -1,7 +1,7 @@
 Metadata-Version: 2.2
 Name: cyberthreat-ml
 Version: 0.1.0
-Summary: A Python library for real-time cybersecurity threat detection using TensorFlow
+Summary: A Python library for real-time cybersecurity threat detection using TensorFlow 
 Author-email: CyberThreat-ML Team <example@example.com>
 Requires-Python: >=3.11
 Description-Content-Type: text/markdown
