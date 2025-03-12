@@ -2,7 +2,7 @@
 Unit tests for the model module.
 """
 
-import unittest
+import unittest 
 import numpy as np
 import tensorflow as tf
 import os
