@@ -2,7 +2,7 @@
 
 Explainability is a critical aspect of any security tool. This guide explores the explainability features of CyberThreat-ML that help security professionals understand *why* something was identified as a threat.
 
-## Why Explainability Matters in Cybersecurity
+## Why Explainability Matters in Cybersecurity 
 
 In cybersecurity, false positives can be costly and time-consuming. Without understanding why an alert was triggered, security teams may:
 - Waste time investigating benign activities

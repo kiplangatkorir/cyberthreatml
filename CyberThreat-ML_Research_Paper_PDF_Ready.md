@@ -1,7 +1,6 @@
 # CyberThreat-ML: An Explainable Machine Learning Framework for Real-Time Cybersecurity Threat Detection
 
 Kiplangat Korir  
-Department of Computer Science  
 korirkiplangat22@gmail.com
 
 ## Abstract
@@ -140,12 +139,12 @@ CyberThreat-ML implements a modular architecture that facilitates both research 
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                         CyberThreat-ML Architecture                      │
+│                         CyberThreat-ML Architecture                     │
 └─────────────────────────────────────────────────────────────────────────┘
                                     │
                                     ▼
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                              Input Layer                                 │
+│                              Input Layer                                │
 │                                                                         │
 │  ┌───────────────┐   ┌───────────────┐   ┌───────────────────────────┐  │
 │  │ Network PCAP  │   │ Flow Records  │   │ Security Logs & Telemetry │  │
@@ -153,36 +152,36 @@ CyberThreat-ML implements a modular architecture that facilitates both research 
 └──────────┼─────────────────────────────────────────────┼────────────────┘
            │                                             │
            ▼                                             ▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│                         Preprocessing Layer                              │
-│                                                                         │
-│  ┌───────────────────────────┐      ┌───────────────────────────────┐  │
-│  │     Feature Extraction    │      │  Normalization & Encoding     │  │
-│  └─────────────┬─────────────┘      └──────────────┬────────────────┘  │
-└────────────────┼──────────────────────────────────┼───────────────────-┘
+┌───────────────────────────────────────────────────────────────────────┐
+│                         Preprocessing Layer                           │
+│                                                                       │
+│  ┌───────────────────────────┐      ┌───────────────────────────────┐ │
+│  │     Feature Extraction    │      │  Normalization & Encoding     │ │
+│  └─────────────┬─────────────┘      └──────────────┬────────────────┘ │
+└────────────────┼──────────────────────────────────┼───────────────────┘
                  │                                  │
                  ▼                                  ▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│                          Detection Layer                                 │
-│                                                                         │
-│  ┌─────────────────────┐       ┌─────────────────────┐                  │
-│  │  Signature-Based    │       │   Anomaly-Based     │                  │
-│  │     Detection       │       │     Detection       │                  │
-│  │  (TensorFlow Model) │       │ (Ensemble Methods)  │                  │
-│  └──────────┬──────────┘       └──────────┬──────────┘                  │
-│             │                             │                             │
-│             └─────────────┬───────────────┘                             │
-│                           │                                             │
-│                           ▼                                             │
-│                 ┌───────────────────────┐                               │
-│                 │    Hybrid Detection   │                               │
-│                 │       Results         │                               │
-│                 └───────────┬───────────┘                               │
+┌────────────────────────────────────────────────────────────────────────┐
+│                          Detection Layer                               │
+│                                                                        │
+│  ┌─────────────────────┐       ┌─────────────────────┐                 │
+│  │  Signature-Based    │       │   Anomaly-Based     │                 │
+│  │     Detection       │       │     Detection       │                 │
+│  │  (TensorFlow Model) │       │ (Ensemble Methods)  │                 │
+│  └──────────┬──────────┘       └──────────┬──────────┘                 │
+│             │                             │                            │
+│             └─────────────┬───────────────┘                            │
+│                           │                                            │
+│                           ▼                                            │
+│                 ┌───────────────────────┐                              │
+│                 │    Hybrid Detection   │                              │
+│                 │       Results         │                              │
+│                 └───────────┬───────────┘                              │
 └─────────────────────────────┼─────────────────────────────────────────-┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                       Interpretability Layer                             │
+│                       Interpretability Layer                            │
 │                                                                         │
 │  ┌─────────────────────┐       ┌─────────────────────┐                  │
 │  │   SHAP-based        │       │ Domain-Specific     │                  │
@@ -200,7 +199,7 @@ CyberThreat-ML implements a modular architecture that facilitates both research 
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                        Output Layer                                      │
+│                        Output Layer                                     │
 │                                                                         │
 │  ┌───────────────┐   ┌───────────────┐   ┌───────────────────────────┐  │
 │  │ Security      │   │ Visualizations│   │ Integration with          │  │

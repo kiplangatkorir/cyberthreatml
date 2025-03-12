@@ -1,7 +1,7 @@
-# CyberThreat-ML Documentation
+# CyberThreat-ML Documentation 
 
 ## Introduction
-
+ 
 CyberThreat-ML is a comprehensive Python library for real-time cybersecurity threat detection using machine learning. It combines signature-based detection for known threats and anomaly detection for zero-day threats, all with powerful explainability features.
 
 ## Features

@@ -1,6 +1,6 @@
 # CyberThreat-ML Documentation
 
-## Table of Contents
+## Table of Contents 
 
 1. [Introduction](#introduction)
 2. [Architecture Overview](#architecture-overview)

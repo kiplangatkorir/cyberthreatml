@@ -259,7 +259,7 @@ process_packet_stream(duration=30, interval=0.1)
 
 After collecting data, let's analyze what we've found:
 
-```python
+```python 
 def analyze_detected_anomalies():
     """Analyze the anomalies we've detected."""
     if not detected_anomalies:
