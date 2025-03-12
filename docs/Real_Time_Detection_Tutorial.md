@@ -1,4 +1,4 @@
-# Real-Time Threat Detection Tutorial
+# Real-Time Threat Detection Tutorial 
 
 This tutorial walks you through using the CyberThreat-ML library for real-time network traffic monitoring and threat detection.
 
