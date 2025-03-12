@@ -12,7 +12,7 @@ cyberthreat_ml/utils.py
 cyberthreat_ml/visualization.py
 cyberthreat_ml.egg-info/PKG-INFO
 cyberthreat_ml.egg-info/SOURCES.txt
-cyberthreat_ml.egg-info/dependency_links.txt
+cyberthreat_ml.egg-info/dependency_links.txt 
 cyberthreat_ml.egg-info/requires.txt
 cyberthreat_ml.egg-info/top_level.txt
 tests/test_evaluation.py
