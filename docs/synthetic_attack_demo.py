@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""
+""" 
 Synthetic Attack Demo - CyberThreat-ML
 
 This script simulates a multi-stage attack scenario in real-time and shows how CyberThreat-ML 
