@@ -5,7 +5,7 @@ Unit tests for the realtime module.
 import unittest
 import numpy as np
 import time
-import threading
+import threading 
 from cyberthreat_ml.model import ThreatDetectionModel
 from cyberthreat_ml.realtime import RealTimeDetector, PacketStreamDetector
 
