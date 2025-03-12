@@ -140,7 +140,7 @@ CyberThreat-ML implements a modular architecture that facilitates both research 
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                         CyberThreat-ML Architecture                      │
+│                         CyberThreat-ML Architecture                     │
 └─────────────────────────────────────────────────────────────────────────┘
                                     │
                                     ▼
