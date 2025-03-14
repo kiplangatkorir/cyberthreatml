@@ -15,6 +15,7 @@ import random
 import logging
 import json
 from datetime import datetime
+import threading
 
 # Create output directories if they don't exist
 os.makedirs('security_output/alerts', exist_ok=True)
@@ -364,11 +365,25 @@ class EnterpriseFeatureExtractor:
     
     def _compute_entropy(self, data):
         """Compute Shannon entropy of data."""
+        if isinstance(data, str):
+            data = data.encode('utf-8')
+        elif not isinstance(data, bytes):
+            return 0
+            
         if not data:
             return 0
+            
         counts = np.bincount(np.frombuffer(data, dtype=np.uint8))
         probabilities = counts[counts > 0] / len(data)
         return -np.sum(probabilities * np.log2(probabilities))
+    
+    def _ip_to_bytes(self, ip):
+        """Convert IP address to bytes for entropy calculation."""
+        try:
+            # Split IP into octets and convert to bytes
+            return bytes([int(x) for x in ip.split('.')])
+        except:
+            return b''
     
     def transform(self, packet):
         """
@@ -413,14 +428,19 @@ class EnterpriseFeatureExtractor:
         
         # Payload features (12-14)
         payload = packet.get('payload', b'')
+        if isinstance(payload, str):
+            payload = payload.encode('utf-8')
         features[12] = len(payload) / 1500  # Normalize by MTU
         features[13] = self._compute_entropy(payload)
         features[14] = 1 if packet.get('is_encrypted', False) else 0
         
         # Header features (15-17)
-        features[15] = len(packet.get('header', b'')) / 40  # Typical header size
-        features[16] = self._compute_entropy(packet.get('source_ip', b''))
-        features[17] = self._compute_entropy(packet.get('dest_ip', b''))
+        header = packet.get('header', b'')
+        if isinstance(header, str):
+            header = header.encode('utf-8')
+        features[15] = len(header) / 40  # Typical header size
+        features[16] = self._compute_entropy(self._ip_to_bytes(packet.get('source_ip', '')))
+        features[17] = self._compute_entropy(self._ip_to_bytes(packet.get('dest_ip', '')))
         
         # State features (18-19)
         conn_state = packet.get('connection_state', 'unknown').lower()
@@ -447,34 +467,44 @@ class EnterpriseFeatureExtractor:
 
 class ThreatStorage:
     """
-    Class for storing and analyzing detected threats.
+    Storage for detected threats.
     """
     def __init__(self):
         """Initialize the threat storage."""
         self.threats = []
-        self.class_data = {i: [] for i in range(1, 6)}  # Skip class 0 (normal)
+        self.lock = threading.Lock()
     
-    def add_threat(self, threat_data):
+    def add_threat(self, threat):
         """Add a threat to storage."""
-        self.threats.append(threat_data)
-        class_idx = threat_data['class_idx']
-        if class_idx > 0:
-            self.class_data[class_idx].append(threat_data)
+        with self.lock:
+            self.threats.append({
+                'timestamp': time.time(),
+                **threat
+            })
     
-    def get_threats_by_class(self, class_idx):
-        """Get all threats of a specific class."""
-        return self.class_data.get(class_idx, [])
+    def get_threats(self):
+        """Get all stored threats."""
+        with self.lock:
+            return self.threats.copy()
     
     def get_threat_count(self):
-        """Get the count of threats by class."""
-        return {class_idx: len(threats) for class_idx, threats in self.class_data.items()}
+        """Get count of threats by type."""
+        with self.lock:
+            counts = {}
+            for threat in self.threats:
+                threat_type = threat['type']
+                counts[threat_type] = counts.get(threat_type, 0) + 1
+            return counts
     
-    def get_threat_features(self, class_idx):
-        """Get feature vectors for a specific threat class."""
-        threats = self.class_data.get(class_idx, [])
-        if not threats:
-            return np.array([])
-        return np.array([t['features'] for t in threats])
+    def get_threats_by_class(self, class_idx):
+        """Get threats of a specific class."""
+        with self.lock:
+            return [t for t in self.threats if t['type'] == class_idx]
+    
+    def clear(self):
+        """Clear all stored threats."""
+        with self.lock:
+            self.threats.clear()
 
 
 def get_recommended_action(threat_type):

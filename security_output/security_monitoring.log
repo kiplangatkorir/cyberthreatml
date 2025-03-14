@@ -38,3 +38,135 @@
 2025-03-14 14:13:04,762 - enterprise_security - INFO - Real-time threat detector started
 2025-03-14 14:13:04,762 - enterprise_security - INFO - Starting network traffic monitoring...
 2025-03-14 14:13:04,762 - enterprise_security - INFO - Starting traffic simulation...
+2025-03-14 14:13:57,133 - enterprise_security - INFO - Starting Enterprise Security Monitoring System
+2025-03-14 14:13:57,134 - enterprise_security - INFO - No existing model found. Creating and training a new model...
+2025-03-14 14:14:10,473 - enterprise_security - INFO - Model training completed
+2025-03-14 14:14:10,822 - enterprise_security - INFO - Threat visualization dashboard started
+2025-03-14 14:14:11,004 - enterprise_security - INFO - Threat interpreter initialized
+2025-03-14 14:14:11,006 - enterprise_security - INFO - Real-time threat detector started
+2025-03-14 14:14:11,006 - enterprise_security - INFO - Starting network traffic monitoring...
+2025-03-14 14:14:11,006 - enterprise_security - INFO - Starting traffic simulation...
+2025-03-14 14:14:12,037 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:13,056 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:14,113 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:15,133 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:16,230 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:17,281 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:18,347 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:19,366 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:20,395 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:21,434 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:22,462 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:23,506 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:24,552 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:25,597 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:26,618 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:27,692 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:28,776 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:29,842 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:30,854 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:31,911 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:32,971 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:34,021 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:35,071 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:36,130 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:37,186 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:38,204 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:39,229 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:40,288 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:41,332 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:42,349 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:43,428 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:44,495 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:45,515 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:46,572 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:47,591 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:48,643 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:49,689 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:50,728 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:51,770 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:52,836 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:53,908 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:54,927 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:55,986 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:57,078 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:58,094 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:14:59,140 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:15:00,160 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:15:01,197 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:15:02,262 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:15:03,275 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:15:04,308 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:15:05,328 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:15:06,350 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:15:07,386 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:15:08,431 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:15:09,462 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:15:10,490 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:15:11,021 - enterprise_security - INFO - Traffic simulation completed. Processed 1218 packets
+2025-03-14 14:17:51,781 - enterprise_security - INFO - Starting Enterprise Security Monitoring System
+2025-03-14 14:17:51,781 - enterprise_security - INFO - No existing model found. Creating and training a new model...
+2025-03-14 14:18:06,018 - enterprise_security - INFO - Model training completed
+2025-03-14 14:18:06,493 - enterprise_security - INFO - Threat visualization dashboard started
+2025-03-14 14:18:06,734 - enterprise_security - INFO - Threat interpreter initialized
+2025-03-14 14:18:06,736 - enterprise_security - INFO - Real-time threat detector started
+2025-03-14 14:18:06,736 - enterprise_security - INFO - Starting network traffic monitoring...
+2025-03-14 14:18:06,736 - enterprise_security - INFO - Starting traffic simulation...
+2025-03-14 14:18:07,806 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:08,823 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:09,891 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:10,893 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:11,931 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:12,957 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:14,002 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:15,029 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:16,068 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:17,109 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:18,142 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:19,229 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:20,265 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:21,334 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:22,362 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:23,406 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:24,440 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:25,495 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:26,564 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:27,626 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:28,657 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:29,683 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:30,689 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:31,768 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:32,816 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:33,854 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:34,929 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:35,992 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:37,001 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:38,051 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:39,131 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:40,154 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:41,192 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:42,205 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:43,259 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:44,284 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:45,300 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:46,390 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:47,457 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:48,531 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:49,571 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:50,578 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:51,638 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:52,650 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:53,686 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:54,702 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:55,712 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:56,752 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:57,807 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:58,830 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:18:59,854 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:19:00,916 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:19:01,933 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:19:02,977 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:19:04,005 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:19:05,056 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:19:06,086 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
+2025-03-14 14:19:06,806 - enterprise_security - INFO - Traffic simulation completed. Processed 1203 packets
