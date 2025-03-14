@@ -51,13 +51,14 @@ def create_threat_model(input_shape):
 def plot_threat_distribution(df, save_dir):
     """Plot threat type distribution"""
     plt.figure(figsize=(12, 6))
-    threat_counts = df['threat_type'].value_counts()
     
-    sns.barplot(data=threat_counts.reset_index(), 
-                x='count', y='index', 
-                palette='viridis')
+    # Create DataFrame for plotting
+    threat_data = df['threat_type'].value_counts().reset_index()
+    threat_data.columns = ['Threat Type', 'Count']
+    
+    sns.barplot(data=threat_data, x='Count', y='Threat Type', palette='viridis')
     plt.title('Distribution of Threat Types')
-    plt.xlabel('Number of Occurrences')
+    plt.xlabel('Number of Events')
     plt.ylabel('Threat Type')
     plt.tight_layout()
     
@@ -68,7 +69,11 @@ def plot_severity_distribution(df, save_dir):
     """Plot severity distribution by threat type"""
     plt.figure(figsize=(12, 6))
     
+    # Create cross-tabulation
     severity_threat = pd.crosstab(df['severity'], df['threat_type'])
+    severity_order = ['Low', 'Medium', 'High', 'Critical']
+    severity_threat = severity_threat.reindex(severity_order)
+    
     sns.heatmap(severity_threat, annot=True, fmt='d', cmap='YlOrRd')
     plt.title('Threat Types by Severity Level')
     plt.tight_layout()
@@ -80,14 +85,17 @@ def plot_temporal_pattern(df, save_dir):
     """Plot temporal threat patterns"""
     plt.figure(figsize=(12, 6))
     
+    # Group by hour and calculate threat counts
     df['hour'] = df['timestamp'].dt.hour
     hourly_threats = df[df['is_threat'] == 1].groupby('hour').size()
     
-    sns.lineplot(x=hourly_threats.index, y=hourly_threats.values)
+    # Create line plot
+    plt.plot(hourly_threats.index, hourly_threats.values, marker='o')
     plt.title('Threat Distribution by Hour')
     plt.xlabel('Hour of Day')
     plt.ylabel('Number of Threats')
     plt.grid(True, alpha=0.3)
+    plt.xticks(range(0, 24, 2))
     plt.tight_layout()
     
     plt.savefig(f"{save_dir}/temporal_pattern.png", dpi=300, bbox_inches='tight')
@@ -97,12 +105,15 @@ def plot_feature_correlations(df, save_dir):
     """Plot feature correlations"""
     plt.figure(figsize=(10, 8))
     
+    # Select numeric features
     features = ['packet_rate', 'bytes_per_packet', 'connection_duration', 
                 'error_rate', 'is_threat']
     correlation_matrix = df[features].corr()
     
-    sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', center=0)
-    plt.title('Feature Correlations')
+    # Create heatmap with custom styling
+    sns.heatmap(correlation_matrix, annot=True, fmt='.2f', 
+                cmap='coolwarm', center=0, vmin=-1, vmax=1)
+    plt.title('Feature Correlations with Threat Detection')
     plt.tight_layout()
     
     plt.savefig(f"{save_dir}/feature_correlations.png", dpi=300, bbox_inches='tight')
