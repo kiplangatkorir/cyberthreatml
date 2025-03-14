@@ -202,14 +202,14 @@ class RealTimeDetector:
                         'id': i,
                         'timestamp': time.time(),
                         'data': data_item,
-                        'threat_score': float(prediction),
-                        'is_threat': bool(is_threat),
+                        'threat_score': float(prediction[1]) if isinstance(prediction, np.ndarray) else float(prediction),
+                        'is_threat': bool(is_threat[1]) if isinstance(is_threat, np.ndarray) else bool(is_threat),
                         'threshold': self.threshold,
                         'is_binary': True
                     }
                     results.append(result)
                 
-                threat_count = sum(threats)
+                threat_count = int(np.sum(threats))
                 
             else:
                 # Multi-class classification
@@ -356,8 +356,8 @@ class PacketStreamDetector(RealTimeDetector):
                     'id': valid_indices[i],
                     'timestamp': time.time(),
                     'packet': packet,
-                    'threat_score': float(pred),
-                    'is_threat': bool(is_threat),
+                    'threat_score': float(pred[1]) if isinstance(pred, np.ndarray) else float(pred),
+                    'is_threat': bool(is_threat[1]) if isinstance(is_threat, np.ndarray) else bool(is_threat),
                     'threshold': self.threshold,
                     'is_binary': True
                 }
