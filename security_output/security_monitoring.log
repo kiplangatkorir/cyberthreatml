@@ -3025,3 +3025,1840 @@ Rules Triggered:
 
 2025-03-14 14:57:58,280 - root - INFO - Real-time detector stopped
 2025-03-14 14:57:58,327 - enterprise_security - INFO - Enterprise security monitoring completed
+2025-03-14 15:05:44,870 - enterprise_security - INFO - Starting Enterprise Security Monitoring System
+2025-03-14 15:05:45,045 - enterprise_security - INFO - Loaded existing model
+2025-03-14 15:05:45,330 - shap - WARNING - Using 1000 background data samples could cause slower run times. Consider using shap.sample(data, K) or shap.kmeans(data, K) to summarize the background as K samples.
+2025-03-14 15:05:45,330 - enterprise_security - INFO - Threat interpreter initialized
+2025-03-14 15:05:45,331 - enterprise_security - INFO - Real-time threat detector started
+2025-03-14 15:05:45,773 - enterprise_security - INFO - Threat visualization dashboard started
+2025-03-14 15:05:45,773 - enterprise_security - INFO - Starting network traffic monitoring...
+2025-03-14 15:05:45,773 - enterprise_security - INFO - Starting traffic simulation...
+2025-03-14 15:05:45,774 - enterprise_security - INFO - Starting traffic simulation...
+2025-03-14 15:05:45,790 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:45,790 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:45
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:45,980 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:45,980 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:45
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:46,161 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:46,161 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:46
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:46,358 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:46,358 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:46
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:46,536 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:46,536 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:46
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:46,714 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:46,714 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:46
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:46,900 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:46,900 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:46
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:47,100 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:47,101 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:47
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:47,278 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:47,278 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:47
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:47,461 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:47,461 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:47
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:47,635 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:47,635 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:47
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:47,807 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:47,807 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:47
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:47,992 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:47,992 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:47
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:48,170 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:48,170 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:48
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:48,345 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:48,345 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:48
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:48,518 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:48,518 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:48
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:48,690 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:48,692 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:48
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:48,864 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:48,864 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:48
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:49,042 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:49,042 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:49
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:49,218 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:49,218 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:49
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:49,411 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:49,411 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:49
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:49,586 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:49,589 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:49
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:49,763 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:49,763 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:49
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:49,952 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:49,952 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:49
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:50,126 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:50,126 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:50
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:50,296 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:50,296 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:50
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:50,473 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:50,473 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:50
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:50,652 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:50,652 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:50
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:50,845 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:50,845 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:50
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:51,053 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:51,055 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:51
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:51,248 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:51,248 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:51
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:51,439 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:51,439 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:51
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:51,632 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:51,632 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:51
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:51,837 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:51,837 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:51
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:52,045 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:52,045 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:52
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:52,259 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:52,261 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:52
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:52,458 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:52,458 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:52
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:52,654 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:52,654 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:52
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:52,859 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:52,860 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:52
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:53,056 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:53,056 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:53
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:53,242 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:53,242 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:53
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:53,436 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:53,436 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:53
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:53,629 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:53,629 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:53
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:53,828 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:53,828 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:53
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:54,025 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:54,025 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:54
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:54,238 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:54,238 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:54
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:54,438 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:54,438 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:54
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:54,671 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:54,671 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:54
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:54,864 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:54,867 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:54
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:55,068 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:55,068 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:55
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:55,249 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:55,249 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:55
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:55,444 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:55,445 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:55
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:55,650 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:55,650 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:55
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:55,843 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:55,843 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:55
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:56,054 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:56,054 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:56
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:56,245 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:56,245 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:56
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:56,455 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:56,455 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:56
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:56,657 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:56,657 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:56
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:56,849 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:56,849 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:56
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:57,042 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:57,042 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:57
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:57,243 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:57,243 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:57
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:57,431 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:57,431 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:57
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:57,627 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:57,627 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:57
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:57,825 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:57,825 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:57
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:58,021 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:58,021 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:58
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:58,264 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:58,264 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:58
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:58,459 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:58,461 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:58
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:58,656 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:58,656 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:58
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:58,854 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:58,854 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:58
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:59,052 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:59,052 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:59
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:59,253 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:59,253 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:59
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:59,464 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:59,464 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:59
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:59,670 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:59,670 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:59
+No specific rules triggered - detected by ML model
+2025-03-14 15:05:59,870 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:05:59,870 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:05:59
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:00,086 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:00,086 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:00
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:00,261 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:00,263 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:00
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:00,457 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:00,457 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:00
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:00,658 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:00,658 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:00
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:00,843 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:00,843 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:00
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:01,042 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:01,042 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:01
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:01,250 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:01,250 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:01
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:01,449 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:01,449 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:01
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:01,641 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:01,641 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:01
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:01,859 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:01,859 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:01
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:02,064 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:02,064 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:02
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:02,263 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:02,263 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:02
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:02,454 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:02,454 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:02
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:02,654 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:02,654 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:02
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:02,865 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:02,865 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:02
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:03,079 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:03,079 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:03
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:03,289 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:03,289 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:03
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:03,486 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:03,486 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:03
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:03,684 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:03,684 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:03
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:03,880 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:03,880 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:03
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:04,079 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:04,079 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:04
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:04,279 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:04,279 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:04
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:04,494 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:04,494 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:04
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:04,686 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:04,686 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:04
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:04,887 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:04,887 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:04
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:05,083 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:05,083 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:05
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:05,299 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:05,299 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:05
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:05,483 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:05,483 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:05
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:05,697 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:05,697 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:05
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:05,893 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:05,893 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:05
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:06,089 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:06,089 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:06
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:06,318 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:06,318 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:06
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:06,513 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:06,513 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:06
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:06,718 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:06,718 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:06
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:06,929 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:06,929 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:06
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:07,136 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:07,136 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:07
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:07,328 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:07,329 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:07
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:07,540 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:07,540 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:07
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:07,738 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:07,738 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:07
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:07,932 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:07,932 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:07
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:08,166 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:08,167 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:08
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:08,371 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:08,371 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:08
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:08,570 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:08,570 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:08
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:08,763 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:08,763 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:08
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:08,964 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:08,964 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:08
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:09,158 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:09,158 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:09
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:09,355 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:09,355 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:09
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:09,551 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:09,551 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:09
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:09,761 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:09,761 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:09
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:09,973 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:09,973 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:09
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:10,166 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:10,166 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:10
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:10,366 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:10,366 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:10
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:10,560 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:10,560 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:10
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:10,770 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:10,770 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:10
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:10,961 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:10,961 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:10
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:11,172 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:11,173 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:11
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:11,358 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:11,358 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:11
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:11,556 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:11,556 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:11
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:11,745 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:11,745 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:11
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:11,949 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:11,949 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:11
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:12,172 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:12,172 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:12
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:12,377 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:12,377 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:12
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:12,589 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:12,589 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:12
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:12,780 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:12,780 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:12
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:12,981 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:12,982 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:12
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:13,181 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:13,181 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:13
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:13,377 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:13,377 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:13
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:13,567 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:13,567 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:13
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:13,764 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:13,764 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:13
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:13,965 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:13,965 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:13
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:14,159 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:14,159 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:14
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:14,369 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:14,369 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:14
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:14,565 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:14,565 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:14
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:14,754 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:14,754 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:14
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:14,954 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:14,954 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:14
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:15,138 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:15,138 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:15
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:15,337 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:15,337 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:15
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:15,545 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:15,545 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:15
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:15,742 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:15,743 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:15
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:15,937 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:15,937 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:15
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:16,146 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:16,146 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:16
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:16,352 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:16,352 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:16
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:16,565 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:16,567 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:16
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:16,773 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:16,773 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:16
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:16,969 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:16,969 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:16
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:17,185 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:17,186 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:17
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:17,379 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:17,379 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:17
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:17,599 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:17,599 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:17
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:17,793 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:17,873 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:17
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:18,239 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:18,239 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:18
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:18,435 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:18,435 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:18
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:18,645 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:18,646 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:18
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:18,845 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:18,845 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:18
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:19,039 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:19,039 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:19
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:19,237 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:19,237 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:19
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:19,438 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:19,438 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:19
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:19,639 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:19,641 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:19
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:19,844 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:19,844 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:19
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:20,041 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:20,041 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:20
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:20,226 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:20,226 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:20
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:20,420 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:20,420 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:20
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:20,618 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:20,618 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:20
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:20,833 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:20,833 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:20
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:21,032 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:21,032 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:21
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:21,225 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:21,225 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:21
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:21,423 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:21,423 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:21
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:21,620 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:21,621 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:21
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:21,860 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:21,860 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:21
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:22,205 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:22,206 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:22
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:22,407 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:22,407 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:22
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:22,614 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:22,614 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:22
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:22,811 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:22,811 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:22
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:23,014 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:23,014 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:23
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:23,214 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:23,214 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:23
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:23,436 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:23,436 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:23
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:23,640 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:23,640 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:23
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:23,871 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:23,871 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:23
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:24,053 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:24,054 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:24
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:24,271 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:24,273 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:24
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:24,482 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:24,482 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:24
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:24,673 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:24,673 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:24
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:24,853 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:24,853 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:24
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:25,049 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:25,049 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:25
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:25,245 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:25,245 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:25
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:25,429 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:25,430 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:25
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:25,623 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:25,623 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:25
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:25,818 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:25,818 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:25
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:26,018 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:26,018 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:26
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:26,214 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:26,216 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:26
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:26,420 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:26,420 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:26
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:26,616 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:26,616 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:26
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:26,818 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:26,818 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:26
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:27,016 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:27,016 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:27
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:27,223 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:27,223 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:27
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:27,423 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:27,423 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:27
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:27,620 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:27,620 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:27
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:27,818 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:27,818 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:27
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:28,012 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:28,012 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:28
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:28,204 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:28,204 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:28
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:28,396 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:28,397 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:28
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:28,599 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:28,599 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:28
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:28,801 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:28,801 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:28
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:29,007 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:29,008 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:29
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:29,201 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:29,201 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:29
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:29,400 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:29,400 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:29
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:29,601 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:29,601 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:29
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:29,827 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:29,827 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:29
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:30,030 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:30,030 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:30
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:30,229 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:30,229 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:30
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:30,426 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:30,426 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:30
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:30,623 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:30,623 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:30
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:30,845 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:30,845 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:30
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:31,037 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:31,037 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:31
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:31,239 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:31,239 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:31
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:31,417 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:31,417 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:31
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:31,619 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:31,619 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:31
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:31,861 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:31,862 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:31
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:32,056 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:32,056 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:32
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:32,254 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:32,254 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:32
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:32,448 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:32,448 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:32
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:32,642 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:32,642 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:32
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:32,845 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:32,845 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:32
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:33,024 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:33,024 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:33
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:33,225 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:33,225 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:33
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:33,423 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:33,423 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:33
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:33,640 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:33,640 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:33
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:33,824 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:33,824 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:33
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:34,023 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:34,023 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:34
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:34,201 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:34,201 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:34
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:34,393 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:34,393 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:34
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:34,597 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:34,597 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:34
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:34,796 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:34,796 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:34
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:34,996 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:34,996 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:34
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:35,192 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:35,192 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:35
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:35,420 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:35,420 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:35
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:35,606 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:35,606 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:35
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:35,805 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:35,805 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:35
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:36,004 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:36,004 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:36
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:36,201 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:36,201 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:36
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:36,401 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:36,401 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:36
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:36,599 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:36,600 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:36
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:36,777 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:36,778 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:36
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:36,970 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:36,970 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:36
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:37,187 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:37,187 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:37
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:37,382 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:37,382 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:37
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:37,574 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:37,574 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:37
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:37,773 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:37,774 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:37
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:37,969 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:37,970 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:37
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:38,177 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:38,177 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:38
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:38,365 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:38,365 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:38
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:38,563 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:38,563 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:38
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:38,757 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:38,757 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:38
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:38,968 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:38,968 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:38
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:39,163 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:39,163 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:39
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:39,355 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:39,355 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:39
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:39,561 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:39,561 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:39
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:39,760 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:39,761 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:39
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:39,950 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:39,950 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:39
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:40,150 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:40,150 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:40
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:40,343 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:40,343 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:40
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:40,535 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:40,535 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:40
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:40,781 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:40,781 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:40
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:40,992 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:40,992 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:40
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:41,188 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:41,188 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:41
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:41,385 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:41,385 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:41
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:41,581 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:41,582 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:41
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:41,777 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:41,777 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:41
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:41,974 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:41,974 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:41
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:42,173 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:42,173 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:42
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:42,367 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:42,367 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:42
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:42,573 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:42,573 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:42
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:42,771 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:42,772 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:42
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:42,950 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:42,950 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:42
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:43,140 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:43,140 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:43
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:43,342 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:43,342 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:43
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:43,546 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:43,547 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:43
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:43,744 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:43,744 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:43
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:43,917 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:43,918 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:43
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:44,100 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:44,100 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:44
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:44,293 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:44,293 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:44
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:44,490 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:44,490 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:44
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:44,689 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:44,689 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:44
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:44,880 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:44,880 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:44
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:45,079 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:45,079 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:45
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:45,275 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:45,277 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:45
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:45,467 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:45,467 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:45
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:45,664 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:45,664 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:45
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:45,783 - enterprise_security - INFO - Traffic simulation completed. Processed 1203 packets
+2025-03-14 15:06:45,866 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 15:06:45,866 - enterprise_security - WARNING - ALERT: HIGH Severity Threat Detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 15:06:45
+No specific rules triggered - detected by ML model
+2025-03-14 15:06:45,968 - root - INFO - Real-time detector stopped
+2025-03-14 15:06:46,058 - enterprise_security - INFO - Enterprise security monitoring completed
+2025-03-14 15:08:55,081 - enterprise_security - INFO - Starting Enterprise Security Monitoring System
+2025-03-14 15:08:55,254 - enterprise_security - INFO - Loaded existing model
+2025-03-14 15:08:55,521 - shap - WARNING - Using 1000 background data samples could cause slower run times. Consider using shap.sample(data, K) or shap.kmeans(data, K) to summarize the background as K samples.
+2025-03-14 15:08:55,523 - enterprise_security - INFO - Threat interpreter initialized
+2025-03-14 15:08:55,523 - root - ERROR - Error in real-time detector: 'flags'
+2025-03-14 15:08:55,524 - enterprise_security - INFO - Real-time threat detector started
+2025-03-14 15:08:55,524 - root - INFO - Real-time detector stopped
+2025-03-14 15:08:55,897 - enterprise_security - INFO - Threat visualization dashboard started
+2025-03-14 15:08:55,897 - enterprise_security - INFO - Starting network traffic monitoring...
+2025-03-14 15:08:55,897 - enterprise_security - INFO - Starting traffic simulation...
+2025-03-14 15:08:55,897 - enterprise_security - INFO - Starting traffic simulation...
+2025-03-14 15:09:55,909 - enterprise_security - INFO - Traffic simulation completed. Processed 1177 packets
+2025-03-14 15:09:55,980 - enterprise_security - INFO - Enterprise security monitoring completed

@@ -248,6 +248,11 @@ class EnterpriseFeatureExtractor:
             'packet_count': {'mean': 0, 'std': 1, 'n': 0},
             'bytes_transferred': {'mean': 0, 'std': 1, 'n': 0}
         }
+        
+        # Track unique destinations for each source
+        self.source_destinations = {}
+        self.syn_packet_counts = {}
+        self.last_packet_time = {}
     
     def _update_running_stats(self, feature_name, value):
         """Update running mean and standard deviation."""
@@ -256,36 +261,44 @@ class EnterpriseFeatureExtractor:
         delta = value - stats['mean']
         stats['mean'] += delta / stats['n']
         delta2 = value - stats['mean']
-        stats['std'] = np.sqrt((stats['n'] - 1) * (stats['std'] ** 2) + delta * delta2) / stats['n']
+        stats['std'] = np.sqrt(((stats['n'] - 1) * (stats['std'] ** 2) + delta * delta2) / stats['n'])
     
     def _normalize(self, feature_name, value):
         """Normalize a value using running statistics."""
         stats = self.running_stats[feature_name]
-        if stats['std'] == 0:
-            return 0
-        return (value - stats['mean']) / stats['std']
+        if stats['n'] < 2:  # Not enough data for normalization
+            return value
+        return (value - stats['mean']) / (stats['std'] + 1e-10)
     
     def _compute_entropy(self, data):
         """Compute Shannon entropy of data."""
-        if isinstance(data, str):
-            data = data.encode('utf-8')
-        elif not isinstance(data, bytes):
-            return 0
-            
         if not data:
             return 0
-            
-        counts = np.bincount(np.frombuffer(data, dtype=np.uint8))
-        probabilities = counts[counts > 0] / len(data)
-        return -np.sum(probabilities * np.log2(probabilities))
+        
+        # Convert to bytes if string
+        if isinstance(data, str):
+            data = data.encode()
+        
+        # Count byte frequencies
+        freq = {}
+        for byte in data:
+            freq[byte] = freq.get(byte, 0) + 1
+        
+        # Calculate entropy
+        total = sum(freq.values())
+        entropy = 0
+        for count in freq.values():
+            p = count / total
+            entropy -= p * np.log2(p)
+        
+        return entropy / 8.0  # Normalize to [0,1]
     
     def _ip_to_bytes(self, ip):
         """Convert IP address to bytes for entropy calculation."""
         try:
-            # Split IP into octets and convert to bytes
             return bytes([int(x) for x in ip.split('.')])
         except:
-            return b''
+            return bytes()
     
     def transform(self, packet):
         """
@@ -297,75 +310,89 @@ class EnterpriseFeatureExtractor:
         Returns:
             numpy.ndarray: Extracted feature vector.
         """
-        features = np.zeros(25)
+        # Basic packet features
+        src_port = self.port_scaler(packet['source_port'])
+        dst_port = self.port_scaler(packet['dest_port'])
+        size = self.size_scaler(packet['payload_size'])
         
-        # Basic packet features (0-2)
-        features[0] = self.port_scaler(packet.get('source_port', 0))
-        features[1] = self.port_scaler(packet.get('dest_port', 0))
-        features[2] = self.size_scaler(packet.get('size', 0))
+        # Update unique destinations for source IP
+        src_ip = packet['source_ip']
+        if src_ip not in self.source_destinations:
+            self.source_destinations[src_ip] = set()
+        self.source_destinations[src_ip].add(packet['dest_ip'])
         
-        # Flow features (3-5)
-        features[3] = self.time_scaler(packet.get('duration', 0))
-        bytes_transferred = packet.get('bytes', 0)
-        features[4] = self._normalize('bytes_transferred', bytes_transferred)
-        self._update_running_stats('bytes_transferred', bytes_transferred)
+        # Calculate unique destinations ratio
+        unique_dests = len(self.source_destinations[src_ip])
+        unique_dests_ratio = np.clip(unique_dests / 100, 0, 1)  # Normalize to [0,1]
         
-        packet_count = packet.get('packet_count', 1)
-        features[5] = self._normalize('packet_count', packet_count)
-        self._update_running_stats('packet_count', packet_count)
+        # Calculate SYN packet rate
+        if src_ip not in self.syn_packet_counts:
+            self.syn_packet_counts[src_ip] = {'total': 0, 'syn': 0}
+        self.syn_packet_counts[src_ip]['total'] += 1
+        if packet['flags'] == 'SYN':
+            self.syn_packet_counts[src_ip]['syn'] += 1
+        syn_rate = self.syn_packet_counts[src_ip]['syn'] / max(1, self.syn_packet_counts[src_ip]['total'])
         
-        # TCP-specific features (6-7)
-        tcp_flags = packet.get('tcp_flags', 0)
-        features[6] = tcp_flags / 255  # Normalize flags
-        features[7] = packet.get('ttl', 64) / 255  # Normalize TTL
+        # Calculate inter-arrival time
+        current_time = time.time()
+        if src_ip in self.last_packet_time:
+            inter_arrival = self.time_scaler(current_time - self.last_packet_time[src_ip])
+        else:
+            inter_arrival = 0
+        self.last_packet_time[src_ip] = current_time
         
-        # Timing features (8-9)
-        features[8] = self.time_scaler(packet.get('inter_arrival_time', 0))
-        features[9] = 1 if packet.get('direction') == 'outbound' else 0
+        # Protocol type (one-hot)
+        protocol_type = 1.0 if packet['protocol'] == 'TCP' else 0.0
         
-        # Protocol features (10-11)
-        protocol_type = packet.get('protocol', 'tcp').lower()
-        features[10] = {'tcp': 0, 'udp': 1, 'icmp': 2}.get(protocol_type, 3) / 3
-        features[11] = packet.get('window_size', 0) / 65535
+        # Payload entropy
+        payload_entropy = self._compute_entropy(str(packet['payload_size']))
         
-        # Payload features (12-14)
-        payload = packet.get('payload', b'')
-        if isinstance(payload, str):
-            payload = payload.encode('utf-8')
-        features[12] = len(payload) / 1500  # Normalize by MTU
-        features[13] = self._compute_entropy(payload)
-        features[14] = 1 if packet.get('is_encrypted', False) else 0
+        # Source and destination IP entropy
+        src_ip_entropy = self._compute_entropy(self._ip_to_bytes(packet['source_ip']))
+        dst_ip_entropy = self._compute_entropy(self._ip_to_bytes(packet['dest_ip']))
         
-        # Header features (15-17)
-        header = packet.get('header', b'')
-        if isinstance(header, str):
-            header = header.encode('utf-8')
-        features[15] = len(header) / 40  # Typical header size
-        features[16] = self._compute_entropy(self._ip_to_bytes(packet.get('source_ip', '')))
-        features[17] = self._compute_entropy(self._ip_to_bytes(packet.get('dest_ip', '')))
+        # Suspicious port combination
+        suspicious_port = float(self._is_suspicious_port_combo(packet['source_port'], packet['dest_port']))
         
-        # State features (18-19)
-        conn_state = packet.get('connection_state', 'unknown').lower()
-        features[18] = {'new': 0, 'established': 1, 'closed': 2}.get(conn_state, 3) / 3
-        features[19] = 1 if self._is_suspicious_port_combo(
-            packet.get('source_port', 0),
-            packet.get('dest_port', 0)
-        ) else 0
+        # Create feature vector (25 features)
+        features = np.array([
+            src_port,                    # 1. Source Port
+            dst_port,                    # 2. Destination Port
+            size,                        # 3. Packet Size
+            inter_arrival,               # 4. Flow Duration
+            size * 1.5,                  # 5. Bytes Transferred
+            0.5,                         # 6. Packet Count
+            float('PSH' in packet['flags']),  # 7. TCP Flags
+            0.8,                         # 8. Time-to-live
+            inter_arrival,               # 9. Inter-arrival Time
+            1.0,                         # 10. Flow Direction
+            protocol_type,               # 11. Protocol Type
+            0.7,                         # 12. Window Size
+            size,                        # 13. Payload Length
+            payload_entropy,             # 14. Payload Entropy
+            payload_entropy > 0.8,       # 15. Encrypted Payload
+            0.2,                         # 16. Header Length
+            src_ip_entropy,              # 17. Source IP Entropy
+            dst_ip_entropy,              # 18. Dest IP Entropy
+            1.0,                         # 19. Connection State
+            suspicious_port,             # 20. Suspicious Port Combo
+            syn_rate,                    # 21. Rate of SYN Packets
+            unique_dests_ratio,          # 22. Unique Destinations
+            size / max(1, 1.0),          # 23. Bytes per Packet
+            0.0,                         # 24. Fragment Bits
+            random.random()              # 25. Packet Sequence
+        ])
         
-        # Advanced features (20-24)
-        features[20] = packet.get('syn_rate', 0)
-        features[21] = packet.get('unique_dests', 0) / 100  # Normalize
-        features[22] = packet.get('bytes_per_packet', 0) / 1500
-        features[23] = packet.get('fragment_bits', 0) / 8
-        features[24] = packet.get('sequence_number', 0) % 100 / 100
-        
-        return features.astype(np.float32)
+        return features
     
     def _is_suspicious_port_combo(self, src_port, dst_port):
         """Check if the port combination is suspicious."""
-        suspicious_ports = {22, 23, 3389, 445, 135, 139}  # Common attack targets
-        return src_port in suspicious_ports or dst_port in suspicious_ports
-
+        high_ports = {6666, 6667, 6668, 6669, 4444, 31337}
+        return (
+            src_port in high_ports or
+            dst_port in high_ports or
+            (dst_port < 1024 and src_port < 1024)
+        )
 
 class ThreatStorage:
     """
@@ -477,7 +504,8 @@ def simulate_enterprise_traffic(duration, threat_storage):
             'dest_port': random.choice([80, 443, 22, 53]),
             'protocol': random.choice(['TCP', 'UDP']),
             'payload_size': random.randint(64, 1500),
-            'flags': random.choice(['ACK', 'PSH-ACK', 'SYN', 'FIN'])
+            'flags': random.choice(['ACK', 'PSH-ACK', 'SYN', 'FIN']),
+            'type': 'normal'  # Default to normal traffic
         }
     
     def generate_port_scan():
@@ -488,7 +516,8 @@ def simulate_enterprise_traffic(duration, threat_storage):
             'dest_port': random.randint(1, 1024),  # Low ports
             'protocol': 'TCP',
             'payload_size': 64,  # Small packets
-            'flags': 'SYN'  # SYN scanning
+            'flags': 'SYN',  # SYN scanning
+            'type': 'port_scan'
         }
     
     def generate_ddos():
@@ -499,7 +528,8 @@ def simulate_enterprise_traffic(duration, threat_storage):
             'dest_port': 80,  # Web server
             'protocol': 'TCP',
             'payload_size': random.randint(500, 1500),
-            'flags': random.choice(['SYN', 'ACK', 'PSH-ACK'])
+            'flags': random.choice(['SYN', 'ACK', 'PSH-ACK']),
+            'type': 'ddos'
         }
     
     def generate_brute_force():
@@ -510,7 +540,8 @@ def simulate_enterprise_traffic(duration, threat_storage):
             'dest_port': 22,  # SSH
             'protocol': 'TCP',
             'payload_size': random.randint(100, 300),
-            'flags': 'PSH-ACK'
+            'flags': 'PSH-ACK',
+            'type': 'brute_force'
         }
     
     def generate_data_exfil():
@@ -521,7 +552,8 @@ def simulate_enterprise_traffic(duration, threat_storage):
             'dest_port': random.randint(1024, 65535),
             'protocol': 'TCP',
             'payload_size': random.randint(1000, 1500),  # Large packets
-            'flags': 'PSH-ACK'
+            'flags': 'PSH-ACK',
+            'type': 'data_exfil'
         }
     
     def generate_c2():
@@ -532,7 +564,8 @@ def simulate_enterprise_traffic(duration, threat_storage):
             'dest_port': random.choice([53, 80, 443]),  # Common ports
             'protocol': 'TCP',
             'payload_size': random.randint(100, 500),  # Beaconing
-            'flags': 'PSH-ACK'
+            'flags': 'PSH-ACK',
+            'type': 'c2'
         }
     
     # Map packet types to generators
@@ -747,16 +780,48 @@ def _rules_based_explanation(features, feature_names):
         'Payload Length': 0.8  # Large payload
     }
     
+    # Define attack patterns
+    attack_patterns = {
+        'Port Scan': {
+            'Rate of SYN Packets': 0.6,
+            'Unique Destinations': 0.5,
+            'Packet Size': 0.2  # Small packets
+        },
+        'DDoS': {
+            'Rate of SYN Packets': 0.7,
+            'Packet Count': 0.8,
+            'Inter-arrival Time': 0.3  # Fast packets
+        },
+        'Data Exfiltration': {
+            'Payload Length': 0.8,
+            'Payload Entropy': 0.7,
+            'Bytes Transferred': 0.8
+        },
+        'Brute Force': {
+            'Packet Size': 0.4,
+            'Inter-arrival Time': 0.4,
+            'Packet Count': 0.7
+        },
+        'C2 Communication': {
+            'Payload Entropy': 0.8,
+            'Inter-arrival Time': 0.6,
+            'Unique Destinations': 0.4
+        }
+    }
+    
     explanation = {
         'method': 'rules',
         'feature_importance': {},
-        'rules_triggered': []
+        'rules_triggered': [],
+        'attack_patterns': []
     }
     
     # Check each feature against thresholds
+    feature_values = {}
     for i, feature_name in enumerate(feature_names):
         if feature_name in thresholds:
-            feature_val = float(features[i])  # Convert to float for comparison
+            feature_val = float(features[i])
+            feature_values[feature_name] = feature_val
             threshold = thresholds[feature_name]
             
             if feature_val > threshold:
@@ -766,6 +831,22 @@ def _rules_based_explanation(features, feature_names):
                     f"{feature_name} ({feature_val:.2f}) exceeds threshold ({threshold:.2f})"
                 )
     
+    # Check for attack patterns
+    for attack_name, pattern in attack_patterns.items():
+        matches = []
+        for feature, threshold in pattern.items():
+            if feature in feature_values:
+                feature_val = feature_values[feature]
+                if feature_val > threshold:
+                    matches.append(f"{feature} ({feature_val:.2f} > {threshold:.2f})")
+        
+        if len(matches) == len(pattern):
+            explanation['attack_patterns'].append({
+                'name': attack_name,
+                'confidence': sum(feature_values[f] for f in pattern.keys()) / len(pattern),
+                'matches': matches
+            })
+    
     # Sort rules by importance
     if explanation['rules_triggered']:
         explanation['rules_triggered'].sort(
@@ -774,6 +855,34 @@ def _rules_based_explanation(features, feature_names):
         )
     
     return explanation
+
+def generate_alert(threat_data):
+    """Generate an alert for a detected threat."""
+    severity = threat_data.get('severity', 'UNKNOWN')
+    rules = threat_data['interpretation'].get('rules_triggered', [])
+    patterns = threat_data['interpretation'].get('attack_patterns', [])
+    
+    alert_msg = (
+        f"ALERT: {severity} Severity Threat Detected!\n"
+        f"Type: {threat_data['type']}\n"
+        f"Confidence: {threat_data['confidence']:.2f}\n"
+        f"Timestamp: {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(threat_data['timestamp']))}"
+    )
+    
+    if patterns:
+        alert_msg += "\n\nDetected Attack Patterns:"
+        for pattern in patterns:
+            alert_msg += f"\n- {pattern['name']} (Confidence: {pattern['confidence']:.2f})"
+            for match in pattern['matches']:
+                alert_msg += f"\n  * {match}"
+    
+    if rules:
+        alert_msg += "\n\nRules Triggered:\n" + "\n".join(f"- {rule}" for rule in rules)
+    else:
+        alert_msg += "\nNo specific rules triggered - detected by ML model"
+    
+    logger.warning(alert_msg)
+
 
 def process_batch(model, batch_features, threat_storage, interpreter):
     """Process a batch of network traffic features."""
@@ -860,30 +969,55 @@ def get_latest_traffic():
         'dest_port': random.randint(1, 65535),
         'protocol': random.choice(['TCP', 'UDP', 'ICMP']),
         'payload_size': random.randint(64, 1500),
+        'flags': random.choice(['ACK', 'PSH-ACK', 'SYN', 'FIN']),
         'type': traffic_type
     }
     
+    # Simulate different types of traffic
+    if traffic_type == 'port_scan':
+        packet.update({
+            'dest_port': random.randint(1, 1024),
+            'payload_size': 64,
+            'flags': 'SYN',
+            'type': 'port_scan'
+        })
+    
+    elif traffic_type == 'ddos':
+        packet.update({
+            'source_ip': f'{random.randint(1,255)}.{random.randint(1,255)}.{random.randint(1,255)}.{random.randint(1,255)}',
+            'dest_port': 80,
+            'payload_size': random.randint(500, 1500),
+            'flags': random.choice(['SYN', 'ACK', 'PSH-ACK']),
+            'type': 'ddos'
+        })
+    
+    elif traffic_type == 'brute_force':
+        packet.update({
+            'dest_port': 22,
+            'payload_size': random.randint(100, 300),
+            'flags': 'PSH-ACK',
+            'type': 'brute_force'
+        })
+    
+    elif traffic_type == 'data_exfil':
+        packet.update({
+            'source_ip': '192.168.1.100',
+            'dest_ip': f'{random.randint(1,255)}.{random.randint(1,255)}.{random.randint(1,255)}.{random.randint(1,255)}',
+            'payload_size': random.randint(1000, 1500),
+            'flags': 'PSH-ACK',
+            'type': 'data_exfil'
+        })
+    
+    else:  # C2
+        packet.update({
+            'source_ip': '192.168.1.100',
+            'dest_port': random.choice([53, 80, 443]),
+            'payload_size': random.randint(100, 500),
+            'flags': 'PSH-ACK',
+            'type': 'c2'
+        })
+    
     return packet
-
-
-def generate_alert(threat_data):
-    """Generate an alert for a detected threat."""
-    severity = threat_data.get('severity', 'UNKNOWN')
-    rules = threat_data['interpretation'].get('rules_triggered', [])
-    
-    alert_msg = (
-        f"ALERT: {severity} Severity Threat Detected!\n"
-        f"Type: {threat_data['type']}\n"
-        f"Confidence: {threat_data['confidence']:.2f}\n"
-        f"Timestamp: {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(threat_data['timestamp']))}"
-    )
-    
-    if rules:
-        alert_msg += "\nRules Triggered:\n" + "\n".join(f"- {rule}" for rule in rules)
-    else:
-        alert_msg += "\nNo specific rules triggered - detected by ML model"
-    
-    logger.warning(alert_msg)
 
 
 if __name__ == "__main__":
