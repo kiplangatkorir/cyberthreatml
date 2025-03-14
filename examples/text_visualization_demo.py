@@ -49,73 +49,159 @@ def create_threat_model(input_shape):
     return model
 
 def plot_threat_distribution(df, save_dir):
-    """Plot threat type distribution"""
+    """Plot threat type distribution with threat severity breakdown"""
     plt.figure(figsize=(12, 6))
+    sns.set_style("darkgrid")
     
-    # Create DataFrame for plotting
-    threat_data = df['threat_type'].value_counts().reset_index()
-    threat_data.columns = ['Threat Type', 'Count']
+    # Create stacked bars for severity levels
+    threat_severity = pd.crosstab(df['threat_type'], df['severity'])
+    severity_order = ['Critical', 'High', 'Medium', 'Low']
+    threat_severity = threat_severity[severity_order]
     
-    sns.barplot(data=threat_data, x='Count', y='Threat Type', palette='viridis')
-    plt.title('Distribution of Threat Types')
-    plt.xlabel('Number of Events')
-    plt.ylabel('Threat Type')
+    # Plot stacked bars
+    bottom = np.zeros(len(threat_severity))
+    colors = ['#FF4B4B', '#FF8C42', '#FFC857', '#8FD694']
+    
+    for severity, color in zip(severity_order, colors):
+        plt.bar(threat_severity.index, threat_severity[severity], 
+                bottom=bottom, label=severity, color=color)
+        bottom += threat_severity[severity]
+    
+    plt.title('Threat Distribution by Type and Severity', pad=20, fontsize=12, fontweight='bold')
+    plt.xlabel('Threat Type', fontsize=10)
+    plt.ylabel('Number of Events', fontsize=10)
+    plt.legend(title='Severity', bbox_to_anchor=(1.05, 1), loc='upper left')
+    plt.xticks(rotation=45, ha='right')
+    plt.grid(True, alpha=0.3)
     plt.tight_layout()
     
     plt.savefig(f"{save_dir}/threat_distribution.png", dpi=300, bbox_inches='tight')
     plt.close()
 
 def plot_severity_distribution(df, save_dir):
-    """Plot severity distribution by threat type"""
+    """Plot severity distribution with percentage annotations"""
     plt.figure(figsize=(12, 6))
+    sns.set_style("darkgrid")
     
-    # Create cross-tabulation
-    severity_threat = pd.crosstab(df['severity'], df['threat_type'])
-    severity_order = ['Low', 'Medium', 'High', 'Critical']
+    # Create cross-tabulation with percentages
+    severity_threat = pd.crosstab(df['severity'], df['threat_type'], normalize='columns') * 100
+    severity_order = ['Critical', 'High', 'Medium', 'Low']
     severity_threat = severity_threat.reindex(severity_order)
     
-    sns.heatmap(severity_threat, annot=True, fmt='d', cmap='YlOrRd')
-    plt.title('Threat Types by Severity Level')
-    plt.tight_layout()
+    # Create heatmap with custom styling
+    sns.heatmap(severity_threat, annot=True, fmt='.1f', cmap='YlOrRd',
+                cbar_kws={'label': 'Percentage of Events (%)'})
     
+    plt.title('Severity Distribution by Threat Type', pad=20, fontsize=12, fontweight='bold')
+    plt.xlabel('Threat Type', fontsize=10)
+    plt.ylabel('Severity Level', fontsize=10)
+    
+    # Add total counts as text
+    for i, threat in enumerate(severity_threat.columns):
+        total = len(df[df['threat_type'] == threat])
+        plt.text(i, -0.2, f'n={total}', ha='center', va='top')
+    
+    plt.tight_layout()
     plt.savefig(f"{save_dir}/severity_distribution.png", dpi=300, bbox_inches='tight')
     plt.close()
 
 def plot_temporal_pattern(df, save_dir):
-    """Plot temporal threat patterns"""
-    plt.figure(figsize=(12, 6))
+    """Plot temporal threat patterns with severity breakdown"""
+    sns.set_style("darkgrid")
     
-    # Group by hour and calculate threat counts
+    # Create subplots
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(15, 10), height_ratios=[2, 1])
+    
+    # Plot 1: Hourly threat counts by severity
     df['hour'] = df['timestamp'].dt.hour
-    hourly_threats = df[df['is_threat'] == 1].groupby('hour').size()
+    severity_order = ['Critical', 'High', 'Medium', 'Low']
+    colors = ['#FF4B4B', '#FF8C42', '#FFC857', '#8FD694']
     
-    # Create line plot
-    plt.plot(hourly_threats.index, hourly_threats.values, marker='o')
-    plt.title('Threat Distribution by Hour')
-    plt.xlabel('Hour of Day')
-    plt.ylabel('Number of Threats')
-    plt.grid(True, alpha=0.3)
-    plt.xticks(range(0, 24, 2))
+    for severity, color in zip(severity_order, colors):
+        hourly_severity = df[df['severity'] == severity].groupby('hour').size()
+        ax1.plot(hourly_severity.index, hourly_severity.values, 
+                 marker='o', label=severity, color=color, linewidth=2)
+    
+    ax1.set_title('Hourly Threat Distribution by Severity', pad=20, fontsize=12, fontweight='bold')
+    ax1.set_xlabel('Hour of Day', fontsize=10)
+    ax1.set_ylabel('Number of Events', fontsize=10)
+    ax1.grid(True, alpha=0.3)
+    ax1.legend(title='Severity', bbox_to_anchor=(1.05, 1))
+    ax1.set_xticks(range(0, 24, 2))
+    
+    # Plot 2: Threat type distribution over time
+    threat_types = df['threat_type'].unique()
+    for threat in threat_types:
+        if threat != 'Normal':
+            hourly_threats = df[df['threat_type'] == threat].groupby('hour').size()
+            ax2.plot(hourly_threats.index, hourly_threats.values, 
+                    marker='o', label=threat, linewidth=2)
+    
+    ax2.set_title('Hourly Distribution by Threat Type', pad=20, fontsize=12, fontweight='bold')
+    ax2.set_xlabel('Hour of Day', fontsize=10)
+    ax2.set_ylabel('Number of Events', fontsize=10)
+    ax2.grid(True, alpha=0.3)
+    ax2.legend(title='Threat Type', bbox_to_anchor=(1.05, 1))
+    ax2.set_xticks(range(0, 24, 2))
+    
     plt.tight_layout()
-    
     plt.savefig(f"{save_dir}/temporal_pattern.png", dpi=300, bbox_inches='tight')
     plt.close()
 
 def plot_feature_correlations(df, save_dir):
-    """Plot feature correlations"""
-    plt.figure(figsize=(10, 8))
+    """Plot feature correlations with enhanced styling"""
+    plt.figure(figsize=(12, 10))
+    sns.set_style("darkgrid")
     
-    # Select numeric features
-    features = ['packet_rate', 'bytes_per_packet', 'connection_duration', 
-                'error_rate', 'is_threat']
+    # Select and rename features for better readability
+    feature_map = {
+        'packet_rate': 'Packet Rate',
+        'bytes_per_packet': 'Bytes/Packet',
+        'connection_duration': 'Conn Duration',
+        'error_rate': 'Error Rate',
+        'is_threat': 'Is Threat'
+    }
+    
+    features = list(feature_map.keys())
     correlation_matrix = df[features].corr()
     
-    # Create heatmap with custom styling
-    sns.heatmap(correlation_matrix, annot=True, fmt='.2f', 
-                cmap='coolwarm', center=0, vmin=-1, vmax=1)
-    plt.title('Feature Correlations with Threat Detection')
-    plt.tight_layout()
+    # Create mask for upper triangle
+    mask = np.triu(np.ones_like(correlation_matrix), k=1)
     
+    # Create heatmap with custom styling
+    sns.heatmap(correlation_matrix, 
+                mask=mask,
+                annot=True, 
+                fmt='.2f',
+                cmap='coolwarm',
+                center=0,
+                vmin=-1,
+                vmax=1,
+                square=True,
+                linewidths=1,
+                cbar_kws={'label': 'Correlation Coefficient'})
+    
+    # Update labels
+    labels = [feature_map[f] for f in features]
+    plt.xticks(range(len(labels)), labels, rotation=45, ha='right')
+    plt.yticks(range(len(labels)), labels, rotation=0)
+    
+    plt.title('Network Feature Correlations\nfor Threat Detection', 
+              pad=20, fontsize=12, fontweight='bold')
+    
+    # Add correlation interpretation guide
+    plt.figtext(0.99, 0.15, 
+                'Correlation Guide:\n' +
+                '> 0.7: Strong Positive\n' +
+                '0.3 to 0.7: Moderate Positive\n' +
+                '-0.3 to 0.3: Weak\n' +
+                '-0.7 to -0.3: Moderate Negative\n' +
+                '< -0.7: Strong Negative',
+                bbox=dict(facecolor='white', alpha=0.8, edgecolor='none'),
+                fontsize=8,
+                ha='right')
+    
+    plt.tight_layout()
     plt.savefig(f"{save_dir}/feature_correlations.png", dpi=300, bbox_inches='tight')
     plt.close()
 
