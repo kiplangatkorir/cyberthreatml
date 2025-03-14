@@ -170,3 +170,5 @@
 2025-03-14 14:19:05,056 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
 2025-03-14 14:19:06,086 - enterprise_security - INFO - Processed batch: 0 packets, 0 threats
 2025-03-14 14:19:06,806 - enterprise_security - INFO - Traffic simulation completed. Processed 1203 packets
+2025-03-14 14:20:31,078 - enterprise_security - INFO - Starting Enterprise Security Monitoring System
+2025-03-14 14:20:31,078 - enterprise_security - INFO - No existing model found. Creating and training a new model...
