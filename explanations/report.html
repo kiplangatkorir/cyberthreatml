@@ -1,0 +1,200 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>CyberThreat-ML Model Explanation Report</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+            h1 { color: #2c3e50; }
+            h2 { color: #3498db; margin-top: 30px; }
+            .container { max-width: 1000px; margin: 0 auto; }
+            table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+            th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+            th { background-color: #f2f2f2; }
+            .feature-bar { height: 20px; background-color: #3498db; }
+            .positive { color: #27ae60; }
+            .negative { color: #e74c3c; }
+            .summary { background-color: #f9f9f9; padding: 20px; border-radius: 5px; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>CyberThreat-ML Model Explanation Report</h1>
+            
+            <div class="summary">
+                <p>This report provides insights into how the threat detection model makes decisions, 
+                highlighting the most important features and how they contribute to predictions.</p>
+            </div>
+            
+            <h2>Feature Importance</h2>
+            <p>The following features have the most influence on the model's predictions:</p>
+            
+            <table>
+                <tr>
+                    <th>Rank</th>
+                    <th>Feature</th>
+                    <th>Importance</th>
+                    <th>Visualization</th>
+                </tr>
+    
+                <tr>
+                    <td>1</td>
+                    <td>High Port Combo</td>
+                    <td>0.132264</td>
+                    <td><div class="feature-bar" style="width: 66.13192585483269px"></div></td>
+                </tr>
+        
+                <tr>
+                    <td>2</td>
+                    <td>Payload Entropy</td>
+                    <td>0.091137</td>
+                    <td><div class="feature-bar" style="width: 45.568599247669574px"></div></td>
+                </tr>
+        
+                <tr>
+                    <td>3</td>
+                    <td>TCP Protocol</td>
+                    <td>0.081062</td>
+                    <td><div class="feature-bar" style="width: 40.53082102683745px"></div></td>
+                </tr>
+        
+                <tr>
+                    <td>4</td>
+                    <td>Source Port</td>
+                    <td>0.076684</td>
+                    <td><div class="feature-bar" style="width: 38.34198248243017px"></div></td>
+                </tr>
+        
+                <tr>
+                    <td>5</td>
+                    <td>UDP Protocol</td>
+                    <td>0.076557</td>
+                    <td><div class="feature-bar" style="width: 38.27860640797609px"></div></td>
+                </tr>
+        
+                <tr>
+                    <td>6</td>
+                    <td>Destination Port</td>
+                    <td>0.066486</td>
+                    <td><div class="feature-bar" style="width: 33.24314356955752px"></div></td>
+                </tr>
+        
+                <tr>
+                    <td>7</td>
+                    <td>ICMP Protocol</td>
+                    <td>0.064598</td>
+                    <td><div class="feature-bar" style="width: 32.299078999854856px"></div></td>
+                </tr>
+        
+                <tr>
+                    <td>8</td>
+                    <td>TTL</td>
+                    <td>0.043755</td>
+                    <td><div class="feature-bar" style="width: 21.877472894863228px"></div></td>
+                </tr>
+        
+                <tr>
+                    <td>9</td>
+                    <td>Packet Size</td>
+                    <td>0.041993</td>
+                    <td><div class="feature-bar" style="width: 20.996473463061363px"></div></td>
+                </tr>
+        
+                <tr>
+                    <td>10</td>
+                    <td>TCP Flags</td>
+                    <td>0.019737</td>
+                    <td><div class="feature-bar" style="width: 9.868686353605094px"></div></td>
+                </tr>
+        
+            </table>
+            
+            <h2>Sample Prediction Explanation</h2>
+            <p>The following shows how different features contributed to a specific prediction:</p>
+            
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>Contribution</th>
+                </tr>
+    
+                <tr>
+                    <td>Source Port</td>
+                    <td class="negative">0.000000</td>
+                </tr>
+        
+                <tr>
+                    <td>Destination Port</td>
+                    <td class="negative">0.000000</td>
+                </tr>
+        
+                <tr>
+                    <td>Packet Size</td>
+                    <td class="negative">0.000000</td>
+                </tr>
+        
+                <tr>
+                    <td>TCP Protocol</td>
+                    <td class="negative">0.000000</td>
+                </tr>
+        
+                <tr>
+                    <td>UDP Protocol</td>
+                    <td class="negative">0.000000</td>
+                </tr>
+        
+                <tr>
+                    <td>ICMP Protocol</td>
+                    <td class="negative">0.000000</td>
+                </tr>
+        
+                <tr>
+                    <td>TCP Flags</td>
+                    <td class="negative">0.000000</td>
+                </tr>
+        
+                <tr>
+                    <td>TTL</td>
+                    <td class="negative">0.000000</td>
+                </tr>
+        
+                <tr>
+                    <td>Payload Entropy</td>
+                    <td class="negative">0.000000</td>
+                </tr>
+        
+                <tr>
+                    <td>High Port Combo</td>
+                    <td class="negative">0.000000</td>
+                </tr>
+        
+            </table>
+            
+            <p>Base value: 0.922473</p>
+            <p>Final prediction: 0.922473</p>
+            
+            <h2>Interpretation Guide</h2>
+            <p>How to interpret this report:</p>
+            <ul>
+                <li><strong>Feature Importance</strong>: Shows which features have the greatest overall impact on model predictions.</li>
+                <li><strong>Sample Prediction</strong>: Shows how each feature contributed to a specific prediction:
+                    <ul>
+                        <li><span class="positive">Positive values (green)</span>: Increase the likelihood of being classified as a threat</li>
+                        <li><span class="negative">Negative values (red)</span>: Decrease the likelihood of being classified as a threat</li>
+                    </ul>
+                </li>
+                <li><strong>Base value</strong>: The average model output over the training dataset</li>
+                <li><strong>Final prediction</strong>: The probability that the sample is a threat (0-1)</li>
+            </ul>
+            
+            <h2>Visualization Guide</h2>
+            <p>Please refer to the following visualization files for more insights:</p>
+            <ul>
+                <li><strong>shap_summary.png</strong>: Overall feature importance and impact direction</li>
+                <li><strong>threat_waterfall.png</strong>: Detailed breakdown of a threat prediction</li>
+                <li><strong>normal_waterfall.png</strong>: Detailed breakdown of a normal prediction</li>
+            </ul>
+        </div>
+    </body>
+    </html>
+    
