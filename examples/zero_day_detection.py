@@ -63,7 +63,7 @@ def main():
     X_train = np.vstack([data_normal, data_known])
     y_train = np.concatenate([labels_normal, labels_known])
     
-    # Binary classification: 0 = normal, 1 = known attack
+    # Binary classification: 0 = normal, 1 = attack
     y_train_binary = (y_train > 0).astype(int)
     
     # Split data into training and validation sets
@@ -71,22 +71,23 @@ def main():
     X_train, X_val, y_train, y_val = train_test_split(X_train, y_train_binary, test_size=0.2, random_state=42)
     
     # Create and train signature-based model
+    input_dim = X_train.shape[1]  # Get actual number of features
     signature_model = ThreatDetectionModel(
-        input_shape=(20,),  # Number of features
-        num_classes=3,      # Normal, Known Attack, Zero-day
+        input_shape=(input_dim,),  # Use actual feature dimension
+        num_classes=2,      # Binary: Normal vs Attack
         model_config={
             'hidden_layers': [64, 32, 16],
             'dropout_rate': 0.3,
             'activation': 'relu',
-            'output_activation': 'softmax',
-            'loss': 'categorical_crossentropy',
+            'output_activation': 'sigmoid',  # Binary classification
+            'loss': 'binary_crossentropy',
             'metrics': ['accuracy'],
             'optimizer': 'adam',
-            'class_names': ['Normal', 'Known Attack', 'Zero-day Attack']
+            'class_names': ['Normal', 'Attack']
         }
     )
 
-    # Train with proper validation split
+    # Train with proper validation split and early stopping
     history = signature_model.train(
         X_train, y_train,
         validation_data=(X_val, y_val),
