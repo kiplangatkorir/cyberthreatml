@@ -68,16 +68,7 @@ def main():
     threat_storage = ThreatStorage()
     
     # Initialize threat interpreter with feature names
-    feature_names = [
-        "Source Port", "Destination Port", "Packet Size", "Flow Duration",
-        "Bytes Transferred", "Packet Count", "TCP Flags", "Time-to-live",
-        "Inter-arrival Time", "Flow Direction", "Protocol Type", "Window Size",
-        "Payload Length", "Payload Entropy", "Encrypted Payload", "Header Length",
-        "Source IP Entropy", "Dest IP Entropy", "Connection State", "Suspicious Port Combo",
-        "Rate of SYN Packets", "Unique Destinations", "Bytes per Packet", "Fragment Bits",
-        "Packet Sequence"
-    ]
-    interpreter = ThreatInterpreter(model, feature_names=feature_names)
+    interpreter = ThreatInterpreter(model, feature_names=feature_extractor.feature_names)
     
     # Initialize interpreter with background data
     X_background, _ = create_enterprise_dataset(n_samples=1000)
@@ -253,6 +244,35 @@ class EnterpriseFeatureExtractor:
         self.source_destinations = {}
         self.syn_packet_counts = {}
         self.last_packet_time = {}
+        
+        # Define feature names in order
+        self.feature_names = [
+            'source_port',          # 1. Source port (normalized)
+            'dest_port',            # 2. Destination port (normalized)
+            'payload_size',         # 3. Packet size
+            'inter_arrival',        # 4. Flow duration
+            'bytes_transferred',    # 5. Bytes transferred
+            'packet_count',         # 6. Packet count
+            'tcp_flags',           # 7. TCP flags
+            'ttl',                 # 8. Time-to-live
+            'inter_arrival_time',  # 9. Inter-arrival time
+            'direction',           # 10. Flow direction
+            'protocol',            # 11. Protocol type
+            'window_size',         # 12. Window size
+            'payload_length',      # 13. Payload length
+            'payload_entropy',     # 14. Payload entropy
+            'encrypted',           # 15. Encrypted payload
+            'header_length',       # 16. Header length
+            'src_ip_entropy',      # 17. Source IP entropy
+            'dst_ip_entropy',      # 18. Dest IP entropy
+            'connection_state',    # 19. Connection state
+            'suspicious_port',     # 20. Suspicious port combo
+            'syn_rate',           # 21. Rate of SYN packets
+            'unique_dests',       # 22. Unique destinations
+            'bytes_per_packet',   # 23. Bytes per packet
+            'fragment_bits',      # 24. Fragment bits
+            'sequence'            # 25. Packet sequence
+        ]
     
     def _update_running_stats(self, feature_name, value):
         """Update running mean and standard deviation."""
@@ -766,6 +786,38 @@ def generate_security_report(threat_storage, interpreter):
 
 def _rules_based_explanation(features, feature_names):
     """Generate a rules-based explanation for the features."""
+    # Define feature name mapping
+    feature_map = {
+        'source_port': 'Source Port',
+        'dest_port': 'Destination Port',
+        'payload_size': 'Packet Size',
+        'inter_arrival': 'Flow Duration',
+        'bytes_transferred': 'Bytes Transferred',
+        'packet_count': 'Packet Count',
+        'tcp_flags': 'TCP Flags',
+        'ttl': 'Time-to-live',
+        'inter_arrival_time': 'Inter-arrival Time',
+        'direction': 'Flow Direction',
+        'protocol': 'Protocol Type',
+        'window_size': 'Window Size',
+        'payload_length': 'Payload Length',
+        'payload_entropy': 'Payload Entropy',
+        'encrypted': 'Encrypted Payload',
+        'header_length': 'Header Length',
+        'src_ip_entropy': 'Source IP Entropy',
+        'dst_ip_entropy': 'Dest IP Entropy',
+        'connection_state': 'Connection State',
+        'suspicious_port': 'Suspicious Port Combo',
+        'syn_rate': 'Rate of SYN Packets',
+        'unique_dests': 'Unique Destinations',
+        'bytes_per_packet': 'Bytes per Packet',
+        'fragment_bits': 'Fragment Bits',
+        'sequence': 'Packet Sequence'
+    }
+    
+    # Map feature names to their indices
+    feature_indices = {name: i for i, name in enumerate(feature_names)}
+    
     # Define thresholds for common threat indicators (adjusted for normalized values)
     thresholds = {
         'Packet Size': 0.7,  # Large packet size relative to max
@@ -818,32 +870,38 @@ def _rules_based_explanation(features, feature_names):
     
     # Check each feature against thresholds
     feature_values = {}
-    for i, feature_name in enumerate(feature_names):
-        if feature_name in thresholds:
-            feature_val = float(features[i])
-            feature_values[feature_name] = feature_val
-            threshold = thresholds[feature_name]
-            
-            if feature_val > threshold:
-                importance = min((feature_val - threshold) / (1 - threshold), 1.0)
-                explanation['feature_importance'][feature_name] = importance
-                explanation['rules_triggered'].append(
-                    f"{feature_name} ({feature_val:.2f}) exceeds threshold ({threshold:.2f})"
-                )
+    for feature_name in thresholds.keys():
+        # Find the corresponding feature index
+        for raw_name, mapped_name in feature_map.items():
+            if mapped_name == feature_name and raw_name in feature_indices:
+                idx = feature_indices[raw_name]
+                feature_val = float(features[idx])
+                feature_values[feature_name] = feature_val
+                threshold = thresholds[feature_name]
+                
+                if feature_val > threshold:
+                    importance = min((feature_val - threshold) / (1 - threshold), 1.0)
+                    explanation['feature_importance'][feature_name] = importance
+                    explanation['rules_triggered'].append(
+                        f"{feature_name} ({feature_val:.2f}) exceeds threshold ({threshold:.2f})"
+                    )
+                break
     
     # Check for attack patterns
     for attack_name, pattern in attack_patterns.items():
         matches = []
+        pattern_values = []
         for feature, threshold in pattern.items():
             if feature in feature_values:
                 feature_val = feature_values[feature]
                 if feature_val > threshold:
                     matches.append(f"{feature} ({feature_val:.2f} > {threshold:.2f})")
+                    pattern_values.append(feature_val)
         
         if len(matches) == len(pattern):
             explanation['attack_patterns'].append({
                 'name': attack_name,
-                'confidence': sum(feature_values[f] for f in pattern.keys()) / len(pattern),
+                'confidence': sum(pattern_values) / len(pattern),
                 'matches': matches
             })
     
@@ -1001,7 +1059,7 @@ def get_latest_traffic():
     
     elif traffic_type == 'data_exfil':
         packet.update({
-            'source_ip': '192.168.1.100',
+            'source_ip': '192.168.1.100',  # Compromised host
             'dest_ip': f'{random.randint(1,255)}.{random.randint(1,255)}.{random.randint(1,255)}.{random.randint(1,255)}',
             'payload_size': random.randint(1000, 1500),
             'flags': 'PSH-ACK',
@@ -1010,7 +1068,7 @@ def get_latest_traffic():
     
     else:  # C2
         packet.update({
-            'source_ip': '192.168.1.100',
+            'source_ip': '192.168.1.100',  # Compromised host
             'dest_port': random.choice([53, 80, 443]),
             'payload_size': random.randint(100, 500),
             'flags': 'PSH-ACK',
