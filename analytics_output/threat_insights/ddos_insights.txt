@@ -1,0 +1,12 @@
+THREAT PATTERN INSIGHTS: DDoS
+========================================
+
+KEY PREDICTIVE FEATURES
+  Window Size: 0.2648
+  Source Port: 0.1845
+  Flow Direction: 0.1776
+  Packet Size: 0.1556
+  Payload Size: 0.1403
+
+FEATURE RELIABILITY
+  Suspicious Domain: High reliability (CV: 0.03)

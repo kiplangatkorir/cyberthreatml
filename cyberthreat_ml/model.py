@@ -3,6 +3,7 @@ from tensorflow.keras.models import Sequential, save_model, load_model as tf_loa
 from tensorflow.keras.layers import Dense, Dropout
 import json
 import os
+import numpy as np
 
 class ThreatDetectionModel:
     """
@@ -83,8 +84,13 @@ class ThreatDetectionModel:
         Returns:
             Probability predictions (binary or multi-class)
         """
-        preds = self.model.predict(X)
-        return preds.flatten() if self.num_classes is None else preds
+        preds = self.model.predict(X, verbose=0)  # Reduce TF output noise
+        if self.num_classes is None:
+            # For binary classification, ensure we return a 1D array
+            return preds.reshape(-1)
+        else:
+            # For multi-class, return 2D array (samples x classes)
+            return preds.reshape(len(X), -1)
     
     def predict(self, X, threshold=0.5):
         """
@@ -99,9 +105,11 @@ class ThreatDetectionModel:
         """
         probas = self.predict_proba(X)
         if self.num_classes is None:
+            # Binary classification - return 1D array
             return (probas >= threshold).astype(int)
         else:
-            return probas.argmax(axis=1)
+            # Multi-class - return 1D array of class indices
+            return np.argmax(probas, axis=1)
     
     def save_model(self, model_path, metadata_path):
         """

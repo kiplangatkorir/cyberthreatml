@@ -2,25 +2,25 @@
 THREAT DETECTION EXPLANATION REPORT (RULES)
 =================================================
 
-Prediction: Brute Force (Class ID: 3)
+Prediction: Port Scan (Class ID: 1)
 Explanation Method: rules
 
 TOP CONTRIBUTING FEATURES
 -----------------------
-1. Source Port: +0.8079
-2. Packet Interval: +0.7268
-3. Destination Port: +0.6927
-4. Packet Count: +0.5420
-5. Suspicious Port Combo: +0.5309
+1. Urgent Pointer: +0.2104
+2. ICMP Flag: +0.1778
+3. Bytes Transferred: +0.1271
+4. Packet Count: +0.1199
+5. Window Size: +0.0996
 
 INTERPRETATION
 -------------
 Features increasing the likelihood of this threat:
-- Source Port (contribution: +0.8079)
-- Packet Interval (contribution: +0.7268)
-- Destination Port (contribution: +0.6927)
-- Packet Count (contribution: +0.5420)
-- Suspicious Port Combo (contribution: +0.5309)
+- Urgent Pointer (contribution: +0.2104)
+- ICMP Flag (contribution: +0.1778)
+- Bytes Transferred (contribution: +0.1271)
+- Packet Count (contribution: +0.1199)
+- Window Size (contribution: +0.0996)
 
 NOTES
 -----

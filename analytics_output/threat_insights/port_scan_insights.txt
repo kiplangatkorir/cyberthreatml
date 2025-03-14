@@ -1,0 +1,12 @@
+THREAT PATTERN INSIGHTS: Port Scan
+========================================
+
+KEY PREDICTIVE FEATURES
+  Urgent Pointer: 0.2104
+  ICMP Flag: 0.1778
+  Source Port: 0.1718
+  Packet Count: 0.1352
+  Bytes Transferred: 0.1271
+
+FEATURE RELIABILITY
+  Packet Count: High reliability (CV: 0.11)

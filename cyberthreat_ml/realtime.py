@@ -336,7 +336,7 @@ class PacketStreamDetector(RealTimeDetector):
             return []
         
         # Check if model is binary or multi-class
-        is_binary = getattr(self.model, 'is_binary', True)
+        is_binary = getattr(self.model, 'num_classes', None) is None
         
         results = []
         
@@ -346,62 +346,50 @@ class PacketStreamDetector(RealTimeDetector):
             threats = predictions >= self.threshold
             
             # Update threat count for binary classification
-            self.threat_count += sum(threats)
+            self.threat_count += int(np.sum(threats))
             
             # Create result dictionaries
-            for i, idx in enumerate(valid_indices):
-                packet = batch_data[idx]
-                prediction = predictions[i]
-                is_threat = threats[i]
-                
+            for i, (pred, is_threat) in enumerate(zip(predictions, threats)):
+                packet = batch_data[valid_indices[i]]
                 result = {
-                    'id': idx,
+                    'id': valid_indices[i],
                     'timestamp': time.time(),
                     'packet': packet,
-                    'threat_score': float(prediction),
+                    'threat_score': float(pred),
                     'is_threat': bool(is_threat),
                     'threshold': self.threshold,
                     'is_binary': True
                 }
                 results.append(result)
-            
-            logger.debug(f"Processed {len(valid_features)} packets, found {sum(threats)} binary threats")
-            
         else:
             # Multi-class classification
             class_probabilities = self.model.predict_proba(valid_features)
-            predicted_classes = self.model.predict(valid_features)
+            predicted_classes = np.argmax(class_probabilities, axis=1)
             
             # Get class names if available
-            class_names = getattr(self.model, 'model_config', {}).get('class_names', None)
+            class_names = getattr(self.model, 'class_names', None)
             
-            # Count threats (any non-zero class is a threat)
-            threat_count = sum(1 for pc in predicted_classes if pc > 0)
-            self.threat_count += threat_count
+            # Update threat count for multi-class (any non-zero class is a threat)
+            self.threat_count += int(np.sum(predicted_classes > 0))
             
             # Create result dictionaries
-            for i, idx in enumerate(valid_indices):
-                packet = batch_data[idx]
-                probs = class_probabilities[i]
-                pred_class = predicted_classes[i]
-                
+            for i, (probs, pred_class) in enumerate(zip(class_probabilities, predicted_classes)):
+                packet = batch_data[valid_indices[i]]
                 # For multi-class, any non-zero class is considered a threat
-                is_threat = pred_class > 0  # Class 0 is typically "normal"
+                is_threat = pred_class > 0  # Class 0 is "normal"
                 
                 result = {
-                    'id': idx,
+                    'id': valid_indices[i],
                     'timestamp': time.time(),
                     'packet': packet,
-                    'class_probabilities': probs.tolist() if isinstance(probs, np.ndarray) else probs,
+                    'class_probabilities': probs.tolist(),
                     'predicted_class': int(pred_class),
                     'is_threat': bool(is_threat),
-                    'confidence': float(probs[pred_class]) if len(probs) > pred_class else 0.0,
+                    'confidence': float(probs[pred_class]),
                     'threshold': self.threshold,
                     'is_binary': False,
                     'class_names': class_names
                 }
                 results.append(result)
-            
-            logger.debug(f"Processed {len(valid_features)} packets, found {threat_count} multi-class threats")
         
         return results
