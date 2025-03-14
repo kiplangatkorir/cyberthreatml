@@ -9,21 +9,23 @@ class ThreatDetectionModel:
     A neural network model for cyber threat detection.
     """
     
-    def __init__(self, input_shape, model_config=None):
+    def __init__(self, input_shape, num_classes=None, model_config=None):
         """
         Initialize the model with given input shape and optional configuration.
         
         Args:
             input_shape (tuple): Shape of the input data
+            num_classes (int): Number of classes for multi-class classification. If None, defaults to binary.
             model_config (dict): Optional model configuration
         """
         self.input_shape = input_shape
+        self.num_classes = num_classes
         self.model_config = model_config or {
             'hidden_layers': [64, 32],
             'dropout_rate': 0.2,
             'activation': 'relu',
-            'output_activation': 'sigmoid',
-            'loss': 'binary_crossentropy',
+            'output_activation': 'sigmoid' if num_classes is None else 'softmax',
+            'loss': 'binary_crossentropy' if num_classes is None else 'categorical_crossentropy',
             'metrics': ['accuracy'],
             'optimizer': 'adam'
         }
@@ -46,8 +48,9 @@ class ThreatDetectionModel:
             model.add(Dense(units, activation=self.model_config['activation']))
             model.add(Dropout(self.model_config['dropout_rate']))
         
-        # Output layer
-        model.add(Dense(1, activation=self.model_config['output_activation']))
+        # Output layer - binary or multi-class
+        output_units = 1 if self.num_classes is None else self.num_classes
+        model.add(Dense(output_units, activation=self.model_config['output_activation']))
         
         model.compile(
             optimizer=self.model_config['optimizer'],
@@ -78,23 +81,27 @@ class ThreatDetectionModel:
             X: Input features
             
         Returns:
-            Probability predictions
+            Probability predictions (binary or multi-class)
         """
-        return self.model.predict(X).flatten()
+        preds = self.model.predict(X)
+        return preds.flatten() if self.num_classes is None else preds
     
     def predict(self, X, threshold=0.5):
         """
-        Make binary predictions.
+        Make predictions.
         
         Args:
             X: Input features
-            threshold: Classification threshold
+            threshold: Classification threshold (only used for binary classification)
             
         Returns:
-            Binary predictions
+            Predictions (binary or class indices)
         """
         probas = self.predict_proba(X)
-        return (probas >= threshold).astype(int)
+        if self.num_classes is None:
+            return (probas >= threshold).astype(int)
+        else:
+            return probas.argmax(axis=1)
     
     def save_model(self, model_path, metadata_path):
         """
@@ -111,6 +118,7 @@ class ThreatDetectionModel:
         # Save metadata
         metadata = {
             'input_shape': self.input_shape,
+            'num_classes': self.num_classes,
             'model_config': self.model_config
         }
         with open(metadata_path, 'w') as f:
@@ -134,6 +142,7 @@ def load_model(model_path, metadata_path):
     # Create model instance
     model = ThreatDetectionModel(
         input_shape=tuple(metadata['input_shape']),
+        num_classes=metadata.get('num_classes'),
         model_config=metadata['model_config']
     )
     

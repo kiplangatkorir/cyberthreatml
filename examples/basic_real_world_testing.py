@@ -13,6 +13,10 @@ import sys
 import random
 import time
 from datetime import datetime
+import tensorflow as tf
+from tensorflow.keras.utils import to_categorical
+import numpy as np
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
 # Add parent directory to path to import library modules
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -40,12 +44,12 @@ os.makedirs(RESULTS_DIR, exist_ok=True)
 
 # Define attack types
 ATTACK_TYPES = [
-    'Normal',
-    'Brute Force',
-    'DoS/DDoS',
-    'Web Attack',
     'Port Scan',
-    'Data Exfiltration'
+    'Normal',
+    'DoS/DDoS',
+    'Data Exfiltration',
+    'Web Attack',
+    'Brute Force'
 ]
 
 def print_section(title):
@@ -69,46 +73,58 @@ def create_simple_dataset(n_samples=100, n_features=10, class_ratio=0.7):
     print_section("Creating Simple Dataset")
     print(f"Generating {n_samples} samples with {n_features} features")
     
-    # Create feature matrix with random values
+    # Initialize lists for features and labels
     X = []
-    for _ in range(n_samples):
-        # Generate random features between 0 and 1
-        features = [random.random() for _ in range(n_features)]
-        X.append(features)
-    
-    # Create labels (0 = Normal, 1-5 = Attack types)
     y = []
-    normal_samples = int(n_samples * class_ratio)
-    attack_samples = n_samples - normal_samples
+    class_counts = {label: 0 for label in range(len(ATTACK_TYPES))}
     
-    # Create normal samples
-    for _ in range(normal_samples):
-        y.append(0)  # 0 = Normal
+    # Calculate number of samples for each class
+    n_normal = int(n_samples * class_ratio)
+    n_attacks = n_samples - n_normal
     
-    # Create attack samples
-    for _ in range(attack_samples):
-        # Random attack type (1-5)
-        attack_type = random.randint(1, len(ATTACK_TYPES) - 1)
+    # Generate normal traffic
+    for _ in range(n_normal):
+        # Normal traffic has moderate values
+        features = np.random.normal(0.3, 0.1, n_features)
+        X.append(features)
+        y.append(1)  # Normal traffic class
+        class_counts[1] += 1
+    
+    # Generate attack traffic
+    attack_types = [0, 2, 3, 4, 5]  # All types except normal (1)
+    for _ in range(n_attacks):
+        attack_type = random.choice(attack_types)
+        
+        # Different attack types have different patterns
+        if attack_type == 0:  # Port Scan
+            features = np.random.normal(0.8, 0.1, n_features)
+            features[0] = np.random.normal(0.9, 0.05)  # High port activity
+        elif attack_type == 2:  # DoS/DDoS
+            features = np.random.normal(0.7, 0.1, n_features)
+            features[1] = np.random.normal(0.95, 0.05)  # High traffic volume
+        elif attack_type == 3:  # Data Exfiltration
+            features = np.random.normal(0.6, 0.1, n_features)
+            features[2] = np.random.normal(0.85, 0.05)  # High data transfer
+        elif attack_type == 4:  # Web Attack
+            features = np.random.normal(0.65, 0.1, n_features)
+            features[3] = np.random.normal(0.8, 0.05)  # Suspicious HTTP patterns
+        else:  # Brute Force
+            features = np.random.normal(0.75, 0.1, n_features)
+            features[4] = np.random.normal(0.9, 0.05)  # High auth failures
+        
+        X.append(features)
         y.append(attack_type)
+        class_counts[attack_type] += 1
+    
+    # Convert to numpy arrays and shuffle
+    X = np.array(X, dtype=np.float32)
+    y = np.array(y, dtype=np.int32)
     
     # Shuffle the dataset
-    combined = list(zip(X, y))
-    random.shuffle(combined)
-    X, y = zip(*combined)
-    
-    # Count samples per class
-    class_counts = {}
-    for label in y:
-        if label in class_counts:
-            class_counts[label] += 1
-        else:
-            class_counts[label] = 1
-    
-    # Print class distribution
-    print("\nClass distribution:")
-    for label, count in class_counts.items():
-        percentage = (count / n_samples) * 100
-        print(f"  - {ATTACK_TYPES[label]}: {count} samples ({percentage:.2f}%)")
+    indices = np.arange(len(X))
+    np.random.shuffle(indices)
+    X = X[indices]
+    y = y[indices]
     
     # Split into training and test sets
     train_size = int(0.7 * n_samples)
@@ -298,51 +314,35 @@ def evaluate_model_performance(y_true, y_pred):
     Returns:
         dict: Performance metrics
     """
-    # Convert tuples to lists if needed
-    if isinstance(y_true, tuple):
-        y_true = list(y_true)
-    if isinstance(y_pred, tuple):
-        y_pred = list(y_pred)
-        
-    # Calculate accuracy
-    correct = sum(1 for true, pred in zip(y_true, y_pred) if true == pred)
-    accuracy = correct / len(y_true)
+    results = {
+        'accuracy': accuracy_score(y_true, y_pred),
+        'class_metrics': {}
+    }
     
     # Calculate per-class metrics
-    class_metrics = {}
-    for label in set(y_true + y_pred):
-        # True positives
-        tp = sum(1 for true, pred in zip(y_true, y_pred) if true == label and pred == label)
+    for i in range(len(ATTACK_TYPES)):
+        # Convert to binary classification for each class
+        y_true_binary = (y_true == i).astype(int)
+        y_pred_binary = (y_pred == i).astype(int)
         
-        # False positives
-        fp = sum(1 for true, pred in zip(y_true, y_pred) if true != label and pred == label)
+        # Skip if no samples for this class
+        if sum(y_true_binary) == 0:
+            continue
         
-        # False negatives
-        fn = sum(1 for true, pred in zip(y_true, y_pred) if true == label and pred != label)
+        # Calculate metrics
+        precision = precision_score(y_true_binary, y_pred_binary, zero_division=0)
+        recall = recall_score(y_true_binary, y_pred_binary, zero_division=0)
+        f1 = f1_score(y_true_binary, y_pred_binary, zero_division=0)
+        support = sum(y_true_binary)
         
-        # Precision
-        precision = tp / (tp + fp) if (tp + fp) > 0 else 0
-        
-        # Recall
-        recall = tp / (tp + fn) if (tp + fn) > 0 else 0
-        
-        # F1 score
-        f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
-        
-        # Support (number of true instances)
-        support = sum(1 for true in y_true if true == label)
-        
-        class_metrics[label] = {
+        results['class_metrics'][i] = {
             'precision': precision,
             'recall': recall,
             'f1': f1,
             'support': support
         }
     
-    return {
-        'accuracy': accuracy,
-        'class_metrics': class_metrics
-    }
+    return results
 
 def evaluate_signature_based(X_train, y_train, X_test, y_test):
     """
@@ -362,15 +362,23 @@ def evaluate_signature_based(X_train, y_train, X_test, y_test):
     # Create and train the model
     print("Creating and training signature-based model...")
     
+    # Convert labels to one-hot encoding for multi-class
+    y_train_cat = to_categorical(y_train, num_classes=len(ATTACK_TYPES))
+    y_test_cat = to_categorical(y_test, num_classes=len(ATTACK_TYPES))
+    
     # Use real model if available, otherwise use simple model
     if HAS_MODEL:
         model = ThreatDetectionModel(
-            input_shape=(len(X_train[0]),),
+            input_shape=(X_train.shape[1],),
             num_classes=len(ATTACK_TYPES),
             model_config={
-                'hidden_layers': [64, 32],
+                'hidden_layers': [128, 64],
                 'dropout_rate': 0.3,
-                'learning_rate': 0.001
+                'activation': 'relu',
+                'output_activation': 'softmax',  # For multi-class
+                'loss': 'categorical_crossentropy',  # For multi-class
+                'optimizer': 'adam',
+                'metrics': ['accuracy', 'AUC', 'Precision', 'Recall']
             }
         )
     else:
@@ -378,13 +386,26 @@ def evaluate_signature_based(X_train, y_train, X_test, y_test):
     
     # Train the model
     start_time = time.time()
-    history = model.train(X_train, y_train, epochs=5, batch_size=32)
+    history = model.train(
+        X_train, y_train_cat,
+        epochs=10,
+        batch_size=32,
+        validation_split=0.2,
+        callbacks=[
+            tf.keras.callbacks.EarlyStopping(
+                monitor='val_loss',
+                patience=3,
+                restore_best_weights=True
+            )
+        ]
+    )
     training_time = time.time() - start_time
     print(f"Model training completed in {training_time:.2f} seconds")
     
     # Evaluate the model
     print("\nEvaluating model on test set...")
-    y_pred = model.predict(X_test)
+    y_pred_proba = model.predict_proba(X_test)
+    y_pred = y_pred_proba.argmax(axis=1)
     
     # Calculate metrics
     results = evaluate_model_performance(y_test, y_pred)
@@ -419,7 +440,7 @@ def run_simple_anomaly_detection(X_train, y_train, X_test, y_test):
     # Extract normal samples for training
     normal_X_train = []
     for i, label in enumerate(y_train):
-        if label == 0:  # 0 = Normal
+        if label == 1:  # 1 = Normal
             normal_X_train.append(X_train[i])
     
     print(f"Training anomaly detector with {len(normal_X_train)} normal samples")
@@ -465,7 +486,7 @@ def run_simple_anomaly_detection(X_train, y_train, X_test, y_test):
     y_pred_binary = [1 if score > threshold else 0 for score in anomaly_scores]
     
     # Convert ground truth to binary (1 for attack, 0 for normal)
-    y_test_binary = [1 if label > 0 else 0 for label in y_test]
+    y_test_binary = [1 if label > 1 else 0 for label in y_test]
     
     # Calculate metrics
     tp = sum(1 for true, pred in zip(y_test_binary, y_pred_binary) if true == 1 and pred == 1)
