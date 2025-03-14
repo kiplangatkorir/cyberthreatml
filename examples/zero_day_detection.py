@@ -74,20 +74,25 @@ def main():
     input_dim = X_train.shape[1]  # Get actual number of features
     signature_model = ThreatDetectionModel(
         input_shape=(input_dim,),  # Use actual feature dimension
-        num_classes=2,      # Binary: Normal vs Attack
+        num_classes=1,      # Binary classification: single output node
         model_config={
             'hidden_layers': [64, 32, 16],
             'dropout_rate': 0.3,
             'activation': 'relu',
             'output_activation': 'sigmoid',  # Binary classification
             'loss': 'binary_crossentropy',
-            'metrics': ['accuracy'],
+            'metrics': ['accuracy', 'AUC'],  # Added AUC for better anomaly detection evaluation
             'optimizer': 'adam',
             'class_names': ['Normal', 'Attack']
         }
     )
 
     # Train with proper validation split and early stopping
+    print("\nTraining signature-based model...")
+    print(f"Input shape: {input_dim} features")
+    print(f"Training samples: {len(X_train)}")
+    print(f"Validation samples: {len(X_val)}")
+    
     history = signature_model.train(
         X_train, y_train,
         validation_data=(X_val, y_val),
