@@ -17,6 +17,7 @@ import json
 from datetime import datetime
 import threading
 import keras
+import tensorflow as tf
 
 # Create output directories if they don't exist
 os.makedirs('security_output/alerts', exist_ok=True)
@@ -41,172 +42,58 @@ from cyberthreat_ml.realtime import PacketStreamDetector
 from cyberthreat_ml.visualization import ThreatVisualizationDashboard
 from cyberthreat_ml.interpretability import ThreatInterpreter
 from cyberthreat_ml.utils import split_data
-import tensorflow as tf
 
 def main():
-    """
-    Main function demonstrating enterprise security integration.
-    """
+    """Main function to run the enterprise security monitoring system."""
     logger.info("Starting Enterprise Security Monitoring System")
     
-    # Step 1: Load or create a model
+    # Try to load existing model or create new one
     try:
-        model = load_model('models/enterprise_threat_model')
-        logger.info("Loaded existing enterprise threat model")
+        model = tf.keras.models.load_model('models/enterprise_threat_model.keras')
+        logger.info("Loaded existing model")
     except:
         logger.info("No existing model found. Creating and training a new model...")
         model = create_and_train_model()
+        model.save('models/enterprise_threat_model.keras')
         logger.info("Model training completed")
     
-    # Step 2: Set up the feature extractor
+    # Initialize components
     feature_extractor = EnterpriseFeatureExtractor()
-    
-    # Step 3: Set up the visualization dashboard
-    dashboard = ThreatVisualizationDashboard(max_history=500)
-    dashboard.start()
-    logger.info("Threat visualization dashboard started")
-    
-    # Step 4: Define the class names for better interpretability
-    class_names = [
-        "Normal Traffic",
-        "Port Scan",
-        "DDoS",
-        "Brute Force",
-        "Data Exfiltration",
-        "Command & Control"
-    ]
-    
-    feature_names = [
-        "Source Port", "Destination Port", "Packet Size", "Flow Duration",
-        "Bytes Transferred", "Packet Count", "TCP Flags", "Time-to-live",
-        "Inter-arrival Time", "Flow Direction", "Protocol Type", "Window Size",
-        "Payload Length", "Payload Entropy", "Encrypted Payload", "Header Length",
-        "Source IP Entropy", "Dest IP Entropy", "Connection State", "Suspicious Port Combo",
-        "Rate of SYN Packets", "Unique Destinations", "Bytes per Packet", "Fragment Bits",
-        "Packet Sequence"
-    ]
-    
-    # Step 5: Initialize the interpreter for explainability
-    interpreter = ThreatInterpreter(model, feature_names, class_names)
-    interpreter.initialize(np.random.rand(100, 25))  # Background data
-    logger.info("Threat interpreter initialized")
-    
-    # Step 6: Initialize threat data storage
     threat_storage = ThreatStorage()
     
-    # Step 7: Set up the real-time detector
-    detector = PacketStreamDetector(model, feature_extractor)
+    # Start visualization dashboard
+    dashboard = ThreatVisualizationDashboard(threat_storage, max_history=500)
+    dashboard_thread = threading.Thread(target=dashboard.run)
+    dashboard_thread.start()
+    logger.info("Threat visualization dashboard started")
     
-    # Define the SIEM integration function
-    def send_to_siem(alert_data):
-        """Simulate sending an alert to a SIEM system."""
-        # In a real implementation, this would use the SIEM system's API
-        # For this example, we'll just save it to a file
-        timestamp = datetime.now().strftime("%Y%m%d-%H%M%S.%f")
-        filename = f"security_output/alerts/alert_{timestamp}.json"
-        with open(filename, 'w') as f:
-            json.dump(alert_data, f, indent=2)
-        logger.info(f"Alert sent to SIEM: {alert_data['alert_type']} from {alert_data['source_ip']}")
+    # Initialize threat interpreter
+    interpreter = ThreatInterpreter(model, feature_extractor)
+    logger.info("Threat interpreter initialized")
     
-    # Define severity levels for different threat types
-    severity_levels = {
-        "Port Scan": "MEDIUM",
-        "DDoS": "HIGH",
-        "Brute Force": "HIGH",
-        "Data Exfiltration": "CRITICAL",
-        "Command & Control": "CRITICAL"
-    }
-    
-    # Define callback for threat detection
-    def on_threat_detected(result):
-        if result['class_idx'] > 0:  # Skip normal traffic
-            class_name = class_names[result['class_idx']]
-            severity = severity_levels.get(class_name, "LOW")
-            
-            # Log the detection
-            logger.warning(f"THREAT DETECTED: {class_name} (Confidence: {result['confidence']:.4f}, Severity: {severity})")
-            
-            # Add to the dashboard
-            dashboard_data = {
-                'timestamp': time.time(),
-                'class_name': class_name,
-                'class_idx': result['class_idx'],
-                'confidence': result['confidence'],
-                'source_ip': result.get('source_ip', '192.168.1.1'),
-                'destination_ip': result.get('destination_ip', '10.0.0.1'),
-                'features': result['features'],
-                'severity': severity
-            }
-            dashboard.add_threat(dashboard_data)
-            
-            # Store the threat for analysis
-            threat_storage.add_threat(dashboard_data)
-            
-            # Create and send a SIEM alert
-            alert_data = {
-                'timestamp': datetime.now().isoformat(),
-                'alert_type': class_name,
-                'severity': severity,
-                'confidence': float(result['confidence']),
-                'source_ip': result.get('source_ip', '192.168.1.1'),
-                'destination_ip': result.get('destination_ip', '10.0.0.1'),
-                'detector': 'CyberThreat-ML',
-                'description': f"ML-detected {class_name} threat with {result['confidence']:.2f} confidence",
-                'recommended_action': get_recommended_action(class_name)
-            }
-            send_to_siem(alert_data)
-            
-            # For high-severity threats, generate an explanation immediately
-            if severity in ("HIGH", "CRITICAL") and result['confidence'] > 0.3:
-                explanation = interpreter.explain_prediction(
-                    result['features'],
-                    method="auto",
-                    target_class=result['class_idx'],
-                    top_features=5
-                )
-                
-                # Save the explanation
-                timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
-                report_path = f"security_output/reports/{class_name.lower().replace(' ', '_')}_{timestamp}_report.txt"
-                interpreter.create_feature_importance_report(explanation, output_path=report_path)
-                
-                # Also save a visualization
-                plot_path = f"security_output/reports/{class_name.lower().replace(' ', '_')}_{timestamp}_explanation.png"
-                interpreter.plot_explanation(explanation, plot_type="bar", save_path=plot_path)
-                
-                logger.info(f"Generated threat explanation report: {report_path}")
-    
-    # Register the callback
-    detector.register_threat_callback(on_threat_detected)
-    
-    # Define callback for batch processing
-    def on_batch_processed(results):
-        threats = sum(1 for r in results if r['class_idx'] > 0)
-        logger.info(f"Processed batch: {len(results)} packets, {threats} threats")
-    
-    # Register the batch callback
-    detector.register_processing_callback(on_batch_processed)
-    
-    # Start the detector
-    detector.start()
+    # Start real-time detection
+    stop_event = threading.Event()
+    detector_thread = threading.Thread(
+        target=real_time_detector,
+        args=(model, feature_extractor, threat_storage, interpreter, stop_event)
+    )
+    detector_thread.start()
     logger.info("Real-time threat detector started")
     
-    # Step 8: Simulate network traffic (in a real system, this would be actual traffic)
+    # Start traffic monitoring
     logger.info("Starting network traffic monitoring...")
-    try:
-        simulate_enterprise_traffic(detector)
-    except KeyboardInterrupt:
-        logger.info("Monitoring interrupted by user")
+    logger.info("Starting traffic simulation...")
     
-    # Step 9: Generate a security report based on collected threats
-    report = generate_security_report(threat_storage, interpreter)
+    # Simulate traffic for 60 seconds
+    simulate_enterprise_traffic(60, threat_storage)
     
-    # Step 10: Cleanup
-    detector.stop()
-    dashboard.save_snapshot('security_output/dashboards/final_dashboard.png')
+    # Stop all threads
+    stop_event.set()
+    detector_thread.join()
     dashboard.stop()
+    dashboard_thread.join()
+    
     logger.info("Enterprise security monitoring completed")
-
 
 def create_and_train_model():
     """Create and train the threat detection model."""
@@ -229,8 +116,8 @@ def create_and_train_model():
     )
     
     # Create training data
-    X_train, y_train = create_enterprise_dataset(num_samples=4000)
-    X_val, y_val = create_enterprise_dataset(num_samples=1000)
+    X_train, y_train = create_enterprise_dataset(n_samples=4000)
+    X_val, y_val = create_enterprise_dataset(n_samples=1000)
     
     # Train model
     model.fit(
@@ -544,12 +431,13 @@ def get_recommended_action(threat_type):
     )
 
 
-def simulate_enterprise_traffic(detector):
+def simulate_enterprise_traffic(duration, threat_storage):
     """
     Simulate enterprise network traffic for demonstration.
     
     Args:
-        detector (PacketStreamDetector): The real-time detector.
+        duration (int): Duration of traffic simulation in seconds.
+        threat_storage (ThreatStorage): Storage for detected threats.
     """
     logger.info("Starting traffic simulation...")
     
@@ -670,13 +558,13 @@ def simulate_enterprise_traffic(detector):
         'c2': generate_c2
     }
     
-    # Simulate traffic for 60 seconds
+    # Simulate traffic for specified duration
     start_time = time.time()
     packet_count = 0
     attack_probability = 0.1  # 10% chance of attack packets
     
     try:
-        while time.time() - start_time < 60:
+        while time.time() - start_time < duration:
             # Determine packet type
             if random.random() < attack_probability:
                 packet_type = random.choice(['port_scan', 'ddos', 'brute_force', 'data_exfil', 'c2'])
@@ -686,12 +574,11 @@ def simulate_enterprise_traffic(detector):
             # Generate and process packet
             packet = packet_generators[packet_type]()
             packet['type'] = packet_type
-            detector.process_packet(packet)
-            
-            packet_count += 1
             
             # Add some delay to simulate real traffic
             time.sleep(random.random() * 0.1)
+            
+            packet_count += 1
     
     except KeyboardInterrupt:
         logger.info("Traffic simulation interrupted by user")

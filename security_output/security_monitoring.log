@@ -200,3 +200,9 @@
 2025-03-14 14:26:56,041 - enterprise_security - INFO - Starting traffic simulation...
 2025-03-14 14:27:56,091 - enterprise_security - INFO - Traffic simulation completed. Processed 1201 packets
 2025-03-14 14:27:58,381 - enterprise_security - INFO - Enterprise security monitoring completed
+2025-03-14 14:29:03,861 - enterprise_security - INFO - Starting Enterprise Security Monitoring System
+2025-03-14 14:29:03,861 - enterprise_security - INFO - No existing model found. Creating and training a new model...
+2025-03-14 14:33:32,568 - enterprise_security - INFO - Starting Enterprise Security Monitoring System
+2025-03-14 14:33:32,735 - enterprise_security - INFO - Loaded existing model
+2025-03-14 14:34:36,757 - enterprise_security - INFO - Starting Enterprise Security Monitoring System
+2025-03-14 14:34:36,964 - enterprise_security - INFO - Loaded existing model
