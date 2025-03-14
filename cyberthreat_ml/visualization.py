@@ -53,11 +53,12 @@ class ThreatVisualizationDashboard:
         self.fig = None
         self.axes = None
         self.animation = None
-        self._setup_plot()
         
         # Threading
         self.running = False
-        self.update_thread = None
+        
+        # Initialize plot in the main thread
+        self._setup_plot()
         
     def _setup_plot(self):
         """
@@ -66,6 +67,9 @@ class ThreatVisualizationDashboard:
         if not VISUALIZATION_AVAILABLE:
             return
             
+        # Use plt.ion() for interactive mode
+        plt.ion()
+        
         # Create figure and subplots
         self.fig = plt.figure(figsize=(15, 10))
         self.fig.canvas.manager.set_window_title('CyberThreat-ML Real-time Monitoring')
@@ -141,19 +145,17 @@ class ThreatVisualizationDashboard:
             
         self.running = True
         
-        # Start animation
+        # Start animation in the main thread
         self.animation = animation.FuncAnimation(
             self.fig, 
-            self._update_plots, 
+            self._update_plots,
             interval=self.update_interval * 1000,  # Convert to milliseconds
-            blit=False
+            blit=False,
+            save_count=100  # Limit the cache to 100 frames
         )
         
-        # Start in a separate thread so it doesn't block
-        self.update_thread = threading.Thread(target=self._show_dashboard)
-        self.update_thread.daemon = True
-        self.update_thread.start()
-        
+        # Show the plot in interactive mode
+        plt.show(block=False)
         logger.info("Threat visualization dashboard started")
         
     def stop(self):
@@ -166,7 +168,9 @@ class ThreatVisualizationDashboard:
         self.running = False
         if self.animation:
             self.animation.event_source.stop()
-            
+        
+        # Close all figures
+        plt.close('all')
         logger.info("Threat visualization dashboard stopped")
         
     def _show_dashboard(self):

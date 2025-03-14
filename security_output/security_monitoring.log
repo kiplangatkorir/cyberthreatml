@@ -220,3 +220,739 @@
 2025-03-14 14:39:18,050 - enterprise_security - INFO - Starting traffic simulation...
 2025-03-14 14:40:18,090 - enterprise_security - INFO - Traffic simulation completed. Processed 1210 packets
 2025-03-14 14:40:18,091 - enterprise_security - INFO - Enterprise security monitoring completed
+2025-03-14 14:42:03,649 - enterprise_security - INFO - Starting Enterprise Security Monitoring System
+2025-03-14 14:42:03,851 - enterprise_security - INFO - Loaded existing model
+2025-03-14 14:42:03,852 - enterprise_security - INFO - Threat interpreter initialized
+2025-03-14 14:42:03,854 - enterprise_security - INFO - Real-time threat detector started
+2025-03-14 14:42:04,330 - enterprise_security - INFO - Threat visualization dashboard started
+2025-03-14 14:42:04,330 - enterprise_security - INFO - Starting network traffic monitoring...
+2025-03-14 14:42:04,330 - enterprise_security - INFO - Starting traffic simulation...
+2025-03-14 14:42:04,330 - enterprise_security - INFO - Starting traffic simulation...
+2025-03-14 14:42:04,379 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:04,555 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:04,733 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:04,914 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:05,091 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:05,271 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:05,449 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:05,643 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:05,815 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:05,989 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:06,159 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:06,333 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:06,520 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:06,696 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:06,881 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:07,059 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:07,231 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:07,411 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:07,583 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:07,765 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:07,938 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:08,118 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:08,300 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:08,476 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:08,666 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:08,840 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:09,020 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:09,191 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:09,361 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:09,539 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:09,715 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:09,905 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:10,080 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:10,255 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:10,428 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:10,603 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:10,789 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:10,963 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:11,149 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:11,324 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:11,496 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:11,671 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:11,854 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:12,048 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:12,221 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:12,393 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:12,575 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:12,755 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:12,950 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:13,123 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:13,297 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:13,473 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:13,653 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:13,846 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:14,026 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:14,200 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:14,370 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:14,543 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:14,737 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:14,911 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:15,098 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:15,326 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:15,523 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:15,703 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:15,879 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:16,053 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:16,225 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:16,404 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:16,580 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:16,773 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:16,949 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:17,123 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:17,295 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:17,472 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:17,667 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:17,844 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:18,020 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:18,190 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:18,369 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:18,555 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:18,729 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:18,904 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:19,077 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:19,261 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:19,459 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:19,640 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:19,820 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:19,999 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:20,172 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:20,350 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:20,529 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:20,718 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:20,895 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:21,075 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:21,250 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:21,422 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:21,600 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:21,780 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:21,973 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:22,162 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:22,335 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:22,511 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:22,691 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:22,883 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:23,059 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:23,234 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:23,420 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:23,597 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:23,783 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:23,954 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:24,128 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:24,334 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:24,518 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:24,710 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:24,897 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:25,085 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:25,298 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:25,481 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:25,654 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:25,830 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:26,008 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:26,193 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:26,399 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:26,575 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:26,780 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:26,957 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:27,155 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:27,328 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:27,499 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:27,669 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:27,849 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:28,037 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:28,211 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:28,420 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:28,593 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:28,769 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:28,945 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:29,121 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:29,313 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:29,495 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:29,674 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:29,849 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:30,030 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:30,216 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:30,395 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:30,596 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:30,771 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:30,947 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:31,119 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:31,293 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:31,475 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:31,648 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:31,841 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:32,012 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:32,188 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:32,359 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:32,536 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:32,721 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:32,895 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:33,091 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:33,265 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:33,437 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:33,607 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:33,779 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:33,967 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:34,137 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:34,313 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:34,484 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:34,658 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:34,859 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:35,033 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:35,208 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:35,380 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:35,559 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:35,758 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:35,935 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:36,111 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:36,284 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:36,463 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:36,659 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:36,836 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:37,005 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:37,183 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:37,358 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:37,554 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:37,726 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:37,901 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:38,074 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:38,256 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:38,447 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:38,625 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:38,812 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:38,986 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:39,159 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:39,332 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:39,520 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:39,856 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:40,033 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:40,209 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:40,390 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:40,586 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:40,755 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:40,929 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:41,104 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:41,279 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:41,464 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:41,637 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:41,839 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:42,011 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:42,184 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:42,359 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:42,533 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:42,727 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:42,905 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:43,087 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:43,268 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:43,446 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:43,639 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:43,820 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:44,002 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:44,183 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:44,364 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:44,549 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:44,732 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:44,912 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:45,099 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:45,291 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:45,489 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:45,677 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:45,986 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:46,249 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:46,498 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:46,719 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:46,960 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:47,170 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:47,357 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:47,556 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:47,735 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:47,921 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:48,107 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:48,292 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:48,585 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:48,799 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:49,008 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:49,228 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:49,461 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:49,645 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:49,836 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:50,027 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:50,249 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:50,432 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:50,669 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:50,881 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:51,109 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:51,327 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:51,597 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:51,919 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:52,147 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:52,479 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:52,754 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:53,059 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:53,357 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:53,679 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:53,940 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:54,247 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:54,581 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:54,845 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:55,156 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:55,455 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:55,754 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:56,055 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:56,359 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:56,699 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:56,993 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:57,292 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:57,604 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:57,920 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:58,220 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:58,523 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:58,849 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:59,191 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:59,547 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:42:59,835 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:43:00,186 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:43:00,469 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:43:00,755 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:43:01,157 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:43:01,445 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:43:01,730 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:43:02,002 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:43:02,330 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:43:02,614 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:43:02,920 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:43:03,248 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:43:03,527 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:43:03,827 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:43:04,079 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:43:04,355 - enterprise_security - INFO - Traffic simulation completed. Processed 1184 packets
+2025-03-14 14:43:04,429 - root - ERROR - Error processing batch: 'ThreatInterpreter' object has no attribute 'interpret_prediction'
+2025-03-14 14:43:04,530 - root - INFO - Real-time detector stopped
+2025-03-14 14:43:04,531 - enterprise_security - INFO - Enterprise security monitoring completed
+2025-03-14 14:48:11,568 - enterprise_security - INFO - Starting Enterprise Security Monitoring System
+2025-03-14 14:48:11,749 - enterprise_security - INFO - Loaded existing model
+2025-03-14 14:48:11,753 - enterprise_security - INFO - Threat interpreter initialized
+2025-03-14 14:48:11,755 - enterprise_security - INFO - Real-time threat detector started
+2025-03-14 14:48:12,183 - enterprise_security - INFO - Threat visualization dashboard started
+2025-03-14 14:48:12,328 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:12,347 - enterprise_security - INFO - Starting network traffic monitoring...
+2025-03-14 14:48:12,347 - enterprise_security - INFO - Starting traffic simulation...
+2025-03-14 14:48:12,347 - enterprise_security - INFO - Starting traffic simulation...
+2025-03-14 14:48:12,603 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:12,855 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:13,114 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:13,385 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:13,634 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:13,896 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:14,141 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:14,388 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:14,642 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:14,958 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:15,231 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:15,479 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:15,736 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:15,979 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:16,227 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:16,483 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:16,740 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:16,980 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:17,236 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:17,498 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:17,743 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:18,014 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:18,269 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:18,535 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:18,789 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:19,032 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:19,274 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:19,525 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:19,792 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:20,046 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:20,314 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:20,581 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:20,830 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:21,083 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:21,341 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:21,594 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:21,847 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:22,099 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:22,346 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:22,591 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:22,842 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:23,093 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:23,340 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:23,595 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:23,844 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:24,109 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:24,354 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:24,645 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:24,904 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:25,169 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:25,416 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:25,704 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:25,952 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:26,233 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:26,494 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:26,748 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:26,994 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:27,234 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:27,498 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:27,745 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:28,016 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:28,296 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:28,549 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:28,803 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:29,076 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:29,326 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:29,594 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:29,840 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:30,095 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:30,341 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:30,594 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:30,851 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:31,106 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:31,373 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:31,629 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:31,910 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:32,171 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:32,428 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:32,698 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:32,941 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:33,185 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:33,447 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:33,706 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:33,952 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:34,215 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:34,461 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:34,723 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:34,971 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:35,256 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:35,506 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:35,757 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:36,003 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:36,245 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:36,497 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:36,741 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:37,003 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:37,256 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:37,667 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:37,920 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:38,181 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:38,443 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:38,708 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:38,972 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:39,222 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:39,480 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:39,730 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:39,996 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:40,257 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:40,538 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:40,818 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:41,062 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:41,309 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:41,568 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:41,860 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:42,135 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:42,427 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:42,672 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:42,938 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:43,203 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:43,479 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:43,755 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:44,028 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:44,297 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:44,582 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:44,852 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:45,134 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:45,434 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:45,725 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:46,006 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:46,275 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:46,545 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:46,821 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:47,128 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:47,420 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:47,705 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:47,987 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:48,244 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:48,507 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:48,775 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:49,036 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:49,297 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:49,574 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:49,857 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:50,127 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:50,408 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:50,835 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:51,189 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:51,586 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:52,002 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:52,329 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:52,724 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:53,088 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:53,444 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:53,792 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:54,148 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:54,543 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:54,987 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:55,286 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:55,736 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:56,257 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:56,820 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:57,323 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:57,843 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:58,377 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:59,030 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:48:59,553 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:00,071 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:00,584 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:01,081 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:01,485 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:01,964 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:02,489 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:02,975 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:03,475 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:03,990 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:04,483 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:04,933 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:05,471 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:05,979 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:06,461 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:06,939 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:07,491 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:07,982 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:08,459 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:09,007 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:09,515 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:10,060 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:10,325 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:10,632 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:10,895 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:11,158 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:11,435 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:11,708 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:11,986 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:12,262 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:12,379 - enterprise_security - INFO - Traffic simulation completed. Processed 1170 packets
+2025-03-14 14:49:12,557 - root - ERROR - Error processing batch: arrays used as indices must be of integer (or boolean) type
+2025-03-14 14:49:12,657 - root - INFO - Real-time detector stopped
+2025-03-14 14:49:12,658 - enterprise_security - INFO - Enterprise security monitoring completed
+2025-03-14 14:50:42,964 - enterprise_security - INFO - Starting Enterprise Security Monitoring System
+2025-03-14 14:50:43,162 - enterprise_security - INFO - Loaded existing model
+2025-03-14 14:50:43,460 - shap - WARNING - Using 1000 background data samples could cause slower run times. Consider using shap.sample(data, K) or shap.kmeans(data, K) to summarize the background as K samples.
+2025-03-14 14:50:43,461 - enterprise_security - INFO - Threat interpreter initialized
+2025-03-14 14:50:43,463 - enterprise_security - INFO - Real-time threat detector started
+2025-03-14 14:50:44,048 - enterprise_security - INFO - Threat visualization dashboard started
+2025-03-14 14:50:44,048 - enterprise_security - INFO - Starting network traffic monitoring...
+2025-03-14 14:50:44,048 - enterprise_security - INFO - Starting traffic simulation...
+2025-03-14 14:50:44,048 - enterprise_security - INFO - Starting traffic simulation...
+2025-03-14 14:50:44,541 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:50:44,541 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:50:44,541 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:50:45,246 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:50:45,246 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:50:45,246 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:50:45,917 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:50:45,917 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:50:45,917 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:50:46,605 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:50:46,606 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:50:46,606 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:50:47,372 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:50:47,373 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:50:47,373 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:50:48,078 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:50:48,220 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:50:48,220 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:50:48,860 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:50:48,861 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:50:48,861 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:50:49,596 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:50:49,596 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:50:49,597 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:50:50,466 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:50:50,466 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:50:50,466 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:50:51,429 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:50:51,429 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:50:51,429 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:50:52,282 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:50:52,282 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:50:52,282 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:50:53,080 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:50:53,080 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:50:53,080 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:50:53,936 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:50:53,936 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:50:53,936 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:50:54,807 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:50:54,807 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:50:54,807 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:50:55,698 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:50:55,698 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:50:55,698 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:50:56,576 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:50:56,576 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:50:56,576 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:50:57,479 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:50:57,479 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:50:57,479 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:50:58,299 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:50:58,299 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:50:58,299 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:50:59,111 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:50:59,111 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:50:59,112 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:50:59,931 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:50:59,932 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:50:59,932 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:00,796 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:00,796 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:00,796 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:01,611 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:01,626 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:01,626 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:02,469 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:02,469 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:02,469 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:03,309 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:03,309 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:03,310 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:04,138 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:04,139 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:04,139 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:04,988 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:04,988 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:04,988 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:06,082 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:06,082 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:06,082 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:06,973 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:06,973 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:06,973 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:07,855 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:07,855 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:07,855 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:08,743 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:08,743 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:08,743 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:09,633 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:09,633 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:09,633 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:10,545 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:10,545 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:10,545 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:11,458 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:11,459 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:11,459 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:12,380 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:12,381 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:12,381 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:13,324 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:13,324 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:13,324 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:14,229 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:14,229 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:14,229 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:15,125 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:15,135 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:15,135 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:16,054 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:16,054 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:16,054 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:16,974 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:16,974 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:16,974 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:17,861 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:17,865 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:17,865 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:18,747 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:18,747 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:18,747 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:19,709 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:19,709 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:19,709 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:20,612 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:20,612 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:20,612 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:21,558 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:21,559 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:21,559 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:22,491 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:22,491 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:22,491 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:23,348 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:23,544 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:23,544 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:24,475 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:24,476 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:24,476 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:25,395 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:25,395 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:25,396 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:26,314 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:26,315 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:26,316 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:27,210 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:27,211 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:27,211 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:28,147 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:28,147 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:28,147 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:29,046 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:29,046 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:29,047 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:29,931 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:29,931 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:29,932 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:30,839 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:30,839 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:30,839 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:31,701 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:31,701 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:31,701 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:32,597 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:32,597 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:32,597 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:33,484 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:33,485 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:33,485 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:34,407 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:34,407 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:34,407 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:35,278 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:35,279 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:35,279 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:36,200 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:36,200 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:36,200 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:37,152 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:37,153 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:37,153 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:38,059 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:38,059 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:38,059 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:38,959 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:38,959 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:38,959 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:39,889 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:39,889 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:39,889 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:40,778 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:40,778 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:40,779 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:41,664 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:41,665 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:41,665 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:42,592 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:42,592 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:42,593 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:43,510 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:43,510 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:43,510 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:44,057 - enterprise_security - INFO - Traffic simulation completed. Processed 1199 packets
+2025-03-14 14:51:44,436 - root - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:51:44,436 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:51:44,436 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
+2025-03-14 14:51:44,537 - root - INFO - Real-time detector stopped
+2025-03-14 14:51:44,802 - enterprise_security - INFO - Enterprise security monitoring completed

@@ -50,6 +50,12 @@ def main():
     # Try to load existing model or create new one
     try:
         model = tf.keras.models.load_model('models/enterprise_threat_model.keras')
+        
+        # Add predict_proba method for SHAP
+        def predict_proba(self, x):
+            return self.predict(x)
+        
+        model.predict_proba = predict_proba.__get__(model)
         logger.info("Loaded existing model")
     except:
         logger.info("No existing model found. Creating and training a new model...")
@@ -61,13 +67,21 @@ def main():
     feature_extractor = EnterpriseFeatureExtractor()
     threat_storage = ThreatStorage()
     
-    # Start visualization dashboard
-    dashboard = ThreatVisualizationDashboard(max_history=500)
-    dashboard.start()  
-    logger.info("Threat visualization dashboard started")
+    # Initialize threat interpreter with feature names
+    feature_names = [
+        "Source Port", "Destination Port", "Packet Size", "Flow Duration",
+        "Bytes Transferred", "Packet Count", "TCP Flags", "Time-to-live",
+        "Inter-arrival Time", "Flow Direction", "Protocol Type", "Window Size",
+        "Payload Length", "Payload Entropy", "Encrypted Payload", "Header Length",
+        "Source IP Entropy", "Dest IP Entropy", "Connection State", "Suspicious Port Combo",
+        "Rate of SYN Packets", "Unique Destinations", "Bytes per Packet", "Fragment Bits",
+        "Packet Sequence"
+    ]
+    interpreter = ThreatInterpreter(model, feature_names=feature_names)
     
-    # Initialize threat interpreter
-    interpreter = ThreatInterpreter(model, feature_extractor)
+    # Initialize interpreter with background data
+    X_background, _ = create_enterprise_dataset(n_samples=1000)
+    interpreter.initialize(X_background)
     logger.info("Threat interpreter initialized")
     
     # Start real-time detection
@@ -79,32 +93,47 @@ def main():
     detector_thread.start()
     logger.info("Real-time threat detector started")
     
+    # Start visualization dashboard (in main thread)
+    dashboard = ThreatVisualizationDashboard(max_history=500)
+    dashboard.start()
+    logger.info("Threat visualization dashboard started")
+    
     # Start traffic monitoring
     logger.info("Starting network traffic monitoring...")
     logger.info("Starting traffic simulation...")
     
-    # Simulate traffic for 60 seconds
-    simulate_enterprise_traffic(60, threat_storage)
-    
-    # Stop all threads
-    stop_event.set()
-    detector_thread.join()
-    dashboard.stop()
-    
-    logger.info("Enterprise security monitoring completed")
+    try:
+        # Simulate traffic for 60 seconds
+        simulate_enterprise_traffic(60, threat_storage)
+    except KeyboardInterrupt:
+        logger.info("Monitoring interrupted by user")
+    finally:
+        # Stop all threads
+        stop_event.set()
+        detector_thread.join()
+        dashboard.stop()
+        
+        logger.info("Enterprise security monitoring completed")
 
 def create_and_train_model():
     """Create and train the threat detection model."""
     # Define model architecture
-    model = keras.Sequential([
-        keras.layers.Dense(256, activation='relu', input_shape=(25,)),
-        keras.layers.Dropout(0.3),
-        keras.layers.Dense(128, activation='relu'),
-        keras.layers.Dropout(0.3),
-        keras.layers.Dense(64, activation='relu'),
-        keras.layers.Dropout(0.3),
-        keras.layers.Dense(1, activation='sigmoid')
-    ])
+    inputs = keras.Input(shape=(25,))
+    x = keras.layers.Dense(256, activation='relu')(inputs)
+    x = keras.layers.Dropout(0.3)(x)
+    x = keras.layers.Dense(128, activation='relu')(x)
+    x = keras.layers.Dropout(0.3)(x)
+    x = keras.layers.Dense(64, activation='relu')(x)
+    x = keras.layers.Dropout(0.3)(x)
+    outputs = keras.layers.Dense(1, activation='sigmoid')(x)
+    
+    model = keras.Model(inputs=inputs, outputs=outputs)
+    
+    # Add predict_proba method for SHAP
+    def predict_proba(self, x):
+        return self.predict(x)
+    
+    model.predict_proba = predict_proba.__get__(model)
     
     # Compile model
     model.compile(
@@ -439,116 +468,76 @@ def simulate_enterprise_traffic(duration, threat_storage):
     """
     logger.info("Starting traffic simulation...")
     
-    # Common enterprise ports and protocols
-    common_ports = {
-        'http': 80, 'https': 443, 'dns': 53, 'smb': 445,
-        'ssh': 22, 'rdp': 3389, 'sql': 1433, 'ldap': 389
-    }
-    
-    def generate_normal_packet():
-        """Generate a normal traffic packet."""
-        service = random.choice(list(common_ports.keys()))
+    # Packet generators for different types of traffic
+    def generate_normal():
         return {
-            'source_port': random.randint(49152, 65535),
-            'dest_port': common_ports[service],
-            'size': random.randint(64, 1500),
-            'protocol': 'tcp',
-            'duration': random.randint(1, 1000),
-            'bytes': random.randint(100, 1500),
-            'packet_count': random.randint(1, 10),
-            'tcp_flags': random.randint(0, 255),
-            'ttl': random.randint(32, 128),
-            'inter_arrival_time': random.randint(1, 100),
-            'direction': random.choice(['inbound', 'outbound']),
-            'window_size': random.randint(1024, 65535),
-            'payload': os.urandom(random.randint(10, 100)),
-            'is_encrypted': service == 'https',
-            'header': os.urandom(20),
-            'source_ip': f"192.168.{random.randint(1,254)}.{random.randint(1,254)}",
-            'dest_ip': f"10.0.{random.randint(1,254)}.{random.randint(1,254)}",
-            'connection_state': random.choice(['new', 'established', 'closed']),
-            'syn_rate': random.random() * 0.1,
-            'unique_dests': random.randint(1, 5),
-            'bytes_per_packet': random.randint(100, 1000),
-            'fragment_bits': random.randint(0, 8),
-            'sequence_number': random.randint(0, 1000000)
+            'source_ip': f'192.168.{random.randint(1,255)}.{random.randint(1,255)}',
+            'dest_ip': f'10.0.{random.randint(1,255)}.{random.randint(1,255)}',
+            'source_port': random.randint(1024, 65535),
+            'dest_port': random.choice([80, 443, 22, 53]),
+            'protocol': random.choice(['TCP', 'UDP']),
+            'payload_size': random.randint(64, 1500),
+            'flags': random.choice(['ACK', 'PSH-ACK', 'SYN', 'FIN'])
         }
     
     def generate_port_scan():
-        """Generate a port scan packet."""
-        packet = generate_normal_packet()
-        packet.update({
-            'source_port': random.randint(49152, 65535),
-            'dest_port': random.randint(1, 1024),
-            'size': random.randint(40, 60),
-            'bytes': random.randint(40, 60),
-            'packet_count': 1,
-            'tcp_flags': 2,  # SYN
-            'inter_arrival_time': random.randint(1, 10),
-            'syn_rate': random.random() * 0.9 + 0.1,
-            'unique_dests': random.randint(50, 100)
-        })
-        return packet
+        return {
+            'source_ip': f'192.168.{random.randint(1,255)}.{random.randint(1,255)}',
+            'dest_ip': '10.0.0.1',  # Fixed target
+            'source_port': random.randint(1024, 65535),
+            'dest_port': random.randint(1, 1024),  # Low ports
+            'protocol': 'TCP',
+            'payload_size': 64,  # Small packets
+            'flags': 'SYN'  # SYN scanning
+        }
     
     def generate_ddos():
-        """Generate a DDoS packet."""
-        packet = generate_normal_packet()
-        packet.update({
-            'source_ip': f"{random.randint(1,254)}.{random.randint(1,254)}.{random.randint(1,254)}.{random.randint(1,254)}",
-            'size': random.randint(500, 1500),
-            'packet_count': random.randint(100, 1000),
-            'bytes': random.randint(1000, 1500),
-            'syn_rate': random.random() * 0.5 + 0.5,
-            'unique_dests': 1,
-            'bytes_per_packet': random.randint(500, 1500)
-        })
-        return packet
+        return {
+            'source_ip': f'{random.randint(1,255)}.{random.randint(1,255)}.{random.randint(1,255)}.{random.randint(1,255)}',
+            'dest_ip': '10.0.0.1',  # Fixed target
+            'source_port': random.randint(1024, 65535),
+            'dest_port': 80,  # Web server
+            'protocol': 'TCP',
+            'payload_size': random.randint(500, 1500),
+            'flags': random.choice(['SYN', 'ACK', 'PSH-ACK'])
+        }
     
     def generate_brute_force():
-        """Generate a brute force packet."""
-        packet = generate_normal_packet()
-        packet.update({
-            'dest_port': random.choice([22, 3389, 445]),
-            'size': random.randint(100, 200),
-            'bytes': random.randint(100, 200),
-            'tcp_flags': 24,  # PSH + ACK
-            'connection_state': 'new',
-            'syn_rate': random.random() * 0.3,
-            'unique_dests': 1
-        })
-        return packet
+        return {
+            'source_ip': f'192.168.{random.randint(1,255)}.{random.randint(1,255)}',
+            'dest_ip': '10.0.0.2',  # Authentication server
+            'source_port': random.randint(1024, 65535),
+            'dest_port': 22,  # SSH
+            'protocol': 'TCP',
+            'payload_size': random.randint(100, 300),
+            'flags': 'PSH-ACK'
+        }
     
     def generate_data_exfil():
-        """Generate a data exfiltration packet."""
-        packet = generate_normal_packet()
-        packet.update({
-            'dest_port': random.choice([443, 53, 6667]),
-            'size': random.randint(1000, 1500),
-            'bytes': random.randint(10000, 50000),
-            'is_encrypted': True,
-            'direction': 'outbound',
-            'payload': os.urandom(random.randint(500, 1000)),
-            'bytes_per_packet': random.randint(1000, 1500)
-        })
-        return packet
+        return {
+            'source_ip': '192.168.1.100',  # Compromised host
+            'dest_ip': f'{random.randint(1,255)}.{random.randint(1,255)}.{random.randint(1,255)}.{random.randint(1,255)}',
+            'source_port': random.randint(1024, 65535),
+            'dest_port': random.randint(1024, 65535),
+            'protocol': 'TCP',
+            'payload_size': random.randint(1000, 1500),  # Large packets
+            'flags': 'PSH-ACK'
+        }
     
     def generate_c2():
-        """Generate a command & control packet."""
-        packet = generate_normal_packet()
-        packet.update({
-            'dest_port': random.choice([443, 53, 80]),
-            'size': random.randint(50, 200),
-            'bytes': random.randint(50, 200),
-            'is_encrypted': True,
-            'inter_arrival_time': random.randint(5000, 10000),
-            'payload': os.urandom(random.randint(50, 100)),
-            'connection_state': 'established'
-        })
-        return packet
+        return {
+            'source_ip': '192.168.1.100',  # Compromised host
+            'dest_ip': f'{random.randint(1,255)}.{random.randint(1,255)}.{random.randint(1,255)}.{random.randint(1,255)}',
+            'source_port': random.randint(1024, 65535),
+            'dest_port': random.choice([53, 80, 443]),  # Common ports
+            'protocol': 'TCP',
+            'payload_size': random.randint(100, 500),  # Beaconing
+            'flags': 'PSH-ACK'
+        }
     
-    # Packet generation functions for each type
+    # Map packet types to generators
     packet_generators = {
-        'normal': generate_normal_packet,
+        'normal': generate_normal,
         'port_scan': generate_port_scan,
         'ddos': generate_ddos,
         'brute_force': generate_brute_force,
@@ -580,8 +569,8 @@ def simulate_enterprise_traffic(duration, threat_storage):
     
     except KeyboardInterrupt:
         logger.info("Traffic simulation interrupted by user")
-    
-    logger.info(f"Traffic simulation completed. Processed {packet_count} packets")
+    finally:
+        logger.info(f"Traffic simulation completed. Processed {packet_count} packets")
 
 
 def generate_security_report(threat_storage, interpreter):
@@ -756,18 +745,23 @@ def process_batch(model, batch_features, threat_storage, interpreter):
         is_threat = pred_prob > 0.5
         
         if is_threat:
-            # Get threat interpretation
-            interpretation = interpreter.interpret_prediction(
-                features=batch_features,
-                prediction=pred_prob
-            )
+            try:
+                # Get threat interpretation using rules-based method
+                explanation = interpreter.explain_prediction(
+                    input_data=features_2d[0],  # Pass 1D array for rules-based
+                    method="rules",  # Use rules-based since SHAP is having issues
+                    top_features=5
+                )
+            except Exception as e:
+                logger.error(f"Error generating explanation: {str(e)}")
+                explanation = {"method": "none", "error": str(e)}
             
             # Create threat object
             threat = {
                 'type': 'malicious',
                 'confidence': pred_prob,
                 'features': batch_features.tolist(),
-                'interpretation': interpretation,
+                'interpretation': explanation,
                 'timestamp': time.time()
             }
             
@@ -805,6 +799,37 @@ def real_time_detector(model, feature_extractor, threat_storage, interpreter, st
         logging.error(f"Error in real-time detector: {str(e)}")
     finally:
         logging.info("Real-time detector stopped")
+
+
+def get_latest_traffic():
+    """Simulate getting the latest network traffic."""
+    # In a real system, this would capture actual network packets
+    # For simulation, we'll generate synthetic traffic
+    traffic_types = ['normal', 'port_scan', 'ddos', 'brute_force', 'data_exfil', 'c2']
+    traffic_type = random.choice(traffic_types)
+    
+    packet = {
+        'timestamp': time.time(),
+        'source_ip': f'192.168.{random.randint(1,255)}.{random.randint(1,255)}',
+        'dest_ip': f'10.0.{random.randint(1,255)}.{random.randint(1,255)}',
+        'source_port': random.randint(1024, 65535),
+        'dest_port': random.randint(1, 65535),
+        'protocol': random.choice(['TCP', 'UDP', 'ICMP']),
+        'payload_size': random.randint(64, 1500),
+        'type': traffic_type
+    }
+    
+    return packet
+
+
+def generate_alert(threat_data):
+    """Generate an alert for a detected threat."""
+    logger.warning(
+        f"ALERT: Threat detected!\n"
+        f"Type: {threat_data['type']}\n"
+        f"Confidence: {threat_data['confidence']:.2f}\n"
+        f"Timestamp: {datetime.datetime.fromtimestamp(threat_data['timestamp']).strftime('%Y-%m-%d %H:%M:%S')}"
+    )
 
 
 if __name__ == "__main__":
