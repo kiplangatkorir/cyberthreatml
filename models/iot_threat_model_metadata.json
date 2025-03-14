@@ -1,0 +1,1 @@
+{"input_shape": [20], "num_classes": 6, "model_config": {"hidden_layers": [64, 32, 16], "dropout_rate": 0.25, "activation": "relu", "output_activation": "softmax", "loss": "categorical_crossentropy", "metrics": ["accuracy"], "optimizer": "adam", "class_names": ["Normal Behavior", "Botnet Activity", "Firmware Tampering", "Data Exfiltration", "Command Injection", "Replay Attack"]}}
