@@ -7,11 +7,11 @@ CyberThreat-ML Zero-Day Detection Results
 2                   Attack Samples             250           250     250
 3             Known Attack Samples             200           200     200
 4          Zero-Day Attack Samples              50            50      50
-5            Normal Detection Rate          0.9970        0.9650  0.9630
-6            Attack Detection Rate          0.0640        0.8240  0.8240
-7      Known Attack Detection Rate          0.0700        0.8150  0.8150
-8   Zero-Day Attack Detection Rate          0.0400        0.8600  0.8600
-9              False Positive Rate          0.0030        0.0350  0.0370
-10             False Negative Rate          0.9360        0.1760  0.1760
+5            Normal Detection Rate          1.0000        0.9650  0.9650
+6            Attack Detection Rate          0.0000        0.8080  0.8080
+7      Known Attack Detection Rate          0.0000        0.8050  0.8050
+8   Zero-Day Attack Detection Rate          0.0000        0.8200  0.8200
+9              False Positive Rate          0.0000        0.0350  0.0350
+10             False Negative Rate          1.0000        0.1920  0.1920
 
-Analysis timestamp: 2025-03-11 08:30:02
+Analysis timestamp: 2025-03-14 16:53:43
