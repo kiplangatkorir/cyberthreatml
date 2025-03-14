@@ -172,3 +172,9 @@
 2025-03-14 14:19:06,806 - enterprise_security - INFO - Traffic simulation completed. Processed 1203 packets
 2025-03-14 14:20:31,078 - enterprise_security - INFO - Starting Enterprise Security Monitoring System
 2025-03-14 14:20:31,078 - enterprise_security - INFO - No existing model found. Creating and training a new model...
+2025-03-14 14:20:45,438 - enterprise_security - INFO - Model training completed
+2025-03-14 14:20:46,155 - enterprise_security - INFO - Threat visualization dashboard started
+2025-03-14 14:20:46,647 - enterprise_security - INFO - Threat interpreter initialized
+2025-03-14 14:20:46,648 - enterprise_security - INFO - Real-time threat detector started
+2025-03-14 14:20:46,648 - enterprise_security - INFO - Starting network traffic monitoring...
+2025-03-14 14:20:46,648 - enterprise_security - INFO - Starting traffic simulation...
