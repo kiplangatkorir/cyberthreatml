@@ -873,25 +873,25 @@ def process_batch(model, batch_features, threat_storage, interpreter):
     """Process a batch of network traffic features."""
     try:
         # Make predictions
-        predictions = model.predict(np.array([batch_features]))
+        predictions = model.predict(np.array([batch_features]), verbose=0)
         
-        # Get prediction probabilities for each class
-        pred_probs = predictions[0]  # Get first (and only) prediction
+        # Get prediction probabilities
+        pred_prob = float(predictions[0][0])  # Convert to Python float
         
         # Determine if it's a threat (threshold = 0.5)
-        is_threat = bool(pred_probs[0] > 0.5)
+        is_threat = pred_prob > 0.5
         
         if is_threat:
             # Get threat interpretation
             interpretation = interpreter.interpret_prediction(
                 features=batch_features,
-                prediction=pred_probs[0]
+                prediction=pred_prob
             )
             
             # Create threat object
             threat = {
                 'type': 'malicious',
-                'confidence': float(pred_probs[0]),
+                'confidence': pred_prob,
                 'features': batch_features.tolist(),
                 'interpretation': interpretation,
                 'timestamp': time.time()
@@ -901,12 +901,36 @@ def process_batch(model, batch_features, threat_storage, interpreter):
             threat_storage.add_threat(threat)
             
             # Log the threat
-            logging.warning(f"Threat detected! Confidence: {threat['confidence']:.2f}")
+            logging.warning(f"Threat detected! Confidence: {pred_prob:.2f}")
             
             # Generate alert
             generate_alert(threat)
     except Exception as e:
         logging.error(f"Error processing batch: {str(e)}")
+
+
+def real_time_detector(model, feature_extractor, threat_storage, interpreter, stop_event):
+    """Run real-time threat detection."""
+    try:
+        while not stop_event.is_set():
+            # Get latest network traffic
+            packet = get_latest_traffic()
+            if packet is None:
+                time.sleep(0.1)
+                continue
+                
+            # Extract features
+            features = feature_extractor.transform(packet)
+            
+            # Process the features
+            process_batch(model, features, threat_storage, interpreter)
+            
+            # Small delay to prevent CPU overload
+            time.sleep(0.1)
+    except Exception as e:
+        logging.error(f"Error in real-time detector: {str(e)}")
+    finally:
+        logging.info("Real-time detector stopped")
 
 
 if __name__ == "__main__":
