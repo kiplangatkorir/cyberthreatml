@@ -157,6 +157,7 @@ class SimpleRealTimeDetector:
             'confidence': confidence,
             'is_threat': prediction > 0 and confidence > self.threshold,
             'threat_type': self.model.threat_types[prediction] if prediction < len(self.model.threat_types) else 'Unknown',
+            'severity': 'High' if confidence > 0.8 else 'Medium' if confidence > 0.5 else 'Low'
         }
         
         if result['is_threat']:
@@ -243,10 +244,16 @@ def simulate_traffic(detector, duration=10, packet_rate=5):
         # Process the packet
         result = detector.process_packet(packet)
         
-        # Print threat detections
-        if result and result['is_threat']:
-            print(f"⚠️ Threat detected: {result['threat_type']} from {result['source_ip']}:{result['source_port']} "
-                  f"to {result['dest_ip']}:{result['dest_port']} ({result['confidence']:.2f} confidence)")
+        # Print threat detection results
+        if result['is_threat']:
+            print(f"[!] Threat detected: {result['threat_type']} from {result['source_ip']}:{result['source_port']} "
+                  f"to {result['dest_ip']}:{result['dest_port']}")
+            print(f"    Confidence: {result['confidence']:.2f}")
+            print(f"    Severity: {result['severity']}")
+            print(f"    Timestamp: {result['timestamp']}")
+        else:
+            print(f"[+] Normal traffic from {result['source_ip']}:{result['source_port']} "
+                  f"to {result['dest_ip']}:{result['dest_port']}")
         
         packet_count += 1
         
