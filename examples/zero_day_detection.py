@@ -67,11 +67,17 @@ def main():
     
     # Create and train the model
     signature_model = ThreatDetectionModel(
-        input_shape=(data_normal.shape[1],),
-        num_classes=2,
+        input_shape=(20,),  # Number of features
+        num_classes=3,      # Normal, Known Attack, Zero-day
         model_config={
-            'hidden_layers': [64, 32],
-            'dropout_rate': 0.2
+            'hidden_layers': [64, 32, 16],
+            'dropout_rate': 0.3,
+            'activation': 'relu',
+            'output_activation': 'softmax',
+            'loss': 'categorical_crossentropy',
+            'metrics': ['accuracy'],
+            'optimizer': 'adam',
+            'class_names': ['Normal', 'Known Attack', 'Zero-day Attack']
         }
     )
     
