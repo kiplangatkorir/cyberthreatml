@@ -11,6 +11,7 @@ from datetime import datetime
 from pathlib import Path
 import numpy as np
 import matplotlib.pyplot as plt
+import tensorflow as tf
 
 # Add the parent directory to sys.path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -153,10 +154,16 @@ def create_or_load_model(threat_classes):
     # Train the model with a small number of epochs for quick execution
     model.train(
         X_train, y_train,
-        X_val=X_val, y_val=y_val,
+        validation_data=(X_val, y_val),
         epochs=5,
         batch_size=32,
-        early_stopping=True
+        callbacks=[
+            tf.keras.callbacks.EarlyStopping(
+                monitor='val_loss',
+                patience=2,
+                restore_best_weights=True
+            )
+        ]
     )
     
     return model, feature_names
