@@ -1,6 +1,6 @@
 sample_index,anomaly_score,true_class,severity,severity_level,description,recommended_action
-16,0.387968988087306,Normal,0.2090384245614902,Medium-Low,Anomalous activity detected with Medium-Low severity (score: 0.39).,Medium-Low
-68,0.42704144734703936,Normal,0.2758551099301895,Medium-Low,Anomalous Feature_0 activity detected with Medium-Low severity (score: 0.43).,Medium-Low
-71,0.4680253599731792,Normal,0.27933287863900774,Medium-Low,Anomalous Feature_1 activity detected with Medium-Low severity (score: 0.47).,Medium-Low
-90,0.41456136033047075,Normal,0.254461999019031,Medium-Low,Anomalous Feature_0 activity detected with Medium-Low severity (score: 0.41).,Medium-Low
-91,0.381214005368845,Normal,0.22508663973421378,Medium-Low,Anomalous Feature_1 activity detected with Medium-Low severity (score: 0.38).,Medium-Low
+0,0.38222424939140137,Normal,0.23445931762798528,Medium-Low,Anomalous activity detected with Medium-Low severity (score: 0.38).,Medium-Low
+49,0.3888694361877403,Normal,0.2393161964273626,Medium-Low,Anomalous Feature_0 activity detected with Medium-Low severity (score: 0.39).,Medium-Low
+63,0.3806575851488661,Normal,0.232997385701223,Medium-Low,Anomalous Feature_0 activity detected with Medium-Low severity (score: 0.38).,Medium-Low
+84,0.46939032310384843,Normal,0.2864165066536204,Medium-Low,Anomalous Feature_0 activity detected with Medium-Low severity (score: 0.47).,Medium-Low
+93,0.4264621214808165,Normal,0.26489834263227385,Medium-Low,Anomalous Feature_0 activity detected with Medium-Low severity (score: 0.43).,Medium-Low
