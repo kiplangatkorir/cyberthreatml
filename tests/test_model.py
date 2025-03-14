@@ -101,8 +101,8 @@ class TestThreatDetectionModel(unittest.TestCase):
             # Save the model
             self.model.save_model(model_path, metadata_path)
             
-            # Check if files exist
-            self.assertTrue(os.path.exists(model_path))
+            # Check if files exist (model has .keras extension)
+            self.assertTrue(os.path.exists(model_path + '.keras'))
             self.assertTrue(os.path.exists(metadata_path))
             
             # Load the model

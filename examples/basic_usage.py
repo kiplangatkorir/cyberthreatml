@@ -61,7 +61,7 @@ def main():
     # Train the model
     history = model.train(
         X_train, y_train,
-        X_val=X_val, y_val=y_val,
+        validation_data=(X_val, y_val),
         epochs=10,
         batch_size=32,
         early_stopping=True,

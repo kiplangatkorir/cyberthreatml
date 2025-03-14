@@ -12,6 +12,8 @@ def explain_predictions(model, X_test):
     Returns:
         shap_values: SHAP values for model predictions
     """
-    explainer = shap.Explainer(model)
-    shap_values = explainer(X_test)
+    # Create a background dataset for SHAP
+    background = X_test[:100]  # Using first 100 samples as background
+    explainer = shap.KernelExplainer(model.predict, background)
+    shap_values = explainer.shap_values(X_test[:10])  # Explain first 10 predictions
     return shap_values
