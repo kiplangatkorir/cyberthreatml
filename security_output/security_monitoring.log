@@ -956,3 +956,198 @@
 2025-03-14 14:51:44,436 - root - ERROR - Error processing batch: name 'generate_alert' is not defined
 2025-03-14 14:51:44,537 - root - INFO - Real-time detector stopped
 2025-03-14 14:51:44,802 - enterprise_security - INFO - Enterprise security monitoring completed
+2025-03-14 14:53:02,042 - enterprise_security - INFO - Starting Enterprise Security Monitoring System
+2025-03-14 14:53:02,467 - enterprise_security - INFO - Loaded existing model
+2025-03-14 14:53:02,995 - shap - WARNING - Using 1000 background data samples could cause slower run times. Consider using shap.sample(data, K) or shap.kmeans(data, K) to summarize the background as K samples.
+2025-03-14 14:53:02,996 - enterprise_security - INFO - Threat interpreter initialized
+2025-03-14 14:53:02,998 - enterprise_security - INFO - Real-time threat detector started
+2025-03-14 14:53:03,809 - enterprise_security - INFO - Threat visualization dashboard started
+2025-03-14 14:53:03,809 - enterprise_security - INFO - Starting network traffic monitoring...
+2025-03-14 14:53:03,810 - enterprise_security - INFO - Starting traffic simulation...
+2025-03-14 14:53:03,810 - enterprise_security - INFO - Starting traffic simulation...
+2025-03-14 14:53:05,037 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:05,038 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:05,038 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:06,526 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:06,526 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:06,526 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:07,683 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:07,684 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:07,684 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:08,682 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:08,683 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:08,683 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:09,648 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:09,649 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:09,721 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:11,057 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:11,057 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:11,058 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:12,231 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:12,231 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:12,232 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:13,310 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:13,311 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:13,311 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:14,531 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:14,531 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:14,531 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:15,556 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:15,556 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:15,557 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:16,645 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:16,645 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:16,645 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:17,748 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:17,748 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:17,748 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:18,807 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:18,807 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:18,808 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:19,861 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:19,862 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:19,862 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:20,956 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:20,956 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:20,956 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:22,005 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:22,005 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:22,005 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:22,979 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:22,981 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:22,981 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:23,928 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:23,929 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:23,929 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:25,067 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:25,067 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:25,067 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:26,149 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:26,149 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:26,149 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:27,098 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:27,099 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:27,099 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:27,907 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:27,907 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:27,907 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:28,871 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:28,871 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:28,872 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:29,695 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:29,695 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:29,696 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:30,458 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:30,458 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:30,458 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:31,284 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:31,285 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:31,285 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:32,178 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:32,179 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:32,179 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:33,248 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:33,248 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:33,249 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:34,220 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:34,220 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:34,220 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:35,058 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:35,059 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:35,059 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:36,116 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:36,116 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:36,116 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:37,213 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:37,213 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:37,213 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:38,106 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:38,106 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:38,106 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:38,860 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:38,861 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:38,861 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:39,633 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:39,634 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:39,634 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:40,413 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:40,414 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:40,414 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:41,174 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:41,174 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:41,174 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:42,032 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:42,032 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:42,032 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:42,786 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:42,786 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:42,786 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:43,702 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:43,703 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:43,703 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:44,524 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:44,525 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:44,525 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:45,339 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:45,340 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:45,340 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:46,156 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:46,157 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:46,157 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:46,889 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:46,890 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:46,890 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:47,685 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:47,685 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:47,685 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:48,471 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:48,471 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:48,471 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:49,561 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:49,561 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:49,561 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:50,454 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:50,455 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:50,455 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:51,227 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:51,228 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:51,228 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:52,130 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:52,130 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:52,131 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:52,936 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:52,937 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:52,937 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:53,821 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:53,822 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:53,822 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:54,991 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:54,992 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:54,992 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:56,542 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:56,545 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:56,545 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:57,736 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:57,737 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:57,737 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:58,758 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:58,759 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:58,759 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:53:59,815 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:53:59,815 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:53:59,815 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:54:00,855 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:54:00,855 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:54:00,855 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:54:01,677 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:54:01,677 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:54:01,677 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:54:02,881 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:54:02,881 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:54:02,881 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:54:03,811 - enterprise_security - INFO - Traffic simulation completed. Processed 1159 packets
+2025-03-14 14:54:03,917 - enterprise_security - ERROR - Error generating explanation: only length-1 arrays can be converted to Python scalars
+2025-03-14 14:54:03,917 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:54:03,917 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
+2025-03-14 14:54:04,018 - root - INFO - Real-time detector stopped
+2025-03-14 14:54:04,214 - enterprise_security - INFO - Enterprise security monitoring completed

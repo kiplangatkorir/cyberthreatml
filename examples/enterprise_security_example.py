@@ -731,6 +731,39 @@ def generate_security_report(threat_storage, interpreter):
     return report
 
 
+def _rules_based_explanation(features, feature_names):
+    """Generate a rules-based explanation for the features."""
+    # Define thresholds for common threat indicators
+    thresholds = {
+        'Packet Size': 1500,  # Large packet size
+        'Flow Duration': 300,  # Long flow duration
+        'Bytes Transferred': 10000,  # High data transfer
+        'Packet Count': 100,  # High packet count
+        'Rate of SYN Packets': 0.5,  # High SYN rate
+        'Unique Destinations': 10,  # Many unique destinations
+        'Payload Entropy': 7.0,  # High entropy (encrypted/compressed)
+    }
+    
+    explanation = {
+        'method': 'rules',
+        'feature_importance': {},
+        'rules_triggered': []
+    }
+    
+    # Check each feature against thresholds
+    for i, feature_name in enumerate(feature_names):
+        if feature_name in thresholds:
+            feature_val = float(features[i])  # Convert to float for comparison
+            threshold = thresholds[feature_name]
+            
+            if feature_val > threshold:
+                explanation['feature_importance'][feature_name] = 1.0
+                explanation['rules_triggered'].append(
+                    f"{feature_name} ({feature_val:.2f}) exceeds threshold ({threshold})"
+                )
+    
+    return explanation
+
 def process_batch(model, batch_features, threat_storage, interpreter):
     """Process a batch of network traffic features."""
     try:
@@ -747,10 +780,9 @@ def process_batch(model, batch_features, threat_storage, interpreter):
         if is_threat:
             try:
                 # Get threat interpretation using rules-based method
-                explanation = interpreter.explain_prediction(
-                    input_data=features_2d[0],  # Pass 1D array for rules-based
-                    method="rules",  # Use rules-based since SHAP is having issues
-                    top_features=5
+                explanation = _rules_based_explanation(
+                    features=batch_features,
+                    feature_names=interpreter.feature_names
                 )
             except Exception as e:
                 logger.error(f"Error generating explanation: {str(e)}")
@@ -775,7 +807,6 @@ def process_batch(model, batch_features, threat_storage, interpreter):
             generate_alert(threat)
     except Exception as e:
         logging.error(f"Error processing batch: {str(e)}")
-
 
 def real_time_detector(model, feature_extractor, threat_storage, interpreter, stop_event):
     """Run real-time threat detection."""
@@ -828,7 +859,10 @@ def generate_alert(threat_data):
         f"ALERT: Threat detected!\n"
         f"Type: {threat_data['type']}\n"
         f"Confidence: {threat_data['confidence']:.2f}\n"
-        f"Timestamp: {datetime.datetime.fromtimestamp(threat_data['timestamp']).strftime('%Y-%m-%d %H:%M:%S')}"
+        f"Timestamp: {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(threat_data['timestamp']))}\n"
+        f"Rules Triggered:\n" + "\n".join(
+            f"- {rule}" for rule in threat_data['interpretation'].get('rules_triggered', [])
+        )
     )
 
 
