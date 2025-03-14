@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 import seaborn as sns
 from collections import Counter
 import pandas as pd
+import os
 
 def generate_sample_data(n_samples=1000):
     """Generate synthetic cybersecurity event data"""
@@ -22,7 +23,7 @@ def generate_sample_data(n_samples=1000):
     
     return pd.DataFrame(data)
 
-def plot_attack_distribution(df):
+def plot_attack_distribution(df, save_dir):
     """Plot attack type distribution"""
     plt.figure(figsize=(12, 6))
     
@@ -36,9 +37,12 @@ def plot_attack_distribution(df):
     plt.title('Distribution of Attack Types')
     plt.xlabel('Number of Attacks')
     plt.tight_layout()
-    plt.show()
+    
+    # Save plot
+    plt.savefig(f"{save_dir}/attack_distribution.png", dpi=300, bbox_inches='tight')
+    plt.close()
 
-def plot_severity_heatmap(df):
+def plot_severity_heatmap(df, save_dir):
     """Create severity vs attack type heatmap"""
     plt.figure(figsize=(12, 6))
     
@@ -54,9 +58,12 @@ def plot_severity_heatmap(df):
     plt.ylabel('Severity')
     plt.xlabel('Attack Type')
     plt.tight_layout()
-    plt.show()
+    
+    # Save plot
+    plt.savefig(f"{save_dir}/severity_heatmap.png", dpi=300, bbox_inches='tight')
+    plt.close()
 
-def plot_temporal_pattern(df):
+def plot_temporal_pattern(df, save_dir):
     """Visualize temporal attack patterns"""
     plt.figure(figsize=(12, 6))
     
@@ -72,9 +79,12 @@ def plot_temporal_pattern(df):
     plt.grid(True, alpha=0.3)
     plt.legend(title='Attack Type', bbox_to_anchor=(1.05, 1), loc='upper left')
     plt.tight_layout()
-    plt.show()
+    
+    # Save plot
+    plt.savefig(f"{save_dir}/temporal_pattern.png", dpi=300, bbox_inches='tight')
+    plt.close()
 
-def plot_success_rate(df):
+def plot_success_rate(df, save_dir):
     """Visualize attack success rates by type"""
     plt.figure(figsize=(12, 6))
     
@@ -95,11 +105,18 @@ def plot_success_rate(df):
     plt.xlabel('Success Rate (%)')
     plt.ylabel('Attack Type')
     plt.tight_layout()
-    plt.show()
+    
+    # Save plot
+    plt.savefig(f"{save_dir}/success_rates.png", dpi=300, bbox_inches='tight')
+    plt.close()
 
 def main():
     print("CyberThreat-ML Text Visualization Demo")
     print("=====================================\n")
+    
+    # Create visualizations directory
+    save_dir = "visualizations"
+    os.makedirs(save_dir, exist_ok=True)
     
     # Generate sample data
     print("Generating synthetic cybersecurity event data...")
@@ -113,22 +130,23 @@ def main():
     print(f"Most Common Attack: {df['attack_type'].mode()[0]}")
     print(f"Most Severe Attacks: {df[df['severity'] == 'Critical']['attack_type'].value_counts().head(1).index[0]}")
     
-    # Create visualizations
-    print("\nGenerating visualizations...")
+    # Create and save visualizations
+    print("\nGenerating and saving visualizations...")
     
     print("\n1. Attack Distribution")
-    plot_attack_distribution(df)
+    plot_attack_distribution(df, save_dir)
     
     print("\n2. Severity Heatmap")
-    plot_severity_heatmap(df)
+    plot_severity_heatmap(df, save_dir)
     
     print("\n3. Temporal Pattern")
-    plot_temporal_pattern(df)
+    plot_temporal_pattern(df, save_dir)
     
     print("\n4. Success Rates")
-    plot_success_rate(df)
+    plot_success_rate(df, save_dir)
     
-    print("\nVisualization demo completed successfully!")
+    print(f"\nVisualization demo completed successfully!")
+    print(f"All plots saved to: {os.path.abspath(save_dir)}")
 
 if __name__ == "__main__":
     main()
