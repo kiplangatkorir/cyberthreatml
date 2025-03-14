@@ -869,5 +869,45 @@ def generate_security_report(threat_storage, interpreter):
     return report
 
 
+def process_batch(model, batch_features, threat_storage, interpreter):
+    """Process a batch of network traffic features."""
+    try:
+        # Make predictions
+        predictions = model.predict(np.array([batch_features]))
+        
+        # Get prediction probabilities for each class
+        pred_probs = predictions[0]  # Get first (and only) prediction
+        
+        # Determine if it's a threat (threshold = 0.5)
+        is_threat = bool(pred_probs[0] > 0.5)
+        
+        if is_threat:
+            # Get threat interpretation
+            interpretation = interpreter.interpret_prediction(
+                features=batch_features,
+                prediction=pred_probs[0]
+            )
+            
+            # Create threat object
+            threat = {
+                'type': 'malicious',
+                'confidence': float(pred_probs[0]),
+                'features': batch_features.tolist(),
+                'interpretation': interpretation,
+                'timestamp': time.time()
+            }
+            
+            # Store the threat
+            threat_storage.add_threat(threat)
+            
+            # Log the threat
+            logging.warning(f"Threat detected! Confidence: {threat['confidence']:.2f}")
+            
+            # Generate alert
+            generate_alert(threat)
+    except Exception as e:
+        logging.error(f"Error processing batch: {str(e)}")
+
+
 if __name__ == "__main__":
     main()
