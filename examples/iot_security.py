@@ -47,7 +47,10 @@ def main():
     # Create and train a new model
     logger.info("Creating and training new IoT threat model")
     model = create_and_train_model()
-    model.save_model(model_path)
+    
+    # Save model and metadata
+    metadata_path = "models/iot_threat_model_metadata.json"
+    model.save_model(model_path, metadata_path)
     
     # Step 2: Define IoT-specific threat classes
     class_names = [
