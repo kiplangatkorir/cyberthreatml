@@ -1,0 +1,16 @@
+THREAT PATTERN INSIGHTS: Data Exfiltration
+========================================
+
+KEY PREDICTIVE FEATURES
+  TCP Flag: 0.9016
+  Destination Port: 0.8929
+  Packet Count: 0.6508
+  Packet Interval: 0.3788
+  Source Port: 0.2975
+
+FEATURE RELIABILITY
+  Destination Port: High reliability (CV: 0.24)
+  TCP Flag: High reliability (CV: 0.04)
+  Packet Count: High reliability (CV: 0.07)
+  Packet Interval: High reliability (CV: 0.24)
+  Source Port: High reliability (CV: 0.27)
