@@ -11,6 +11,7 @@ import numpy as np
 import pandas as pd
 import time
 import os
+import random   
 import logging
 import json
 from datetime import datetime
@@ -38,6 +39,7 @@ from cyberthreat_ml.realtime import PacketStreamDetector
 from cyberthreat_ml.visualization import ThreatVisualizationDashboard
 from cyberthreat_ml.interpretability import ThreatInterpreter
 from cyberthreat_ml.utils import split_data
+import tensorflow as tf
 
 def main():
     """
@@ -195,7 +197,7 @@ def main():
         logger.info("Monitoring interrupted by user")
     
     # Step 9: Generate a security report based on collected threats
-    generate_security_report(threat_storage, interpreter)
+    report = generate_security_report(threat_storage, interpreter)
     
     # Step 10: Cleanup
     detector.stop()
@@ -208,34 +210,52 @@ def create_and_train_model():
     """
     Create and train a model for enterprise security monitoring.
     """
-    # Create a synthetic dataset for demonstration
-    X, y = create_enterprise_dataset()
+    # Create synthetic dataset
+    X_train, y_train = create_enterprise_dataset(n_samples=5000, n_features=25, n_classes=6)
     
-    # Split data
-    X_train, X_val, X_test, y_train, y_val, y_test = split_data(X, y)
-    
-    # Create the model with enterprise configuration
+    # Create model with enterprise-grade architecture
     model = ThreatDetectionModel(
-        input_shape=(25,),
-        num_classes=6,
+        input_shape=(25,),  # 25 features
+        num_classes=6,      # Normal + 5 threat types
         model_config={
-            'hidden_layers': [128, 64, 32],
+            'hidden_layers': [256, 128, 64],  # Deeper network for complex threats
             'dropout_rate': 0.3,
-            'l2_regularization': 0.01
+            'activation': 'relu',
+            'output_activation': 'softmax',
+            'loss': 'categorical_crossentropy',
+            'optimizer': 'adam',
+            'metrics': ['accuracy', 'AUC', 'Precision', 'Recall']
         }
     )
     
-    # Train the model
-    model.train(
-        X_train, y_train,
-        X_val=X_val, y_val=y_val,
-        epochs=15,
+    # Convert labels to one-hot encoding
+    y_train_cat = tf.keras.utils.to_categorical(y_train, num_classes=6)
+    
+    # Train with early stopping and model checkpointing
+    history = model.train(
+        X_train, y_train_cat,
+        epochs=50,
         batch_size=32,
-        early_stopping=True
+        validation_split=0.2,
+        callbacks=[
+            tf.keras.callbacks.EarlyStopping(
+                monitor='val_loss',
+                patience=5,
+                restore_best_weights=True
+            ),
+            tf.keras.callbacks.ModelCheckpoint(
+                'models/enterprise_threat_model_checkpoint.keras',
+                monitor='val_loss',
+                save_best_only=True
+            )
+        ]
     )
     
-    # Save the model for future use
-    model.save_model('models/enterprise_threat_model')
+    # Save the final model
+    model.save_model(
+        'models/enterprise_threat_model',
+        'models/enterprise_threat_model_metadata.json'
+    )
     
     return model
 
@@ -252,26 +272,104 @@ def create_enterprise_dataset(n_samples=5000, n_features=25, n_classes=6):
     Returns:
         tuple: (X, y) - features and class labels.
     """
-    # Generate features
-    X = np.random.rand(n_samples, n_features)
+    # Initialize arrays
+    X = np.zeros((n_samples, n_features))
+    y = np.zeros(n_samples, dtype=np.int32)
     
-    # Generate labels with a realistic class distribution
-    # Normal traffic should be the majority
-    class_probabilities = [0.75, 0.05, 0.05, 0.05, 0.05, 0.05]
-    y = np.random.choice(n_classes, size=n_samples, p=class_probabilities)
+    # Define class distribution (70% normal, 30% threats)
+    n_normal = int(0.7 * n_samples)
+    n_threats = n_samples - n_normal
     
-    # Convert to categorical format for multi-class classification
-    # This is needed for TensorFlow/Keras
-    from tensorflow.keras.utils import to_categorical
-    y_categorical = to_categorical(y, n_classes)
+    # Generate normal traffic patterns
+    X[:n_normal] = np.random.normal(0.3, 0.1, (n_normal, n_features))
+    y[:n_normal] = 0  # Class 0 is normal traffic
     
-    return X, y_categorical
+    # Generate threat patterns
+    threat_samples_per_class = n_threats // (n_classes - 1)  # Excluding normal class
+    
+    for threat_class in range(1, n_classes):
+        start_idx = n_normal + (threat_class - 1) * threat_samples_per_class
+        end_idx = start_idx + threat_samples_per_class
+        
+        # Base pattern for this threat class
+        X[start_idx:end_idx] = np.random.normal(0.6, 0.15, (threat_samples_per_class, n_features))
+        
+        # Add specific threat signatures
+        if threat_class == 1:  # Port Scan
+            # High port activity, low data transfer
+            X[start_idx:end_idx, 0:2] = np.random.normal(0.9, 0.05, (threat_samples_per_class, 2))
+            X[start_idx:end_idx, 4:6] = np.random.normal(0.1, 0.05, (threat_samples_per_class, 2))
+            
+        elif threat_class == 2:  # DDoS
+            # High packet count, many source IPs
+            X[start_idx:end_idx, 5] = np.random.normal(0.95, 0.03, threat_samples_per_class)
+            X[start_idx:end_idx, 16] = np.random.normal(0.9, 0.05, threat_samples_per_class)
+            
+        elif threat_class == 3:  # Brute Force
+            # Many failed auth attempts, consistent destination
+            X[start_idx:end_idx, 18] = np.random.normal(0.85, 0.05, threat_samples_per_class)
+            X[start_idx:end_idx, 17] = np.random.normal(0.1, 0.05, threat_samples_per_class)
+            
+        elif threat_class == 4:  # Data Exfiltration
+            # Large data transfers, encrypted payload
+            X[start_idx:end_idx, 4] = np.random.normal(0.9, 0.05, threat_samples_per_class)
+            X[start_idx:end_idx, 14] = np.random.normal(0.95, 0.03, threat_samples_per_class)
+            
+        elif threat_class == 5:  # Command & Control
+            # Periodic beacons, small encrypted packets
+            X[start_idx:end_idx, 8] = np.random.normal(0.8, 0.05, threat_samples_per_class)
+            X[start_idx:end_idx, 12:15] = np.random.normal(0.7, 0.1, (threat_samples_per_class, 3))
+        
+        y[start_idx:end_idx] = threat_class
+    
+    # Shuffle the dataset
+    shuffle_idx = np.random.permutation(n_samples)
+    X = X[shuffle_idx]
+    y = y[shuffle_idx]
+    
+    return X.astype(np.float32), y
 
 
 class EnterpriseFeatureExtractor:
-    """
-    Custom feature extractor for enterprise network traffic.
-    """
+    """Custom feature extractor for enterprise network traffic."""
+    
+    def __init__(self):
+        """Initialize the feature extractor."""
+        # Initialize feature scaling parameters
+        self.port_scaler = lambda x: x / 65535  # Scale ports to [0,1]
+        self.size_scaler = lambda x: np.clip(x / 1500, 0, 1)  # MTU-based scaling
+        self.time_scaler = lambda x: np.clip(x / 1000, 0, 1)  # Scale to seconds
+        
+        # Initialize running statistics for normalization
+        self.running_stats = {
+            'packet_count': {'mean': 0, 'std': 1, 'n': 0},
+            'bytes_transferred': {'mean': 0, 'std': 1, 'n': 0}
+        }
+    
+    def _update_running_stats(self, feature_name, value):
+        """Update running mean and standard deviation."""
+        stats = self.running_stats[feature_name]
+        stats['n'] += 1
+        delta = value - stats['mean']
+        stats['mean'] += delta / stats['n']
+        delta2 = value - stats['mean']
+        stats['std'] = np.sqrt((stats['n'] - 1) * (stats['std'] ** 2) + delta * delta2) / stats['n']
+    
+    def _normalize(self, feature_name, value):
+        """Normalize a value using running statistics."""
+        stats = self.running_stats[feature_name]
+        if stats['std'] == 0:
+            return 0
+        return (value - stats['mean']) / stats['std']
+    
+    def _compute_entropy(self, data):
+        """Compute Shannon entropy of data."""
+        if not data:
+            return 0
+        counts = np.bincount(np.frombuffer(data, dtype=np.uint8))
+        probabilities = counts[counts > 0] / len(data)
+        return -np.sum(probabilities * np.log2(probabilities))
+    
     def transform(self, packet):
         """
         Extract features from a network packet.
@@ -282,46 +380,69 @@ class EnterpriseFeatureExtractor:
         Returns:
             numpy.ndarray: Extracted feature vector.
         """
-        # In a real implementation, this would extract meaningful features
-        # For this example, we'll create synthetic features
+        features = np.zeros(25)
         
-        # Basic feature extraction (simulated)
-        if isinstance(packet, dict):
-            # Convert packet attributes to a feature vector
-            features = np.random.rand(25)  # Simulate extracted features
-            
-            # Add some structure to make it more realistic
-            if 'source_port' in packet:
-                features[0] = packet['source_port'] / 65535  # Normalize port number
-            
-            if 'destination_port' in packet:
-                features[1] = packet['destination_port'] / 65535  # Normalize port number
-            
-            if 'size' in packet:
-                features[2] = packet['size'] / 1500  # Normalize packet size
-            
-            # Add some bias toward the actual packet type if specified
-            if 'type' in packet:
-                if packet['type'] == 'port_scan':
-                    features[1] = 0.95  # High destination port value
-                    features[19] = 0.9  # High suspicious port combo
-                elif packet['type'] == 'ddos':
-                    features[2] = 0.9  # High packet size
-                    features[5] = 0.95  # High packet count
-                elif packet['type'] == 'brute_force':
-                    features[0] = 0.1  # Low source port (often fixed)
-                    features[3] = 0.9  # High flow duration
-                elif packet['type'] == 'data_exfil':
-                    features[4] = 0.95  # High bytes transferred
-                    features[13] = 0.9  # High payload entropy
-                elif packet['type'] == 'c2':
-                    features[14] = 0.95  # High encrypted payload
-                    features[21] = 0.1  # Low unique destinations
-        else:
-            # If not a dict, generate random features
-            features = np.random.rand(25)
+        # Basic packet features (0-2)
+        features[0] = self.port_scaler(packet.get('source_port', 0))
+        features[1] = self.port_scaler(packet.get('dest_port', 0))
+        features[2] = self.size_scaler(packet.get('size', 0))
         
-        return features
+        # Flow features (3-5)
+        features[3] = self.time_scaler(packet.get('duration', 0))
+        bytes_transferred = packet.get('bytes', 0)
+        features[4] = self._normalize('bytes_transferred', bytes_transferred)
+        self._update_running_stats('bytes_transferred', bytes_transferred)
+        
+        packet_count = packet.get('packet_count', 1)
+        features[5] = self._normalize('packet_count', packet_count)
+        self._update_running_stats('packet_count', packet_count)
+        
+        # TCP-specific features (6-7)
+        tcp_flags = packet.get('tcp_flags', 0)
+        features[6] = tcp_flags / 255  # Normalize flags
+        features[7] = packet.get('ttl', 64) / 255  # Normalize TTL
+        
+        # Timing features (8-9)
+        features[8] = self.time_scaler(packet.get('inter_arrival_time', 0))
+        features[9] = 1 if packet.get('direction') == 'outbound' else 0
+        
+        # Protocol features (10-11)
+        protocol_type = packet.get('protocol', 'tcp').lower()
+        features[10] = {'tcp': 0, 'udp': 1, 'icmp': 2}.get(protocol_type, 3) / 3
+        features[11] = packet.get('window_size', 0) / 65535
+        
+        # Payload features (12-14)
+        payload = packet.get('payload', b'')
+        features[12] = len(payload) / 1500  # Normalize by MTU
+        features[13] = self._compute_entropy(payload)
+        features[14] = 1 if packet.get('is_encrypted', False) else 0
+        
+        # Header features (15-17)
+        features[15] = len(packet.get('header', b'')) / 40  # Typical header size
+        features[16] = self._compute_entropy(packet.get('source_ip', b''))
+        features[17] = self._compute_entropy(packet.get('dest_ip', b''))
+        
+        # State features (18-19)
+        conn_state = packet.get('connection_state', 'unknown').lower()
+        features[18] = {'new': 0, 'established': 1, 'closed': 2}.get(conn_state, 3) / 3
+        features[19] = 1 if self._is_suspicious_port_combo(
+            packet.get('source_port', 0),
+            packet.get('dest_port', 0)
+        ) else 0
+        
+        # Advanced features (20-24)
+        features[20] = packet.get('syn_rate', 0)
+        features[21] = packet.get('unique_dests', 0) / 100  # Normalize
+        features[22] = packet.get('bytes_per_packet', 0) / 1500
+        features[23] = packet.get('fragment_bits', 0) / 8
+        features[24] = packet.get('sequence_number', 0) % 100 / 100
+        
+        return features.astype(np.float32)
+    
+    def _is_suspicious_port_combo(self, src_port, dst_port):
+        """Check if the port combination is suspicious."""
+        suspicious_ports = {22, 23, 3389, 445, 135, 139}  # Common attack targets
+        return src_port in suspicious_ports or dst_port in suspicious_ports
 
 
 class ThreatStorage:
@@ -366,14 +487,43 @@ def get_recommended_action(threat_type):
     Returns:
         str: Recommended action.
     """
-    actions = {
-        "Port Scan": "Block source IP and increase monitoring for the affected subnets",
-        "DDoS": "Activate traffic scrubbing and contact upstream provider",
-        "Brute Force": "Temporarily lock affected accounts and enable 2FA",
-        "Data Exfiltration": "Isolate affected systems and conduct forensic investigation",
-        "Command & Control": "Quarantine infected hosts and block C2 servers"
+    recommendations = {
+        "Port Scan": """
+            1. Block scanning IP at firewall
+            2. Review firewall rules and exposed ports
+            3. Enable port scan detection and rate limiting
+            4. Log and monitor for follow-up attacks
+            """,
+        "DDoS": """
+            1. Enable DDoS mitigation services
+            2. Scale infrastructure resources if needed
+            3. Filter traffic using WAF rules
+            4. Contact upstream providers if necessary
+            """,
+        "Brute Force": """
+            1. Block attacking IP addresses
+            2. Enable account lockout policies
+            3. Implement multi-factor authentication
+            4. Review and strengthen password policies
+            """,
+        "Data Exfiltration": """
+            1. Block suspicious outbound connections
+            2. Review data access logs and permissions
+            3. Enable DLP monitoring and alerts
+            4. Investigate compromised systems/accounts
+            """,
+        "Command & Control": """
+            1. Isolate affected systems immediately
+            2. Block C2 server IP addresses/domains
+            3. Scan for and remove malware
+            4. Review system logs for compromise scope
+            """
     }
-    return actions.get(threat_type, "Investigate and monitor")
+    
+    return recommendations.get(
+        threat_type,
+        "1. Monitor system logs\n2. Review security alerts\n3. Update security policies"
+    )
 
 
 def simulate_enterprise_traffic(detector):
@@ -383,142 +533,310 @@ def simulate_enterprise_traffic(detector):
     Args:
         detector (PacketStreamDetector): The real-time detector.
     """
-    # Define some realistic IP ranges
-    internal_ips = [f"10.0.{i}.{j}" for i in range(1, 5) for j in range(1, 10)]
-    external_ips = [f"{i}.{j}.{k}.{l}" for i, j, k, l in [
-        (203, 0, 113, 10), (198, 51, 100, 5), (172, 16, 0, 1),
-        (8, 8, 8, 8), (1, 1, 1, 1), (93, 184, 216, 34)
-    ]]
+    logger.info("Starting traffic simulation...")
     
-    # Define common ports
-    common_ports = [80, 443, 22, 25, 53, 3389, 3306, 8080, 8443]
+    # Common enterprise ports and protocols
+    common_ports = {
+        'http': 80, 'https': 443, 'dns': 53, 'smb': 445,
+        'ssh': 22, 'rdp': 3389, 'sql': 1433, 'ldap': 389
+    }
     
-    # Packet type distribution
-    packet_types = [
-        'normal', 'normal', 'normal', 'normal', 'normal',
-        'port_scan', 'ddos', 'brute_force', 'data_exfil', 'c2'
-    ]
-    
-    logger.info("Simulating enterprise network traffic...")
-    
-    # Generate some packets
-    for i in range(100):
-        # Randomly select packet type, with bias toward normal
-        packet_type = np.random.choice(packet_types)
-        
-        # Create a packet with appropriate characteristics
-        packet = {
-            'timestamp': time.time(),
-            'source_ip': np.random.choice(internal_ips if packet_type != 'port_scan' else external_ips),
-            'destination_ip': np.random.choice(internal_ips if packet_type == 'port_scan' else external_ips),
-            'source_port': np.random.randint(1024, 65535),
-            'destination_port': np.random.choice(common_ports) if packet_type != 'port_scan' else np.random.randint(1, 65535),
-            'protocol': np.random.choice(['TCP', 'UDP', 'ICMP']),
-            'size': np.random.randint(64, 1500),
-            'type': packet_type
+    def generate_normal_packet():
+        """Generate a normal traffic packet."""
+        service = random.choice(list(common_ports.keys()))
+        return {
+            'source_port': random.randint(49152, 65535),
+            'dest_port': common_ports[service],
+            'size': random.randint(64, 1500),
+            'protocol': 'tcp',
+            'duration': random.randint(1, 1000),
+            'bytes': random.randint(100, 1500),
+            'packet_count': random.randint(1, 10),
+            'tcp_flags': random.randint(0, 255),
+            'ttl': random.randint(32, 128),
+            'inter_arrival_time': random.randint(1, 100),
+            'direction': random.choice(['inbound', 'outbound']),
+            'window_size': random.randint(1024, 65535),
+            'payload': os.urandom(random.randint(10, 100)),
+            'is_encrypted': service == 'https',
+            'header': os.urandom(20),
+            'source_ip': f"192.168.{random.randint(1,254)}.{random.randint(1,254)}",
+            'dest_ip': f"10.0.{random.randint(1,254)}.{random.randint(1,254)}",
+            'connection_state': random.choice(['new', 'established', 'closed']),
+            'syn_rate': random.random() * 0.1,
+            'unique_dests': random.randint(1, 5),
+            'bytes_per_packet': random.randint(100, 1000),
+            'fragment_bits': random.randint(0, 8),
+            'sequence_number': random.randint(0, 1000000)
         }
-        
-        # Process the packet
-        detector.process_packet(packet)
-        
-        # Sleep to simulate real-time traffic
-        time.sleep(0.05)
+    
+    def generate_port_scan():
+        """Generate a port scan packet."""
+        packet = generate_normal_packet()
+        packet.update({
+            'source_port': random.randint(49152, 65535),
+            'dest_port': random.randint(1, 1024),
+            'size': random.randint(40, 60),
+            'bytes': random.randint(40, 60),
+            'packet_count': 1,
+            'tcp_flags': 2,  # SYN
+            'inter_arrival_time': random.randint(1, 10),
+            'syn_rate': random.random() * 0.9 + 0.1,
+            'unique_dests': random.randint(50, 100)
+        })
+        return packet
+    
+    def generate_ddos():
+        """Generate a DDoS packet."""
+        packet = generate_normal_packet()
+        packet.update({
+            'source_ip': f"{random.randint(1,254)}.{random.randint(1,254)}.{random.randint(1,254)}.{random.randint(1,254)}",
+            'size': random.randint(500, 1500),
+            'packet_count': random.randint(100, 1000),
+            'bytes': random.randint(1000, 1500),
+            'syn_rate': random.random() * 0.5 + 0.5,
+            'unique_dests': 1,
+            'bytes_per_packet': random.randint(500, 1500)
+        })
+        return packet
+    
+    def generate_brute_force():
+        """Generate a brute force packet."""
+        packet = generate_normal_packet()
+        packet.update({
+            'dest_port': random.choice([22, 3389, 445]),
+            'size': random.randint(100, 200),
+            'bytes': random.randint(100, 200),
+            'tcp_flags': 24,  # PSH + ACK
+            'connection_state': 'new',
+            'syn_rate': random.random() * 0.3,
+            'unique_dests': 1
+        })
+        return packet
+    
+    def generate_data_exfil():
+        """Generate a data exfiltration packet."""
+        packet = generate_normal_packet()
+        packet.update({
+            'dest_port': random.choice([443, 53, 6667]),
+            'size': random.randint(1000, 1500),
+            'bytes': random.randint(10000, 50000),
+            'is_encrypted': True,
+            'direction': 'outbound',
+            'payload': os.urandom(random.randint(500, 1000)),
+            'bytes_per_packet': random.randint(1000, 1500)
+        })
+        return packet
+    
+    def generate_c2():
+        """Generate a command & control packet."""
+        packet = generate_normal_packet()
+        packet.update({
+            'dest_port': random.choice([443, 53, 80]),
+            'size': random.randint(50, 200),
+            'bytes': random.randint(50, 200),
+            'is_encrypted': True,
+            'inter_arrival_time': random.randint(5000, 10000),
+            'payload': os.urandom(random.randint(50, 100)),
+            'connection_state': 'established'
+        })
+        return packet
+    
+    # Packet generation functions for each type
+    packet_generators = {
+        'normal': generate_normal_packet,
+        'port_scan': generate_port_scan,
+        'ddos': generate_ddos,
+        'brute_force': generate_brute_force,
+        'data_exfil': generate_data_exfil,
+        'c2': generate_c2
+    }
+    
+    # Simulate traffic for 60 seconds
+    start_time = time.time()
+    packet_count = 0
+    attack_probability = 0.1  # 10% chance of attack packets
+    
+    try:
+        while time.time() - start_time < 60:
+            # Determine packet type
+            if random.random() < attack_probability:
+                packet_type = random.choice(['port_scan', 'ddos', 'brute_force', 'data_exfil', 'c2'])
+            else:
+                packet_type = 'normal'
+            
+            # Generate and process packet
+            packet = packet_generators[packet_type]()
+            packet['type'] = packet_type
+            detector.process_packet(packet)
+            
+            packet_count += 1
+            
+            # Add some delay to simulate real traffic
+            time.sleep(random.random() * 0.1)
+    
+    except KeyboardInterrupt:
+        logger.info("Traffic simulation interrupted by user")
+    
+    logger.info(f"Traffic simulation completed. Processed {packet_count} packets")
 
 
 def generate_security_report(threat_storage, interpreter):
     """
-    Generate a comprehensive security report from collected threats.
+    Generate a comprehensive security report from detected threats.
     
     Args:
         threat_storage (ThreatStorage): Storage containing detected threats.
-        interpreter (ThreatInterpreter): Interpreter for explaining threats.
+        interpreter (ThreatInterpreter): Model interpreter for threat analysis.
+        
+    Returns:
+        dict: Security report with analysis and recommendations.
     """
-    logger.info("Generating security report...")
+    threats = threat_storage.get_threats()
+    total_threats = len(threats)
     
-    # Get threat counts
-    threat_counts = threat_storage.get_threat_count()
+    if total_threats == 0:
+        return {
+            'summary': 'No threats detected in the monitored time period.',
+            'timestamp': time.strftime('%Y-%m-%d %H:%M:%S'),
+            'total_threats': 0,
+            'threat_categories': {},
+            'recommendations': ['Continue monitoring and ensure all security controls are active.']
+        }
     
-    # Create the report
-    timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
-    report_path = f"security_output/reports/security_report_{timestamp}.txt"
+    # Analyze threats by category
+    threat_categories = {}
+    high_risk_threats = []
+    affected_systems = set()
     
-    with open(report_path, 'w') as f:
-        f.write("="*80 + "\n")
-        f.write("ENTERPRISE SECURITY REPORT\n")
-        f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-        f.write("="*80 + "\n\n")
+    for threat in threats:
+        # Get threat details
+        threat_type = threat['type']
+        confidence = threat['confidence']
+        source_ip = threat.get('source_ip', 'Unknown')
+        dest_ip = threat.get('dest_ip', 'Unknown')
         
-        f.write("THREAT SUMMARY\n")
-        f.write("-"*80 + "\n")
+        # Track affected systems
+        if source_ip != 'Unknown':
+            affected_systems.add(source_ip)
+        if dest_ip != 'Unknown':
+            affected_systems.add(dest_ip)
         
-        class_names = [
-            "Normal Traffic",
-            "Port Scan",
-            "DDoS",
-            "Brute Force",
-            "Data Exfiltration",
-            "Command & Control"
+        # Update threat categories
+        if threat_type not in threat_categories:
+            threat_categories[threat_type] = {
+                'count': 0,
+                'avg_confidence': 0,
+                'sources': set(),
+                'targets': set(),
+                'timestamps': []
+            }
+        
+        cat = threat_categories[threat_type]
+        cat['count'] += 1
+        cat['avg_confidence'] = (cat['avg_confidence'] * (cat['count'] - 1) + confidence) / cat['count']
+        cat['sources'].add(source_ip)
+        cat['targets'].add(dest_ip)
+        cat['timestamps'].append(threat['timestamp'])
+        
+        # Track high-risk threats (confidence > 0.8)
+        if confidence > 0.8:
+            high_risk_threats.append(threat)
+    
+    # Get model interpretability insights
+    interpretability_insights = []
+    for threat_type, stats in threat_categories.items():
+        if stats['count'] >= 5:  # Only analyze patterns with sufficient samples
+            insight = interpreter.explain_prediction({
+                'type': threat_type,
+                'count': stats['count'],
+                'sources': list(stats['sources']),
+                'targets': list(stats['targets'])
+            })
+            interpretability_insights.append({
+                'threat_type': threat_type,
+                'key_indicators': insight['key_indicators'],
+                'confidence_factors': insight['confidence_factors']
+            })
+    
+    # Generate attack timeline
+    timeline = []
+    for threat_type, stats in threat_categories.items():
+        for timestamp in sorted(stats['timestamps']):
+            timeline.append({
+                'timestamp': timestamp,
+                'type': threat_type,
+                'sources': len(stats['sources']),
+                'targets': len(stats['targets'])
+            })
+    
+    # Calculate risk metrics
+    risk_metrics = {
+        'total_threats': total_threats,
+        'high_risk_threats': len(high_risk_threats),
+        'affected_systems': len(affected_systems),
+        'unique_sources': len(set().union(*[cat['sources'] for cat in threat_categories.values()])),
+        'unique_targets': len(set().union(*[cat['targets'] for cat in threat_categories.values()]))
+    }
+    
+    # Generate recommendations
+    recommendations = []
+    for threat_type, stats in threat_categories.items():
+        if stats['count'] > 0:
+            action = get_recommended_action(threat_type)
+            recommendations.append({
+                'threat_type': threat_type,
+                'priority': 'High' if stats['avg_confidence'] > 0.8 else 'Medium',
+                'action': action
+            })
+    
+    # Format threat categories for report
+    formatted_categories = {}
+    for threat_type, stats in threat_categories.items():
+        formatted_categories[threat_type] = {
+            'count': stats['count'],
+            'confidence': round(stats['avg_confidence'], 2),
+            'unique_sources': len(stats['sources']),
+            'unique_targets': len(stats['targets']),
+            'first_seen': min(stats['timestamps']),
+            'last_seen': max(stats['timestamps'])
+        }
+    
+    # Generate executive summary
+    if total_threats > 0:
+        most_common_threat = max(threat_categories.items(), key=lambda x: x[1]['count'])[0]
+        highest_confidence_threat = max(threat_categories.items(), key=lambda x: x[1]['avg_confidence'])[0]
+        summary = f"""
+            Detected {total_threats} potential security threats affecting {risk_metrics['affected_systems']} systems.
+            Most frequent attack type: {most_common_threat} ({threat_categories[most_common_threat]['count']} instances)
+            Highest confidence threat: {highest_confidence_threat} ({threat_categories[highest_confidence_threat]['avg_confidence']:.2f} confidence)
+            {risk_metrics['high_risk_threats']} high-risk threats require immediate attention.
+        """.strip()
+    else:
+        summary = "No security threats detected during the monitoring period."
+    
+    # Compile final report
+    report = {
+        'summary': summary,
+        'timestamp': time.strftime('%Y-%m-%d %H:%M:%S'),
+        'risk_metrics': risk_metrics,
+        'threat_categories': formatted_categories,
+        'timeline': timeline,
+        'interpretability_insights': interpretability_insights,
+        'recommendations': recommendations,
+        'high_risk_threats': [
+            {
+                'type': t['type'],
+                'confidence': t['confidence'],
+                'source': t.get('source_ip', 'Unknown'),
+                'target': t.get('dest_ip', 'Unknown'),
+                'timestamp': t['timestamp']
+            }
+            for t in high_risk_threats
         ]
-        
-        for class_idx, count in threat_counts.items():
-            f.write(f"{class_names[class_idx]}: {count} detections\n")
-        
-        f.write("\n")
-        f.write("THREAT ANALYSIS\n")
-        f.write("-"*80 + "\n")
-        
-        # Analyze each threat class
-        for class_idx, count in threat_counts.items():
-            if count == 0:
-                continue
-            
-            f.write(f"\n{class_names[class_idx]} Analysis:\n")
-            
-            # Get features for this class
-            features = threat_storage.get_threat_features(class_idx)
-            
-            if len(features) >= 5:  # Need enough samples for meaningful analysis
-                # Analyze patterns
-                f.write("  Pattern Analysis:\n")
-                
-                # Calculate average confidence
-                threats = threat_storage.get_threats_by_class(class_idx)
-                avg_confidence = np.mean([t['confidence'] for t in threats])
-                f.write(f"  - Average confidence: {avg_confidence:.4f}\n")
-                
-                # Get a representative sample
-                sample_idx = np.random.randint(0, len(features))
-                sample = features[sample_idx]
-                
-                # Explain this sample
-                explanation = interpreter.explain_prediction(
-                    sample,
-                    method="rules",  # Use rules-based for simplicity
-                    target_class=class_idx,
-                    top_features=5
-                )
-                
-                # Add top features to report
-                f.write("  - Key indicators:\n")
-                for feature, importance in explanation['top_features']:
-                    f.write(f"    {feature}: {importance:.4f}\n")
-                
-                # Add recommended action
-                f.write(f"  Recommended action: {get_recommended_action(class_names[class_idx])}\n")
-        
-        f.write("\n")
-        f.write("SECURITY RECOMMENDATIONS\n")
-        f.write("-"*80 + "\n")
-        
-        # Add some generic recommendations
-        f.write("1. Review firewall rules and ACLs for any unauthorized access patterns\n")
-        f.write("2. Update IDS/IPS signatures based on detected threats\n")
-        f.write("3. Conduct targeted vulnerability scanning on affected systems\n")
-        f.write("4. Review user access controls and authentication mechanisms\n")
-        f.write("5. Increase monitoring for high-risk assets and network segments\n")
+    }
     
-    logger.info(f"Security report generated: {report_path}")
-    return report_path
+    return report
 
 
 if __name__ == "__main__":

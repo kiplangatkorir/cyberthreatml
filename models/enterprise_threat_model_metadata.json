@@ -1,0 +1,1 @@
+{"input_shape": [25], "num_classes": 6, "model_config": {"hidden_layers": [256, 128, 64], "dropout_rate": 0.3, "activation": "relu", "output_activation": "softmax", "loss": "categorical_crossentropy", "optimizer": "adam", "metrics": ["accuracy", "AUC", "Precision", "Recall"]}}

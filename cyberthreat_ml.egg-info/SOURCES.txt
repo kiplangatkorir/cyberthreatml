@@ -1,6 +1,8 @@
 README.md
 pyproject.toml
+setup.py
 cyberthreat_ml/__init__.py
+cyberthreat_ml/anomaly.py
 cyberthreat_ml/evaluation.py
 cyberthreat_ml/explain.py
 cyberthreat_ml/interpretability.py
@@ -8,11 +10,12 @@ cyberthreat_ml/logger.py
 cyberthreat_ml/model.py
 cyberthreat_ml/preprocessing.py
 cyberthreat_ml/realtime.py
+cyberthreat_ml/text_visualization.py
 cyberthreat_ml/utils.py
 cyberthreat_ml/visualization.py
 cyberthreat_ml.egg-info/PKG-INFO
 cyberthreat_ml.egg-info/SOURCES.txt
-cyberthreat_ml.egg-info/dependency_links.txt 
+cyberthreat_ml.egg-info/dependency_links.txt
 cyberthreat_ml.egg-info/requires.txt
 cyberthreat_ml.egg-info/top_level.txt
 tests/test_evaluation.py
