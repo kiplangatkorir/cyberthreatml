@@ -62,9 +62,8 @@ def main():
     threat_storage = ThreatStorage()
     
     # Start visualization dashboard
-    dashboard = ThreatVisualizationDashboard(threat_storage, max_history=500)
-    dashboard_thread = threading.Thread(target=dashboard.run)
-    dashboard_thread.start()
+    dashboard = ThreatVisualizationDashboard(max_history=500)
+    dashboard.start()  
     logger.info("Threat visualization dashboard started")
     
     # Initialize threat interpreter
@@ -91,7 +90,6 @@ def main():
     stop_event.set()
     detector_thread.join()
     dashboard.stop()
-    dashboard_thread.join()
     
     logger.info("Enterprise security monitoring completed")
 
