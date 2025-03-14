@@ -2,11 +2,26 @@ THREAT PATTERN INSIGHTS: DDoS
 ========================================
 
 KEY PREDICTIVE FEATURES
-  Window Size: 0.2648
-  Source Port: 0.1845
-  Flow Direction: 0.1776
-  Packet Size: 0.1556
-  Payload Size: 0.1403
+  TCP Flag: 0.5614
+  Destination Port: 0.3544
+  Packet Count: 0.2592
+  Packet Interval: 0.2218
+  Source Port: 0.1904
 
 FEATURE RELIABILITY
+  Source Port: High reliability (CV: 0.25)
+  UDP Flag: High reliability (CV: 0.05)
+  Packet Count: Low reliability (CV: 0.85)
   Suspicious Domain: High reliability (CV: 0.03)
+  Bytes Transferred: High reliability (CV: 0.10)
+  Destination Port: Low reliability (CV: 1.02)
+  TCP Flags Value: High reliability (CV: 0.12)
+  ICMP Flag: High reliability (CV: 0.18)
+  Connection Duration: High reliability (CV: 0.14)
+  Urgent Pointer: High reliability (CV: 0.24)
+  Packet Interval: Medium reliability (CV: 0.50)
+  Packet Size: High reliability (CV: 0.03)
+  Window Size: Medium reliability (CV: 0.50)
+  Flow Direction: High reliability (CV: 0.20)
+  Payload Size: High reliability (CV: 0.06)
+  TCP Flag: Low reliability (CV: 0.67)
