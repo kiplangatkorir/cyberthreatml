@@ -1151,3 +1151,1877 @@
 2025-03-14 14:54:03,917 - root - ERROR - Error processing batch: type object 'datetime.datetime' has no attribute 'datetime'
 2025-03-14 14:54:04,018 - root - INFO - Real-time detector stopped
 2025-03-14 14:54:04,214 - enterprise_security - INFO - Enterprise security monitoring completed
+2025-03-14 14:56:56,857 - enterprise_security - INFO - Starting Enterprise Security Monitoring System
+2025-03-14 14:56:57,124 - enterprise_security - INFO - Loaded existing model
+2025-03-14 14:56:57,522 - shap - WARNING - Using 1000 background data samples could cause slower run times. Consider using shap.sample(data, K) or shap.kmeans(data, K) to summarize the background as K samples.
+2025-03-14 14:56:57,525 - enterprise_security - INFO - Threat interpreter initialized
+2025-03-14 14:56:57,527 - enterprise_security - INFO - Real-time threat detector started
+2025-03-14 14:56:58,142 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:56:58,148 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:56:58
+Rules Triggered:
+
+2025-03-14 14:56:58,153 - enterprise_security - INFO - Threat visualization dashboard started
+2025-03-14 14:56:58,153 - enterprise_security - INFO - Starting network traffic monitoring...
+2025-03-14 14:56:58,153 - enterprise_security - INFO - Starting traffic simulation...
+2025-03-14 14:56:58,154 - enterprise_security - INFO - Starting traffic simulation...
+2025-03-14 14:56:58,364 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:56:58,364 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:56:58
+Rules Triggered:
+
+2025-03-14 14:56:58,649 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:56:58,649 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:56:58
+Rules Triggered:
+
+2025-03-14 14:56:58,856 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:56:58,856 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:56:58
+Rules Triggered:
+
+2025-03-14 14:56:59,058 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:56:59,058 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:56:59
+Rules Triggered:
+
+2025-03-14 14:56:59,261 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:56:59,261 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:56:59
+Rules Triggered:
+
+2025-03-14 14:56:59,480 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:56:59,480 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:56:59
+Rules Triggered:
+
+2025-03-14 14:56:59,693 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:56:59,693 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:56:59
+Rules Triggered:
+
+2025-03-14 14:56:59,931 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:56:59,931 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:56:59
+Rules Triggered:
+
+2025-03-14 14:57:00,149 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:00,149 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:00
+Rules Triggered:
+
+2025-03-14 14:57:00,368 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:00,368 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:00
+Rules Triggered:
+
+2025-03-14 14:57:00,599 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:00,599 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:00
+Rules Triggered:
+
+2025-03-14 14:57:00,809 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:00,809 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:00
+Rules Triggered:
+
+2025-03-14 14:57:01,010 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:01,010 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:01
+Rules Triggered:
+
+2025-03-14 14:57:01,245 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:01,245 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:01
+Rules Triggered:
+
+2025-03-14 14:57:01,544 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:01,546 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:01
+Rules Triggered:
+
+2025-03-14 14:57:01,757 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:01,757 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:01
+Rules Triggered:
+
+2025-03-14 14:57:01,949 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:01,949 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:01
+Rules Triggered:
+
+2025-03-14 14:57:02,153 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:02,153 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:02
+Rules Triggered:
+
+2025-03-14 14:57:02,342 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:02,342 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:02
+Rules Triggered:
+
+2025-03-14 14:57:02,551 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:02,551 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:02
+Rules Triggered:
+
+2025-03-14 14:57:02,831 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:02,831 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:02
+Rules Triggered:
+
+2025-03-14 14:57:03,047 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:03,047 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:03
+Rules Triggered:
+
+2025-03-14 14:57:03,239 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:03,239 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:03
+Rules Triggered:
+
+2025-03-14 14:57:03,443 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:03,443 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:03
+Rules Triggered:
+
+2025-03-14 14:57:03,662 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:03,662 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:03
+Rules Triggered:
+
+2025-03-14 14:57:03,913 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:03,913 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:03
+Rules Triggered:
+
+2025-03-14 14:57:04,109 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:04,109 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:04
+Rules Triggered:
+
+2025-03-14 14:57:04,300 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:04,303 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:04
+Rules Triggered:
+
+2025-03-14 14:57:04,491 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:04,491 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:04
+Rules Triggered:
+
+2025-03-14 14:57:04,684 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:04,684 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:04
+Rules Triggered:
+
+2025-03-14 14:57:04,909 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:04,909 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:04
+Rules Triggered:
+
+2025-03-14 14:57:05,105 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:05,105 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:05
+Rules Triggered:
+
+2025-03-14 14:57:05,301 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:05,302 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:05
+Rules Triggered:
+
+2025-03-14 14:57:05,518 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:05,518 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:05
+Rules Triggered:
+
+2025-03-14 14:57:05,714 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:05,715 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:05
+Rules Triggered:
+
+2025-03-14 14:57:05,915 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:05,915 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:05
+Rules Triggered:
+
+2025-03-14 14:57:06,104 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:06,104 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:06
+Rules Triggered:
+
+2025-03-14 14:57:06,281 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:06,281 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:06
+Rules Triggered:
+
+2025-03-14 14:57:06,489 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:06,489 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:06
+Rules Triggered:
+
+2025-03-14 14:57:06,693 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:06,693 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:06
+Rules Triggered:
+
+2025-03-14 14:57:06,908 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:06,911 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:06
+Rules Triggered:
+
+2025-03-14 14:57:07,118 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:07,118 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:07
+Rules Triggered:
+
+2025-03-14 14:57:07,351 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:07,351 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:07
+Rules Triggered:
+
+2025-03-14 14:57:07,575 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:07,575 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:07
+Rules Triggered:
+
+2025-03-14 14:57:07,766 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:07,766 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:07
+Rules Triggered:
+
+2025-03-14 14:57:07,970 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:07,970 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:07
+Rules Triggered:
+
+2025-03-14 14:57:08,197 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:08,197 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:08
+Rules Triggered:
+
+2025-03-14 14:57:08,391 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:08,391 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:08
+Rules Triggered:
+
+2025-03-14 14:57:08,564 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:08,564 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:08
+Rules Triggered:
+
+2025-03-14 14:57:08,780 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:08,780 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:08
+Rules Triggered:
+
+2025-03-14 14:57:08,992 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:08,992 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:08
+Rules Triggered:
+
+2025-03-14 14:57:09,190 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:09,190 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:09
+Rules Triggered:
+
+2025-03-14 14:57:09,411 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:09,411 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:09
+Rules Triggered:
+
+2025-03-14 14:57:09,627 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:09,627 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:09
+Rules Triggered:
+
+2025-03-14 14:57:09,836 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:09,836 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:09
+Rules Triggered:
+
+2025-03-14 14:57:10,039 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:10,039 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:10
+Rules Triggered:
+
+2025-03-14 14:57:10,239 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:10,240 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:10
+Rules Triggered:
+
+2025-03-14 14:57:10,441 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:10,443 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:10
+Rules Triggered:
+
+2025-03-14 14:57:10,645 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:10,645 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:10
+Rules Triggered:
+
+2025-03-14 14:57:10,845 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:10,846 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:10
+Rules Triggered:
+
+2025-03-14 14:57:11,049 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:11,049 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:11
+Rules Triggered:
+
+2025-03-14 14:57:11,245 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:11,245 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:11
+Rules Triggered:
+
+2025-03-14 14:57:11,456 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:11,456 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:11
+Rules Triggered:
+
+2025-03-14 14:57:11,673 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:11,673 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:11
+Rules Triggered:
+
+2025-03-14 14:57:11,875 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:11,875 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:11
+Rules Triggered:
+
+2025-03-14 14:57:12,103 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:12,103 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:12
+Rules Triggered:
+
+2025-03-14 14:57:12,284 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:12,284 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:12
+Rules Triggered:
+
+2025-03-14 14:57:12,495 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:12,495 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:12
+Rules Triggered:
+
+2025-03-14 14:57:12,718 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:12,719 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:12
+Rules Triggered:
+
+2025-03-14 14:57:12,941 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:12,941 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:12
+Rules Triggered:
+
+2025-03-14 14:57:13,149 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:13,149 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:13
+Rules Triggered:
+
+2025-03-14 14:57:13,361 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:13,361 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:13
+Rules Triggered:
+
+2025-03-14 14:57:13,577 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:13,577 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:13
+Rules Triggered:
+
+2025-03-14 14:57:13,810 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:13,810 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:13
+Rules Triggered:
+
+2025-03-14 14:57:14,036 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:14,036 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:14
+Rules Triggered:
+
+2025-03-14 14:57:14,309 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:14,309 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:14
+Rules Triggered:
+
+2025-03-14 14:57:14,547 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:14,547 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:14
+Rules Triggered:
+
+2025-03-14 14:57:14,773 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:14,773 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:14
+Rules Triggered:
+
+2025-03-14 14:57:14,982 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:14,982 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:14
+Rules Triggered:
+
+2025-03-14 14:57:15,214 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:15,214 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:15
+Rules Triggered:
+
+2025-03-14 14:57:15,442 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:15,442 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:15
+Rules Triggered:
+
+2025-03-14 14:57:15,654 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:15,654 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:15
+Rules Triggered:
+
+2025-03-14 14:57:15,889 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:15,889 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:15
+Rules Triggered:
+
+2025-03-14 14:57:16,100 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:16,100 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:16
+Rules Triggered:
+
+2025-03-14 14:57:16,327 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:16,328 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:16
+Rules Triggered:
+
+2025-03-14 14:57:16,573 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:16,573 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:16
+Rules Triggered:
+
+2025-03-14 14:57:16,763 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:16,763 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:16
+Rules Triggered:
+
+2025-03-14 14:57:16,970 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:16,970 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:16
+Rules Triggered:
+
+2025-03-14 14:57:17,196 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:17,196 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:17
+Rules Triggered:
+
+2025-03-14 14:57:17,429 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:17,430 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:17
+Rules Triggered:
+
+2025-03-14 14:57:17,681 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:17,681 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:17
+Rules Triggered:
+
+2025-03-14 14:57:17,881 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:17,881 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:17
+Rules Triggered:
+
+2025-03-14 14:57:18,106 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:18,310 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:18
+Rules Triggered:
+
+2025-03-14 14:57:18,523 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:18,523 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:18
+Rules Triggered:
+
+2025-03-14 14:57:18,768 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:18,768 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:18
+Rules Triggered:
+
+2025-03-14 14:57:18,976 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:18,976 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:18
+Rules Triggered:
+
+2025-03-14 14:57:19,199 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:19,199 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:19
+Rules Triggered:
+
+2025-03-14 14:57:19,454 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:19,454 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:19
+Rules Triggered:
+
+2025-03-14 14:57:19,709 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:19,710 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:19
+Rules Triggered:
+
+2025-03-14 14:57:19,913 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:19,913 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:19
+Rules Triggered:
+
+2025-03-14 14:57:20,142 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:20,142 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:20
+Rules Triggered:
+
+2025-03-14 14:57:20,359 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:20,359 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:20
+Rules Triggered:
+
+2025-03-14 14:57:20,571 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:20,571 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:20
+Rules Triggered:
+
+2025-03-14 14:57:20,789 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:20,790 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:20
+Rules Triggered:
+
+2025-03-14 14:57:21,002 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:21,002 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:21
+Rules Triggered:
+
+2025-03-14 14:57:21,214 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:21,214 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:21
+Rules Triggered:
+
+2025-03-14 14:57:21,457 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:21,457 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:21
+Rules Triggered:
+
+2025-03-14 14:57:21,673 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:21,673 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:21
+Rules Triggered:
+
+2025-03-14 14:57:21,913 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:21,913 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:21
+Rules Triggered:
+
+2025-03-14 14:57:22,177 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:22,177 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:22
+Rules Triggered:
+
+2025-03-14 14:57:22,482 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:22,482 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:22
+Rules Triggered:
+
+2025-03-14 14:57:22,704 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:22,704 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:22
+Rules Triggered:
+
+2025-03-14 14:57:22,927 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:22,927 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:22
+Rules Triggered:
+
+2025-03-14 14:57:23,130 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:23,130 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:23
+Rules Triggered:
+
+2025-03-14 14:57:23,354 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:23,357 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:23
+Rules Triggered:
+
+2025-03-14 14:57:23,623 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:23,623 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:23
+Rules Triggered:
+
+2025-03-14 14:57:23,846 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:23,846 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:23
+Rules Triggered:
+
+2025-03-14 14:57:24,080 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:24,085 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:24
+Rules Triggered:
+
+2025-03-14 14:57:24,309 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:24,309 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:24
+Rules Triggered:
+
+2025-03-14 14:57:24,529 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:24,529 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:24
+Rules Triggered:
+
+2025-03-14 14:57:24,795 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:24,795 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:24
+Rules Triggered:
+
+2025-03-14 14:57:25,029 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:25,029 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:25
+Rules Triggered:
+
+2025-03-14 14:57:25,248 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:25,249 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:25
+Rules Triggered:
+
+2025-03-14 14:57:25,497 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:25,497 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:25
+Rules Triggered:
+
+2025-03-14 14:57:25,725 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:25,727 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:25
+Rules Triggered:
+
+2025-03-14 14:57:25,973 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:25,973 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:25
+Rules Triggered:
+
+2025-03-14 14:57:26,255 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:26,256 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:26
+Rules Triggered:
+
+2025-03-14 14:57:26,478 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:26,478 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:26
+Rules Triggered:
+
+2025-03-14 14:57:26,700 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:26,700 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:26
+Rules Triggered:
+
+2025-03-14 14:57:26,929 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:26,931 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:26
+Rules Triggered:
+
+2025-03-14 14:57:27,160 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:27,161 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:27
+Rules Triggered:
+
+2025-03-14 14:57:27,387 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:27,388 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:27
+Rules Triggered:
+
+2025-03-14 14:57:27,635 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:27,635 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:27
+Rules Triggered:
+
+2025-03-14 14:57:27,850 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:27,850 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:27
+Rules Triggered:
+
+2025-03-14 14:57:28,077 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:28,077 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:28
+Rules Triggered:
+
+2025-03-14 14:57:28,277 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:28,277 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:28
+Rules Triggered:
+
+2025-03-14 14:57:28,524 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:28,525 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:28
+Rules Triggered:
+
+2025-03-14 14:57:28,736 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:28,736 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:28
+Rules Triggered:
+
+2025-03-14 14:57:28,963 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:28,964 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:28
+Rules Triggered:
+
+2025-03-14 14:57:29,185 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:29,186 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:29
+Rules Triggered:
+
+2025-03-14 14:57:29,386 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:29,386 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:29
+Rules Triggered:
+
+2025-03-14 14:57:29,597 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:29,597 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:29
+Rules Triggered:
+
+2025-03-14 14:57:29,820 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:29,820 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:29
+Rules Triggered:
+
+2025-03-14 14:57:30,039 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:30,039 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:30
+Rules Triggered:
+
+2025-03-14 14:57:30,292 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:30,292 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:30
+Rules Triggered:
+
+2025-03-14 14:57:30,527 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:30,527 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:30
+Rules Triggered:
+
+2025-03-14 14:57:30,754 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:30,754 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:30
+Rules Triggered:
+
+2025-03-14 14:57:30,980 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:30,980 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:30
+Rules Triggered:
+
+2025-03-14 14:57:31,205 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:31,205 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:31
+Rules Triggered:
+
+2025-03-14 14:57:31,430 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:31,430 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:31
+Rules Triggered:
+
+2025-03-14 14:57:31,640 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:31,640 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:31
+Rules Triggered:
+
+2025-03-14 14:57:31,838 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:31,838 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:31
+Rules Triggered:
+
+2025-03-14 14:57:32,061 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:32,061 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:32
+Rules Triggered:
+
+2025-03-14 14:57:32,290 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:32,290 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:32
+Rules Triggered:
+
+2025-03-14 14:57:32,518 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:32,518 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:32
+Rules Triggered:
+
+2025-03-14 14:57:32,758 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:32,758 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:32
+Rules Triggered:
+
+2025-03-14 14:57:32,999 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:32,999 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:32
+Rules Triggered:
+
+2025-03-14 14:57:33,204 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:33,204 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:33
+Rules Triggered:
+
+2025-03-14 14:57:33,435 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:33,435 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:33
+Rules Triggered:
+
+2025-03-14 14:57:33,678 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:33,678 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:33
+Rules Triggered:
+
+2025-03-14 14:57:33,902 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:33,902 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:33
+Rules Triggered:
+
+2025-03-14 14:57:34,137 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:34,137 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:34
+Rules Triggered:
+
+2025-03-14 14:57:34,396 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:34,397 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:34
+Rules Triggered:
+
+2025-03-14 14:57:34,598 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:34,598 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:34
+Rules Triggered:
+
+2025-03-14 14:57:34,795 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:34,795 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:34
+Rules Triggered:
+
+2025-03-14 14:57:35,016 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:35,016 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:35
+Rules Triggered:
+
+2025-03-14 14:57:35,205 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:35,205 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:35
+Rules Triggered:
+
+2025-03-14 14:57:35,397 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:35,397 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:35
+Rules Triggered:
+
+2025-03-14 14:57:35,609 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:35,609 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:35
+Rules Triggered:
+
+2025-03-14 14:57:35,789 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:35,789 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:35
+Rules Triggered:
+
+2025-03-14 14:57:35,980 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:35,980 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:35
+Rules Triggered:
+
+2025-03-14 14:57:36,197 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:36,197 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:36
+Rules Triggered:
+
+2025-03-14 14:57:36,389 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:36,389 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:36
+Rules Triggered:
+
+2025-03-14 14:57:36,561 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:36,561 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:36
+Rules Triggered:
+
+2025-03-14 14:57:36,749 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:36,749 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:36
+Rules Triggered:
+
+2025-03-14 14:57:36,941 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:36,941 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:36
+Rules Triggered:
+
+2025-03-14 14:57:37,164 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:37,164 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:37
+Rules Triggered:
+
+2025-03-14 14:57:37,378 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:37,378 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:37
+Rules Triggered:
+
+2025-03-14 14:57:37,562 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:37,562 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:37
+Rules Triggered:
+
+2025-03-14 14:57:37,748 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:37,749 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:37
+Rules Triggered:
+
+2025-03-14 14:57:37,959 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:37,959 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:37
+Rules Triggered:
+
+2025-03-14 14:57:38,289 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:38,289 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:38
+Rules Triggered:
+
+2025-03-14 14:57:38,463 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:38,463 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:38
+Rules Triggered:
+
+2025-03-14 14:57:38,652 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:38,652 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:38
+Rules Triggered:
+
+2025-03-14 14:57:38,829 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:38,829 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:38
+Rules Triggered:
+
+2025-03-14 14:57:39,014 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:39,014 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:39
+Rules Triggered:
+
+2025-03-14 14:57:39,206 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:39,206 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:39
+Rules Triggered:
+
+2025-03-14 14:57:39,389 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:39,389 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:39
+Rules Triggered:
+
+2025-03-14 14:57:39,577 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:39,577 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:39
+Rules Triggered:
+
+2025-03-14 14:57:39,770 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:39,770 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:39
+Rules Triggered:
+
+2025-03-14 14:57:39,958 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:39,958 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:39
+Rules Triggered:
+
+2025-03-14 14:57:40,140 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:40,140 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:40
+Rules Triggered:
+
+2025-03-14 14:57:40,346 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:40,346 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:40
+Rules Triggered:
+
+2025-03-14 14:57:40,534 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:40,534 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:40
+Rules Triggered:
+
+2025-03-14 14:57:40,723 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:40,723 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:40
+Rules Triggered:
+
+2025-03-14 14:57:40,930 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:40,930 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:40
+Rules Triggered:
+
+2025-03-14 14:57:41,123 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:41,123 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:41
+Rules Triggered:
+
+2025-03-14 14:57:41,308 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:41,308 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:41
+Rules Triggered:
+
+2025-03-14 14:57:41,514 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:41,514 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:41
+Rules Triggered:
+
+2025-03-14 14:57:41,704 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:41,704 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:41
+Rules Triggered:
+
+2025-03-14 14:57:41,890 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:41,890 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:41
+Rules Triggered:
+
+2025-03-14 14:57:42,082 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:42,082 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:42
+Rules Triggered:
+
+2025-03-14 14:57:42,270 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:42,270 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:42
+Rules Triggered:
+
+2025-03-14 14:57:42,461 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:42,461 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:42
+Rules Triggered:
+
+2025-03-14 14:57:42,665 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:42,665 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:42
+Rules Triggered:
+
+2025-03-14 14:57:42,854 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:42,854 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:42
+Rules Triggered:
+
+2025-03-14 14:57:43,039 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:43,039 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:43
+Rules Triggered:
+
+2025-03-14 14:57:43,254 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:43,258 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:43
+Rules Triggered:
+
+2025-03-14 14:57:43,451 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:43,451 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:43
+Rules Triggered:
+
+2025-03-14 14:57:43,644 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:43,644 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:43
+Rules Triggered:
+
+2025-03-14 14:57:43,856 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:43,856 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:43
+Rules Triggered:
+
+2025-03-14 14:57:44,047 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:44,047 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:44
+Rules Triggered:
+
+2025-03-14 14:57:44,239 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:44,239 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:44
+Rules Triggered:
+
+2025-03-14 14:57:44,455 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:44,455 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:44
+Rules Triggered:
+
+2025-03-14 14:57:44,640 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:44,640 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:44
+Rules Triggered:
+
+2025-03-14 14:57:44,828 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:44,828 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:44
+Rules Triggered:
+
+2025-03-14 14:57:45,039 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:45,039 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:45
+Rules Triggered:
+
+2025-03-14 14:57:45,229 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:45,229 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:45
+Rules Triggered:
+
+2025-03-14 14:57:45,420 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:45,420 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:45
+Rules Triggered:
+
+2025-03-14 14:57:45,631 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:45,631 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:45
+Rules Triggered:
+
+2025-03-14 14:57:45,818 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:45,818 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:45
+Rules Triggered:
+
+2025-03-14 14:57:46,000 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:46,000 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:46
+Rules Triggered:
+
+2025-03-14 14:57:46,197 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:46,197 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:46
+Rules Triggered:
+
+2025-03-14 14:57:46,386 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:46,386 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:46
+Rules Triggered:
+
+2025-03-14 14:57:46,572 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:46,572 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:46
+Rules Triggered:
+
+2025-03-14 14:57:46,785 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:46,786 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:46
+Rules Triggered:
+
+2025-03-14 14:57:46,971 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:46,971 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:46
+Rules Triggered:
+
+2025-03-14 14:57:47,186 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:47,186 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:47
+Rules Triggered:
+
+2025-03-14 14:57:47,411 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:47,411 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:47
+Rules Triggered:
+
+2025-03-14 14:57:47,595 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:47,595 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:47
+Rules Triggered:
+
+2025-03-14 14:57:47,782 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:47,795 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:47
+Rules Triggered:
+
+2025-03-14 14:57:47,992 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:47,992 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:47
+Rules Triggered:
+
+2025-03-14 14:57:48,180 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:48,180 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:48
+Rules Triggered:
+
+2025-03-14 14:57:48,359 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:48,359 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:48
+Rules Triggered:
+
+2025-03-14 14:57:48,573 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:48,573 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:48
+Rules Triggered:
+
+2025-03-14 14:57:48,768 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:48,768 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:48
+Rules Triggered:
+
+2025-03-14 14:57:48,952 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:48,952 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:48
+Rules Triggered:
+
+2025-03-14 14:57:49,159 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:49,159 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:49
+Rules Triggered:
+
+2025-03-14 14:57:49,354 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:49,354 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:49
+Rules Triggered:
+
+2025-03-14 14:57:49,545 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:49,545 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:49
+Rules Triggered:
+
+2025-03-14 14:57:49,763 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:49,763 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:49
+Rules Triggered:
+
+2025-03-14 14:57:49,949 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:49,953 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:49
+Rules Triggered:
+
+2025-03-14 14:57:50,140 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:50,140 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:50
+Rules Triggered:
+
+2025-03-14 14:57:50,351 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:50,351 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:50
+Rules Triggered:
+
+2025-03-14 14:57:50,540 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:50,540 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:50
+Rules Triggered:
+
+2025-03-14 14:57:50,724 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:50,724 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:50
+Rules Triggered:
+
+2025-03-14 14:57:50,932 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:50,932 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:50
+Rules Triggered:
+
+2025-03-14 14:57:51,139 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:51,139 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:51
+Rules Triggered:
+
+2025-03-14 14:57:51,320 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:51,320 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:51
+Rules Triggered:
+
+2025-03-14 14:57:51,520 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:51,520 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:51
+Rules Triggered:
+
+2025-03-14 14:57:51,704 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:51,711 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:51
+Rules Triggered:
+
+2025-03-14 14:57:51,899 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:51,899 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:51
+Rules Triggered:
+
+2025-03-14 14:57:52,091 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:52,091 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:52
+Rules Triggered:
+
+2025-03-14 14:57:52,277 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:52,277 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:52
+Rules Triggered:
+
+2025-03-14 14:57:56,324 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:56,324 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:56
+Rules Triggered:
+
+2025-03-14 14:57:56,507 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:56,509 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:56
+Rules Triggered:
+
+2025-03-14 14:57:56,708 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:56,711 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:56
+Rules Triggered:
+
+2025-03-14 14:57:56,888 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:56,888 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:56
+Rules Triggered:
+
+2025-03-14 14:57:57,070 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:57,070 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:57
+Rules Triggered:
+
+2025-03-14 14:57:57,272 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:57,274 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:57
+Rules Triggered:
+
+2025-03-14 14:57:57,447 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:57,447 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:57
+Rules Triggered:
+
+2025-03-14 14:57:57,623 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:57,623 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:57
+Rules Triggered:
+
+2025-03-14 14:57:57,805 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:57,805 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:57
+Rules Triggered:
+
+2025-03-14 14:57:57,990 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:57,990 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:57
+Rules Triggered:
+
+2025-03-14 14:57:58,164 - root - WARNING - Threat detected! Confidence: 1.00
+2025-03-14 14:57:58,176 - enterprise_security - INFO - Traffic simulation completed. Processed 1160 packets
+2025-03-14 14:57:58,178 - enterprise_security - WARNING - ALERT: Threat detected!
+Type: malicious
+Confidence: 1.00
+Timestamp: 2025-03-14 14:57:58
+Rules Triggered:
+
+2025-03-14 14:57:58,280 - root - INFO - Real-time detector stopped
+2025-03-14 14:57:58,327 - enterprise_security - INFO - Enterprise security monitoring completed

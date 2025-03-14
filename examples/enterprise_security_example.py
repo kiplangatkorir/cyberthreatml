@@ -733,15 +733,18 @@ def generate_security_report(threat_storage, interpreter):
 
 def _rules_based_explanation(features, feature_names):
     """Generate a rules-based explanation for the features."""
-    # Define thresholds for common threat indicators
+    # Define thresholds for common threat indicators (adjusted for normalized values)
     thresholds = {
-        'Packet Size': 1500,  # Large packet size
-        'Flow Duration': 300,  # Long flow duration
-        'Bytes Transferred': 10000,  # High data transfer
-        'Packet Count': 100,  # High packet count
-        'Rate of SYN Packets': 0.5,  # High SYN rate
-        'Unique Destinations': 10,  # Many unique destinations
-        'Payload Entropy': 7.0,  # High entropy (encrypted/compressed)
+        'Packet Size': 0.7,  # Large packet size relative to max
+        'Flow Duration': 0.6,  # Long flow duration 
+        'Bytes Transferred': 0.8,  # High data transfer
+        'Packet Count': 0.7,  # High packet count
+        'Rate of SYN Packets': 0.6,  # High SYN rate
+        'Unique Destinations': 0.5,  # Many unique destinations
+        'Payload Entropy': 0.8,  # High entropy (encrypted/compressed)
+        'Inter-arrival Time': 0.7,  # Suspicious timing
+        'Window Size': 0.9,  # Unusual window size
+        'Payload Length': 0.8  # Large payload
     }
     
     explanation = {
@@ -757,10 +760,18 @@ def _rules_based_explanation(features, feature_names):
             threshold = thresholds[feature_name]
             
             if feature_val > threshold:
-                explanation['feature_importance'][feature_name] = 1.0
+                importance = min((feature_val - threshold) / (1 - threshold), 1.0)
+                explanation['feature_importance'][feature_name] = importance
                 explanation['rules_triggered'].append(
-                    f"{feature_name} ({feature_val:.2f}) exceeds threshold ({threshold})"
+                    f"{feature_name} ({feature_val:.2f}) exceeds threshold ({threshold:.2f})"
                 )
+    
+    # Sort rules by importance
+    if explanation['rules_triggered']:
+        explanation['rules_triggered'].sort(
+            key=lambda x: explanation['feature_importance'][x.split(' ')[0]], 
+            reverse=True
+        )
     
     return explanation
 
@@ -788,10 +799,12 @@ def process_batch(model, batch_features, threat_storage, interpreter):
                 logger.error(f"Error generating explanation: {str(e)}")
                 explanation = {"method": "none", "error": str(e)}
             
-            # Create threat object
+            # Create threat object with severity
+            severity = "HIGH" if pred_prob > 0.8 else "MEDIUM" if pred_prob > 0.6 else "LOW"
             threat = {
                 'type': 'malicious',
                 'confidence': pred_prob,
+                'severity': severity,
                 'features': batch_features.tolist(),
                 'interpretation': explanation,
                 'timestamp': time.time()
@@ -855,15 +868,22 @@ def get_latest_traffic():
 
 def generate_alert(threat_data):
     """Generate an alert for a detected threat."""
-    logger.warning(
-        f"ALERT: Threat detected!\n"
+    severity = threat_data.get('severity', 'UNKNOWN')
+    rules = threat_data['interpretation'].get('rules_triggered', [])
+    
+    alert_msg = (
+        f"ALERT: {severity} Severity Threat Detected!\n"
         f"Type: {threat_data['type']}\n"
         f"Confidence: {threat_data['confidence']:.2f}\n"
-        f"Timestamp: {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(threat_data['timestamp']))}\n"
-        f"Rules Triggered:\n" + "\n".join(
-            f"- {rule}" for rule in threat_data['interpretation'].get('rules_triggered', [])
-        )
+        f"Timestamp: {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(threat_data['timestamp']))}"
     )
+    
+    if rules:
+        alert_msg += "\nRules Triggered:\n" + "\n".join(f"- {rule}" for rule in rules)
+    else:
+        alert_msg += "\nNo specific rules triggered - detected by ML model"
+    
+    logger.warning(alert_msg)
 
 
 if __name__ == "__main__":
