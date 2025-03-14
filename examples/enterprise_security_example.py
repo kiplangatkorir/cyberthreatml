@@ -16,6 +16,7 @@ import logging
 import json
 from datetime import datetime
 import threading
+import keras
 
 # Create output directories if they don't exist
 os.makedirs('security_output/alerts', exist_ok=True)
@@ -208,58 +209,46 @@ def main():
 
 
 def create_and_train_model():
-    """
-    Create and train a model for enterprise security monitoring.
-    """
-    # Create synthetic dataset
-    X_train, y_train = create_enterprise_dataset(n_samples=5000, n_features=25, n_classes=6)
+    """Create and train the threat detection model."""
+    # Define model architecture
+    model = keras.Sequential([
+        keras.layers.Dense(256, activation='relu', input_shape=(25,)),
+        keras.layers.Dropout(0.3),
+        keras.layers.Dense(128, activation='relu'),
+        keras.layers.Dropout(0.3),
+        keras.layers.Dense(64, activation='relu'),
+        keras.layers.Dropout(0.3),
+        keras.layers.Dense(1, activation='sigmoid')
+    ])
     
-    # Create model with enterprise-grade architecture
-    model = ThreatDetectionModel(
-        input_shape=(25,),  # 25 features
-        num_classes=6,      # Normal + 5 threat types
-        model_config={
-            'hidden_layers': [256, 128, 64],  # Deeper network for complex threats
-            'dropout_rate': 0.3,
-            'activation': 'relu',
-            'output_activation': 'softmax',
-            'loss': 'categorical_crossentropy',
-            'optimizer': 'adam',
-            'metrics': ['accuracy', 'AUC', 'Precision', 'Recall']
-        }
+    # Compile model
+    model.compile(
+        optimizer='adam',
+        loss='binary_crossentropy',
+        metrics=['accuracy', 'AUC', 'Precision', 'Recall']
     )
     
-    # Convert labels to one-hot encoding
-    y_train_cat = tf.keras.utils.to_categorical(y_train, num_classes=6)
+    # Create training data
+    X_train, y_train = create_enterprise_dataset(num_samples=4000)
+    X_val, y_val = create_enterprise_dataset(num_samples=1000)
     
-    # Train with early stopping and model checkpointing
-    history = model.train(
-        X_train, y_train_cat,
+    # Train model
+    model.fit(
+        X_train, y_train,
+        validation_data=(X_val, y_val),
         epochs=50,
         batch_size=32,
-        validation_split=0.2,
         callbacks=[
-            tf.keras.callbacks.EarlyStopping(
+            keras.callbacks.EarlyStopping(
                 monitor='val_loss',
                 patience=5,
                 restore_best_weights=True
-            ),
-            tf.keras.callbacks.ModelCheckpoint(
-                'models/enterprise_threat_model_checkpoint.keras',
-                monitor='val_loss',
-                save_best_only=True
             )
-        ]
-    )
-    
-    # Save the final model
-    model.save_model(
-        'models/enterprise_threat_model',
-        'models/enterprise_threat_model_metadata.json'
+        ],
+        verbose=1
     )
     
     return model
-
 
 def create_enterprise_dataset(n_samples=5000, n_features=25, n_classes=6):
     """
@@ -329,7 +318,6 @@ def create_enterprise_dataset(n_samples=5000, n_features=25, n_classes=6):
     y = y[shuffle_idx]
     
     return X.astype(np.float32), y
-
 
 class EnterpriseFeatureExtractor:
     """Custom feature extractor for enterprise network traffic."""
@@ -872,11 +860,12 @@ def generate_security_report(threat_storage, interpreter):
 def process_batch(model, batch_features, threat_storage, interpreter):
     """Process a batch of network traffic features."""
     try:
-        # Make predictions
-        predictions = model.predict(np.array([batch_features]), verbose=0)
+        # Make predictions (ensure batch_features is 2D)
+        features_2d = np.array([batch_features])
+        predictions = model.predict(features_2d, verbose=0)
         
-        # Get prediction probabilities
-        pred_prob = float(predictions[0][0])  # Convert to Python float
+        # Get prediction probability (single value between 0 and 1)
+        pred_prob = float(predictions[0][0])
         
         # Determine if it's a threat (threshold = 0.5)
         is_threat = pred_prob > 0.5
