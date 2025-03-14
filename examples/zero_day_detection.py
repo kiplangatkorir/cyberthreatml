@@ -16,6 +16,7 @@ import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
 import pandas as pd
 import random
+import tensorflow as tf
 
 # Import from cyberthreat_ml library
 from cyberthreat_ml.model import ThreatDetectionModel, load_model
@@ -65,7 +66,11 @@ def main():
     # Binary classification: 0 = normal, 1 = known attack
     y_train_binary = (y_train > 0).astype(int)
     
-    # Create and train the model
+    # Split data into training and validation sets
+    from sklearn.model_selection import train_test_split
+    X_train, X_val, y_train, y_val = train_test_split(X_train, y_train_binary, test_size=0.2, random_state=42)
+    
+    # Create and train signature-based model
     signature_model = ThreatDetectionModel(
         input_shape=(20,),  # Number of features
         num_classes=3,      # Normal, Known Attack, Zero-day
@@ -80,12 +85,21 @@ def main():
             'class_names': ['Normal', 'Known Attack', 'Zero-day Attack']
         }
     )
-    
-    signature_model.train(
-        X_train, y_train_binary,
-        epochs=5,
+
+    # Train with proper validation split
+    history = signature_model.train(
+        X_train, y_train,
+        validation_data=(X_val, y_val),
+        epochs=10,
         batch_size=32,
-        early_stopping=True
+        verbose=1,
+        callbacks=[
+            tf.keras.callbacks.EarlyStopping(
+                monitor='val_loss',
+                patience=3,
+                restore_best_weights=True
+            )
+        ]
     )
     
     print("Signature-based classifier trained successfully")
