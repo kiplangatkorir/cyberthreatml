@@ -15,6 +15,7 @@ import numpy as np
 from datetime import datetime, timedelta
 import json
 import random
+import tensorflow as tf
 
 # Import from cyberthreat_ml library
 from cyberthreat_ml.model import ThreatDetectionModel, load_model
@@ -219,16 +220,35 @@ def create_and_train_model():
         num_classes=6,
         model_config={
             'hidden_layers': [64, 32, 16],
-            'dropout_rate': 0.25
+            'dropout_rate': 0.25,
+            'activation': 'relu',
+            'output_activation': 'softmax',
+            'loss': 'categorical_crossentropy',
+            'metrics': ['accuracy'],
+            'optimizer': 'adam',
+            'class_names': [
+                "Normal Behavior", 
+                "Botnet Activity", 
+                "Firmware Tampering", 
+                "Data Exfiltration", 
+                "Command Injection", 
+                "Replay Attack"
+            ]
         }
     )
     
     model.train(
         X_train, y_train,
-        X_val=X_val, y_val=y_val,
+        validation_data=(X_val, y_val),
         epochs=10,
         batch_size=32,
-        early_stopping=True
+        callbacks=[
+            tf.keras.callbacks.EarlyStopping(
+                monitor='val_loss',
+                patience=3,
+                restore_best_weights=True
+            )
+        ]
     )
     
     return model
