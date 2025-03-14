@@ -7,20 +7,20 @@ Explanation Method: rules
 
 TOP CONTRIBUTING FEATURES
 -----------------------
-1. Urgent Pointer: +0.2104
-2. ICMP Flag: +0.1778
-3. Bytes Transferred: +0.1271
-4. Packet Count: +0.1199
-5. Window Size: +0.0996
+1. Packet Size: +0.9116
+2. Bytes Transferred: +0.7235
+3. Payload Entropy: +0.7170
+4. Flow Direction: +0.5540
+5. Encrypted Payload: +0.4069
 
 INTERPRETATION
 -------------
 Features increasing the likelihood of this threat:
-- Urgent Pointer (contribution: +0.2104)
-- ICMP Flag (contribution: +0.1778)
-- Bytes Transferred (contribution: +0.1271)
-- Packet Count (contribution: +0.1199)
-- Window Size (contribution: +0.0996)
+- Packet Size (contribution: +0.9116)
+- Bytes Transferred (contribution: +0.7235)
+- Payload Entropy (contribution: +0.7170)
+- Flow Direction (contribution: +0.5540)
+- Encrypted Payload (contribution: +0.4069)
 
 NOTES
 -----
