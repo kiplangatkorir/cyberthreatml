@@ -5,6 +5,7 @@ Basic usage example for the CyberThreat-ML library.
 import sys
 import os
 from pathlib import Path
+import tensorflow as tf
 
 # Add the parent directory to sys.path to allow imports from the cyberthreat_ml package
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -59,13 +60,20 @@ def main():
     )
     
     # Train the model
+    callbacks = [
+        tf.keras.callbacks.EarlyStopping(
+            monitor='val_loss',
+            patience=3,
+            restore_best_weights=True
+        )
+    ]
+    
     history = model.train(
         X_train, y_train,
         validation_data=(X_val, y_val),
         epochs=10,
         batch_size=32,
-        early_stopping=True,
-        early_stopping_patience=3
+        callbacks=callbacks
     )
     
     # Step 4: Evaluate the model
