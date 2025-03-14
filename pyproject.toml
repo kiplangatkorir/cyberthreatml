@@ -1,5 +1,5 @@
-[project]
-name = "cyberthreat-ml"
+[project] 
+name = "cyberthreat-ml" 
 version = "0.1.0"
 description = "A Python library for real-time cybersecurity threat detection using TensorFlow"
 authors = [
