@@ -32,70 +32,104 @@ We evaluate the framework against both synthetic attack scenarios and real-world
 
 ### 2.1 Machine Learning in Cybersecurity
 
-Machine learning techniques have been increasingly applied to cybersecurity challenges, with significant research focusing on network intrusion detection [1], malware classification [2], and phishing detection [3]. Deep learning approaches have shown particular promise, with studies demonstrating their ability to detect complex attack patterns [4]. Recent advancements in AI-driven security systems have introduced more sophisticated approaches:
+Machine learning techniques have been increasingly applied to cybersecurity challenges, with significant research focusing on network intrusion detection (Buczak and Guven, 2016), malware classification (Vinayakumar et al., 2019), and phishing detection (Apruzzese et al., 2018). Deep learning approaches have shown particular promise, with studies demonstrating their ability to detect complex attack patterns (Stoecklin et al., 2018). However, these approaches often suffer from several limitations:
 
-1. **Advanced Detection Systems:** Transformer-based architectures have shown superior performance in sequence-based threat detection [15], while graph neural networks have improved network traffic analysis [16].
-  
-2. **Automated Response:** Integration of reinforcement learning for automated incident response has demonstrated promising results in containing threats in real-time [17].
-
-3. **Edge Computing Integration:** Recent work has shown effective deployment of ML models at network edges, enabling faster response times and reduced data transmission [18].
-
-However, these approaches often face several challenges:
-
-1. **Limited Interpretability:** Most ML models provide predictions without explanations, leaving security analysts unable to validate or trust the detections [5].
-  
-2. **Training Data Biases:** Models trained on known attack signatures often fail to generalize to novel attack patterns [6].
-
-3. **Operational Complexity:** Deploying ML systems in security contexts requires specialized knowledge across both domains [7].
+1. **Limited Interpretability:** Most ML models provide predictions without explanations, leaving security analysts unable to validate or trust the detections (Explainable AI for Security, Sommer and Paxson, 2010).
+2. **Training Data Biases:** Models trained on known attack signatures often fail to generalize to novel attack patterns (Pendlebury et al., 2019).
+3. **Operational Complexity:** Deploying ML systems in security contexts requires specialized knowledge across both domains (Arp et al., 2020).
 
 ### 2.2 Explainable AI in Security Contexts
 
-Explainable AI (XAI) has emerged as a crucial research area for security applications [8]. While traditional approaches like LIME [9] and SHAP [10] have been applied to security problems, recent developments have significantly advanced the field:
+Explainable AI (XAI) has emerged as a crucial research area for security applications (Kuppa et al., 2021). Model-agnostic explanation techniques like LIME (Local Interpretable Model-agnostic Explanations) (Ribeiro et al., 2016) and SHAP (Lundberg and Lee, 2017) have been applied to security problems with some success. However, meaningful interpretability in cybersecurity requires domain-specific approaches that translate model outputs into actionable security intelligence (Guo et al., 2018).
 
-1. **Enhanced SHAP Applications:** Recent work has extended SHAP for time-series analysis in network traffic [19], providing better insights into temporal attack patterns.
+The importance of explainability in security contexts is heightened by regulatory requirements, incident response needs, and the trust deficit between security analysts and ML systems. Recent work by Marino et al. (2018) demonstrated that security professionals were more likely to act on ML-based alerts when provided with contextual explanations of the detection rationale. Similarly, Apruzzese et al. (2020) found that context-aware explanations significantly improved analyst decision-making in SOC environments.
 
-2. **Hierarchical Explanations:** New frameworks combine multiple levels of explanations, from feature-level to strategic insights [20], making interpretations more actionable for security teams.
-
-3. **Domain-Specific XAI:** Security-focused explanation methods have been developed to address unique challenges in cybersecurity [21], including:
-   - Attack chain reconstruction
-   - Threat severity assessment
-   - Impact analysis
-   - Mitigation recommendations
-
-4. **Real-time Explanations:** Recent advances in efficient XAI computation [22] have enabled real-time threat explanations without compromising detection speed.
+```python
+# Example of SHAP-based explanation for a security threat
+def explain_prediction(model, X_sample, feature_names=None):
+    """
+    Explain a single prediction using SHAP values.
+    
+    Args:
+        model: Trained model
+        X_sample: Sample input for explanation
+        feature_names: List of feature names
+        
+    Returns:
+        Explanation dictionary with feature contributions
+    """
+    # Get prediction and SHAP values
+    prediction = model.predict(X_sample)
+    explainer = shap.Explainer(model)
+    shap_values = explainer(X_sample)
+    
+    # Get class with highest probability
+    class_idx = np.argmax(prediction[0])
+    
+    # If feature names not provided, generate generic names
+    if feature_names is None:
+        feature_names = [f"Feature {i}" for i in range(X_sample.shape[1])]
+    
+    # Get top contributing features
+    top_features = sorted(zip(feature_names, shap_values[class_idx][0]), 
+                          key=lambda x: abs(x[1]), 
+                          reverse=True)
+    
+    return {
+        "prediction": class_idx,
+        "confidence": float(prediction[0][class_idx]),
+        "top_features": top_features[:5],
+        "explanation_text": generate_security_explanation(top_features, class_idx)
+    }
+```
 
 ### 2.3 Zero-Day Threat Detection
 
-Zero-day vulnerabilities and attacks represent significant challenges for cybersecurity systems. While traditional signature-based approaches fundamentally cannot detect previously unseen threats [12], recent research has made substantial progress:
+Zero-day vulnerabilities and attacks represent significant challenges for cybersecurity systems. Traditional signature-based approaches fundamentally cannot detect previously unseen threats (García-Teodoro et al., 2009). Anomaly detection techniques offer promise but suffer from high false positive rates and limited actionability (Chandola et al., 2009). Recent research has explored ensemble methods and hybrid approaches to improve detection accuracy while reducing false positives (Bridges et al., 2021).
 
-1. **Advanced Anomaly Detection:** 
-   - Self-supervised learning approaches for better pattern recognition [23]
-   - Transformer-based anomaly detection with attention mechanisms [24]
-   - Hybrid ensemble methods combining multiple detection strategies [25]
+Research by Ahmed et al. (2020) demonstrated that ensemble anomaly detection approaches can achieve up to 17% higher detection rates for previously unseen attack patterns compared to individual methods, while Siddiqui et al. (2019) showed that hybrid approaches combining signature-based and anomaly-based techniques can reduce false positive rates by over 30%.
 
-2. **Transfer Learning Applications:**
-   - Knowledge transfer from known attacks to detect novel variants [26]
-   - Few-shot learning for rapid adaptation to new threats [27]
+A notable challenge in zero-day detection is the balance between sensitivity and specificity. As Alazab et al. (2021) noted, overly sensitive anomaly detection leads to alert fatigue, while insufficient sensitivity leaves organizations vulnerable. Our approach addresses this through confidence-based alerting and detailed contextual explanations.
 
-3. **Adversarial Robustness:**
-   - Detection of adversarial attacks against ML models [28]
-   - Robust architecture design for reliability under attack [29]
-
-### 2.4 Recent Industry Developments
-
-The cybersecurity industry has seen significant advancement in ML-based threat detection:
-
-1. **Cloud-Native Security:**
-   - Containerized deployment of ML models [30]
-   - Microservices architecture for scalable threat detection [31]
-
-2. **AutoML in Security:**
-   - Automated model selection and hyperparameter tuning [32]
-   - Continuous model updating with new threat data [33]
-
-3. **Federated Learning:**
-   - Privacy-preserving threat detection across organizations [34]
-   - Collaborative model training without data sharing [35]
+```python
+class ZeroDayDetector:
+    """Detector for identifying zero-day attacks using anomaly detection techniques."""
+    
+    def __init__(self, method='isolation_forest', contamination=0.1, 
+                 feature_columns=None, min_samples=100, threshold=None):
+        """Initialize the zero-day detector with specified algorithm."""
+        self.method = method
+        self.contamination = contamination
+        self.feature_columns = feature_columns
+        self.min_samples = min_samples
+        self.threshold = threshold
+        self.models = {}
+        self.is_fitted = False
+        self.normal_data_stats = {}
+        
+        # Initialize selected algorithm
+        if method == 'isolation_forest':
+            self.models['isolation_forest'] = IsolationForest(
+                contamination=contamination, random_state=42)
+        elif method == 'local_outlier_factor':
+            self.models['lof'] = LocalOutlierFactor(
+                contamination=contamination, novelty=True)
+        elif method == 'robust_covariance':
+            self.models['robust_covariance'] = EllipticEnvelope(
+                contamination=contamination, random_state=42)
+        elif method == 'one_class_svm':
+            self.models['one_class_svm'] = OneClassSVM(nu=contamination)
+        elif method == 'ensemble':
+            # Use multiple methods for ensemble detection
+            self.models['isolation_forest'] = IsolationForest(
+                contamination=contamination, random_state=42)
+            self.models['lof'] = LocalOutlierFactor(
+                contamination=contamination, novelty=True)
+            self.models['robust_covariance'] = EllipticEnvelope(
+                contamination=contamination, random_state=42)
+        else:
+            raise ValueError(f"Unsupported method: {method}")
+```
 
 ## 3. System Architecture and Implementation
 
@@ -213,6 +247,114 @@ The framework consists of the following key components:
    - Callback registration for threat events
    - Thread-safe implementation for parallel processing
    - Packet stream processing with protocol awareness
+
+```python
+class RealTimeDetector:
+    """Base class for real-time threat detection."""
+    
+    def __init__(self, model, feature_extractor, threshold=0.5, 
+                 batch_size=32, processing_interval=1.0):
+        """
+        Initialize the real-time detector.
+        
+        Args:
+            model: Trained threat detection model
+            feature_extractor: Component that transforms raw data to feature vectors
+            threshold: Detection threshold (0.0 to 1.0)
+            batch_size: Number of samples to process in each batch
+            processing_interval: Time between processing batches (seconds)
+        """
+        self.model = model
+        self.feature_extractor = feature_extractor
+        self.threshold = threshold
+        self.batch_size = batch_size
+        self.processing_interval = processing_interval
+        self.data_buffer = []
+        self.is_running = False
+        self.processing_thread = None
+        self.threat_callbacks = []
+        self.processing_callbacks = []
+        self.lock = threading.RLock()
+        
+    def register_threat_callback(self, callback):
+        """Register a callback for when threats are detected."""
+        self.threat_callbacks.append(callback)
+        
+    def register_processing_callback(self, callback):
+        """Register a callback for when batches are processed."""
+        self.processing_callbacks.append(callback)
+        
+    def add_data(self, data):
+        """Add data to the processing buffer."""
+        with self.lock:
+            self.data_buffer.append(data)
+            
+    def start(self):
+        """Start the real-time detection thread."""
+        if self.is_running:
+            return
+            
+        self.is_running = True
+        self.processing_thread = threading.Thread(
+            target=self._processing_loop, daemon=True)
+        self.processing_thread.start()
+        
+    def stop(self):
+        """Stop the real-time detection thread."""
+        self.is_running = False
+        if self.processing_thread:
+            self.processing_thread.join(timeout=2.0)
+            
+    def _processing_loop(self):
+        """Main processing loop that runs in a separate thread."""
+        while self.is_running:
+            self._process_batch()
+            time.sleep(self.processing_interval)
+            
+    def _process_batch(self):
+        """Process a batch of data from the buffer."""
+        batch = []
+        with self.lock:
+            if len(self.data_buffer) > 0:
+                # Get up to batch_size items
+                batch = self.data_buffer[:self.batch_size]
+                self.data_buffer = self.data_buffer[self.batch_size:]
+                
+        if not batch:
+            return
+            
+        # Extract features
+        features = [self.feature_extractor.transform(data) for data in batch]
+        features = np.array(features)
+        
+        # Make predictions
+        predictions = self.model.predict(features)
+        results = []
+        
+        # Process each prediction
+        for i, pred in enumerate(predictions):
+            confidence = np.max(pred)
+            if confidence >= self.threshold:
+                class_idx = np.argmax(pred)
+                result = {
+                    'data': batch[i],
+                    'class_idx': class_idx,
+                    'confidence': confidence,
+                    'timestamp': datetime.now(),
+                    'features': features[i]
+                }
+                results.append(result)
+                
+                # Call threat callbacks
+                for callback in self.threat_callbacks:
+                    callback(result)
+        
+        # Call processing callbacks
+        for callback in self.processing_callbacks:
+            callback(results)
+            
+        return results
+```
 
 4. **Anomaly Detection Module (`anomaly.py`):** Implements multiple anomaly detection algorithms with ensemble capabilities for zero-day threat identification:
    - Isolation Forest for identifying outliers
@@ -1074,25 +1216,3 @@ Stoecklin, M. P., et al. (2018). DeepLocker: Concealing targeted attacks with AI
 Veeramachaneni, K., Arnaldo, I., Korrapati, V., Bassias, C., & Li, K. (2016). AI^2: training a big data machine to defend. In 2016 IEEE 2nd International Conference on Big Data Security on Cloud (BigDataSecurity) (pp. 49-54). IEEE.
 
 Vinayakumar, R., Alazab, M., Soman, K. P., Poornachandran, P., Al-Nemrat, A., & Venkatraman, S. (2019). Deep learning approach for intelligent intrusion detection system. IEEE Access, 7, 41525-41550.
-
-Zhang et al., "TransformerGuard: Advanced Threat Detection with Self-Attention," IEEE S&P, 2024.
-Liu et al., "GraphDefender: Graph Neural Networks for Network Security," USENIX Security, 2023.
-Johnson et al., "Reinforcement Learning for Automated Incident Response," CCS, 2024.
-Park et al., "EdgeDefend: Efficient ML-based Security at the Network Edge," NDSS, 2023.
-Williams et al., "Time-Series SHAP: Explaining Sequential Attack Patterns," IEEE Security & Privacy, 2024.
-Chen et al., "HierarchicalXAI: Multi-level Security Explanations," USENIX Security, 2023.
-Smith et al., "SecurityXAI: Domain-Specific Explanations for Cyber Threats," CCS, 2024.
-Brown et al., "FastXAI: Real-time Explanations for Security Operations," IEEE S&P, 2023.
-Kumar et al., "Self-Supervised Learning for Zero-Day Attack Detection," NDSS, 2024.
-Wang et al., "AttentionZero: Transformer-based Zero-Day Detection," CCS, 2023.
-Miller et al., "EnsembleZero: Hybrid Detection of Unknown Threats," USENIX Security, 2024.
-Taylor et al., "TransferSec: Knowledge Transfer in Cyber Defense," IEEE Security & Privacy, 2023.
-Anderson et al., "Few-Shot Learning for Rapid Threat Adaptation," S&P, 2024.
-Lee et al., "Detecting Adversarial Attacks in Security Models," CCS, 2023.
-Wilson et al., "RobustML: Reliable Security Architecture," USENIX Security, 2024.
-Cloud Security Alliance, "ML-Based Cloud Security Best Practices," 2024.
-Martinez et al., "Microservices for Scalable Threat Detection," IEEE Cloud Computing, 2023.
-AutoML Security Working Group, "AutoML in Cybersecurity," 2024.
-Thompson et al., "Continuous Learning in Security Systems," IEEE Security & Privacy, 2023.
-Kim et al., "FedSec: Federated Learning for Cyber Defense," NDSS, 2024.
-Roberts et al., "Privacy-Preserving Threat Intelligence Sharing," CCS, 2023.
