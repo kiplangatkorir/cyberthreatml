@@ -1,1 +1,1 @@
-{"input_shape": [20], "model_config": {"hidden_layers": [64, 32], "dropout_rate": 0.3, "activation": "relu", "output_activation": "sigmoid", "loss": "binary_crossentropy", "metrics": ["accuracy", "AUC", "Precision", "Recall"], "optimizer": "adam"}}
+{"input_shape": [20], "num_classes": null, "model_config": {"hidden_layers": [64, 32], "dropout_rate": 0.3, "activation": "relu", "output_activation": "sigmoid", "loss": "binary_crossentropy", "metrics": ["accuracy", "AUC", "Precision", "Recall"], "optimizer": "adam"}}

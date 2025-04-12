@@ -18,6 +18,10 @@ from datetime import datetime
 import threading
 import keras
 import tensorflow as tf
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 
 # Create output directories if they don't exist
 os.makedirs('security_output/alerts', exist_ok=True)

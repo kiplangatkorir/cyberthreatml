@@ -13,6 +13,9 @@ import time
 import numpy as np
 import matplotlib.pyplot as plt
 from datetime import datetime
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from cyberthreat_ml.model import ThreatDetectionModel, load_model
 from cyberthreat_ml.preprocessing import FeatureExtractor, extract_packet_features

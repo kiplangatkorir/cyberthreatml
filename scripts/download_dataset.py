@@ -1,35 +1,35 @@
 """
-Download and verify the CICIDS2017 dataset files.
+Download instructions for the CIC-IDS2023 dataset.
 """
 import os
-import sys
-import requests
-import hashlib
 from pathlib import Path
 import logging
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-DATASET_DIR = Path(__file__).resolve().parent.parent / "datasets" / "CICIDS2017"
+DATASET_DIR = Path(__file__).resolve().parent.parent / "datasets" / "CICIDS2023"
+DATASET_URL = "https://www.unb.ca/cic/datasets/ids-2023.html"
+
 REQUIRED_FILES = [
-    "Monday-WorkingHours.pcap_ISCX.csv",
-    "Tuesday-WorkingHours.pcap_ISCX.csv",
-    "Friday-WorkingHours-Morning.pcap_ISCX.csv"
+    "DrDoS_MSSQL.csv",
+    "DrDoS_NetBIOS.csv",
+    "DrDoS_SNMP.csv",
+    "Infiltration.csv",
+    "BotAttack.csv"
 ]
 
 def main():
-    logger.info("CyberThreat-ML Dataset Downloader")
+    logger.info("CyberThreat-ML Dataset Downloader - CIC-IDS2023")
     logger.info("=" * 80)
     
     # Create dataset directory if it doesn't exist
     DATASET_DIR.mkdir(parents=True, exist_ok=True)
     
-    logger.info(f"Dataset will be downloaded to: {DATASET_DIR}")
-    logger.info("\nPlease follow these steps:")
-    logger.info("1. Visit: https://www.unb.ca/cic/datasets/ids-2017.html")
+    logger.info(f"\nTo download the CIC-IDS2023 dataset, please follow these steps:")
+    logger.info(f"1. Visit: {DATASET_URL}")
     logger.info("2. Fill out the registration form to get download access")
-    logger.info("3. Download the following files and place them in the datasets/CICIDS2017 directory:")
+    logger.info("3. Download the following files and place them in the datasets/CICIDS2023 directory:")
     for file in REQUIRED_FILES:
         logger.info(f"   - {file}")
     
