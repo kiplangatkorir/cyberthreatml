@@ -1,5 +1,5 @@
 =================================================
-THREAT DETECTION EXPLANATION REPORT (RULES)
+THREAT DETECTION EXPLANATION REPORT (RULES) 
 =================================================
 
 Prediction: Port Scan (Class ID: 1)
