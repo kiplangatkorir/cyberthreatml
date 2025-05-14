@@ -12,7 +12,7 @@
 - Expanded explainable AI in security section
 - Comprehensive zero-day threat detection literature
 - **New section:** Text-based visualization research
-- **New section:** Complex pattern detection literature
+- **New section:** Complex pattern detection literature 
 - **New section:** Enterprise and IoT security integration research
 
 ### 3. System Architecture and Implementation
