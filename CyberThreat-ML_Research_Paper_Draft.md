@@ -1,4 +1,5 @@
-# CyberThreat-ML: An Explainable Machine Learning Framework for Real-Time Cybersecurity Threat Detection
+# CyberThreat-ML - Advanced Threat Detection with Explainable AI
+
 
 Kiplangat Korir  
 korirkiplangat22@gmail.com
