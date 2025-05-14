@@ -29,7 +29,7 @@ CyberThreat-ML is a comprehensive library for building, training, and deploying 
 pip install cyberthreat-ml
 ```
 
-## Requirements
+## Requirements 
 
 - Python 3.8+
 - TensorFlow 2.8+
