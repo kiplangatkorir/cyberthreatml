@@ -1,5 +1,5 @@
 import shap
-import numpy as np
+import numpy as np 
 
 def explain_predictions(model, X_test):
     """
