@@ -8,7 +8,7 @@ CyberThreat-ML is a comprehensive library for building, training, and deploying 
 - **Multi-class Classification**: Support for detecting multiple threat categories:
   - Normal Traffic
   - Port Scan
-  - DDoS (Distributed Denial of Service)
+  - DDoS (Distributed Denial of Service) 
   - Brute Force Attacks
   - Data Exfiltration
   - Command & Control Communication
