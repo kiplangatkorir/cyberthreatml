@@ -2,7 +2,7 @@
 THREAT DETECTION EXPLANATION REPORT (RULES)
 =================================================
 
-Prediction: Data Exfiltration (Class ID: 4)
+Prediction: Data Exfiltration (Class ID: 4) 
 Explanation Method: rules
 
 TOP CONTRIBUTING FEATURES
