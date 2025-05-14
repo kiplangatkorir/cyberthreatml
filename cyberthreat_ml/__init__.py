@@ -1,5 +1,5 @@
 """
-CyberThreat-ML: A Python library for real-time cybersecurity threat detection using TensorFlow.
+CyberThreat-ML: An Explainable Python library for real-time cybersecurity threat detection using TensorFlow.
 
 This library provides tools for:
 - Processing network traffic data
