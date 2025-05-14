@@ -1,5 +1,5 @@
 """
-Module for anomaly-based zero-day threat detection.
+Module for anomaly-based zero-day threat detection. 
 
 This module provides implementations of various anomaly detection algorithms
 for identifying potentially malicious activities that don't match known threat patterns.
