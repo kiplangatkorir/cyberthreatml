@@ -17,7 +17,7 @@ CyberThreat-ML's modular architecture facilitates both research applications and
 
 Cybersecurity threats continue to evolve in sophistication and scale, outpacing traditional rule-based and signature-based detection systems. Machine learning (ML) approaches have shown promise in improving threat detection capabilities; however, their adoption in security operations has been hindered by several factors. Security practitioners often describe ML-based security tools as "black boxes" that provide limited insight into detection decisions. Furthermore, most ML systems predominantly focus on known threat patterns, leaving organizations vulnerable to zero-day attacks.
 
-This research introduces CyberThreat-ML, a Python library built on TensorFlow that addresses these challenges through six core contributions:
+This research introduces CyberThreat-ML, a Python library built on TensorFlow that addresses these challenges through six core contributions: 
 
 1. **Explainability by Design:** Integration of SHAP (SHapley Additive exPlanations) and custom interpretability methods to transform detection outputs into human-understandable security insights.
 2. **Hybrid Detection Approach:** Combination of signature-based detection for known threats and ensemble anomaly-based detection for zero-day threat identification.
