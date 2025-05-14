@@ -4,11 +4,11 @@ This tutorial will guide you through building a complete zero-day threat detecti
 
 ## Overview
 
-Zero-day threats exploit previously unknown vulnerabilities, making them particularly dangerous. Traditional signature-based detection fails against these threats because there are no known signatures yet. This is where anomaly-based detection shines, by identifying activity that deviates significantly from normal patterns.
+Zero-day threats exploit previously unknown vulnerabilities, making them particularly dangerous. Traditional signature-based detection fails against these threats because there are no known signatures yet. This is where anomaly-based detection shines, by identifying activity that deviates significantly from normal patterns. 
 
 This tutorial will show you how to:
 1. Set up baseline data of normal traffic
-2. Configure and train the zero-day detector
+2. Configure and train the zero-day detector 
 3. Implement real-time monitoring
 4. Analyze and interpret detection results
 5. Adapt the system as network behavior changes
