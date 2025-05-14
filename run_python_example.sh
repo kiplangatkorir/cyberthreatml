@@ -6,7 +6,7 @@
 
 # Python path in Replit environment
 PYTHON_PATH="/mnt/nixmodules/nix/store/b03kwd9a5dm53k0z5vfzdhkvaa64c4g7-python3-3.10.13-env/bin/python3"
-
+ 
 # Check if the Python path exists
 if [ ! -f "$PYTHON_PATH" ]; then
     echo "Error: Python interpreter not found at $PYTHON_PATH"
