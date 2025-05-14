@@ -15,7 +15,7 @@ CyberThreat-ML is an advanced cybersecurity framework that leverages machine lea
 
 ## What Has Been Accomplished
 
-### Core Framework
+### Core Framework 
 - ✅ Developed fundamental code architecture and module structure
 - ✅ Implemented basic logger, preprocessing, model, and evaluation modules
 - ✅ Created reusable base classes for threat detection and streaming processing
