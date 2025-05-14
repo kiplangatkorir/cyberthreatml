@@ -7,7 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from collections import defaultdict
 
-# Try to import SHAP for model explainability
+# import SHAP for model explainability
 try:
     import shap
     SHAP_AVAILABLE = True
