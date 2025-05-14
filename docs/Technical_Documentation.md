@@ -13,7 +13,7 @@ CyberThreat-ML is built with a modular architecture that separates concerns into
 7. **Visualization Module** (`cyberthreat_ml.visualization`): Provides dashboards and visualizations for threat monitoring.
 8. **Utils Module** (`cyberthreat_ml.utils`): Contains utility functions used across the library.
 
-## Model Architecture
+## Model Architecture 
 
 The default model architecture is a multilayer perceptron (MLP) with configurable hidden layers, dropout for regularization, and either sigmoid (binary) or softmax (multi-class) output activation.
 
