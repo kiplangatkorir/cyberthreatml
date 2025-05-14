@@ -7,7 +7,7 @@ from tensorflow.keras.optimizers import Adam
 import numpy as np
 
 def lr_schedule(epoch):
-    """Learning rate scheduler for adaptive training."""
+    """Learning rate scheduler for adaptive training.""" 
     initial_lr = 0.001
     drop = 0.5
     epochs_drop = 10.0
