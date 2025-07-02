@@ -6,7 +6,7 @@ CyberThreat-ML is a comprehensive library for building, training, and deploying 
  
 - **Advanced Threat Detection Model**: Sophisticated neural network architecture for detecting various cyber threats
 - **Multi-class Classification**: Support for detecting multiple threat categories:
-  - Normal Traffic
+  - Normal Traffic 
   - Port Scan
   - DDoS (Distributed Denial of Service) 
   - Brute Force Attacks
